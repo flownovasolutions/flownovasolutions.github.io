@@ -13,7 +13,7 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION BAR */
+        /* NAVIGATION */
         nav {
             display: flex;
             justify-content: space-between;
@@ -45,19 +45,26 @@
             opacity: 1;
         }
 
-        /* HERO SECTION */
+        /* HERO WITH IMAGE */
         header {
-            padding: 120px 20px;
+            padding: 140px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #0a0f1f, #0d223f, #0f3b5f, #144b7a);
-            background-size: 200% 200%;
-            animation: gradientShift 10s ease infinite;
+            background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 15, 31, 0.7);
+        }
+
+        header > * {
+            position: relative;
+            z-index: 2;
         }
 
         header h1 {
@@ -89,7 +96,7 @@
             transform: translateY(-2px);
         }
 
-        /* CONTENT SECTIONS */
+        /* CONTENT */
         .container {
             max-width: 1000px;
             margin: auto;
@@ -103,6 +110,14 @@
         .section h3 {
             font-size: 1.9rem;
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h3 img {
+            width: 32px;
+            opacity: 0.9;
         }
 
         .pillars {
@@ -123,10 +138,6 @@
         .card:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.12);
-        }
-
-        ul li {
-            margin-bottom: 6px;
         }
 
         footer {
@@ -164,15 +175,21 @@
 
         <!-- INTRO -->
         <div class="section">
+            <h3>
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/rocket.png">
+                Modern Power Platform Consulting
+            </h3>
             <p>
                 FlowNova Solutions helps organizations eliminate inefficiency and unlock modern, scalable workflows through Power Apps, Power Automate, Dataverse architecture, and thoughtful process design.
-                We blend structured engineering with creative problem‑solving to deliver systems that feel intuitive, powerful, and built for the future.
             </p>
         </div>
 
         <!-- VALUE PILLARS -->
         <div class="section">
-            <h3>What We Deliver</h3>
+            <h3>
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/flow-chart.png">
+                What We Deliver
+            </h3>
             <div class="pillars">
                 <div class="card">
                     <h4>Automate with Confidence</h4>
@@ -189,21 +206,26 @@
             </div>
         </div>
 
-        <!-- SERVICES SNAPSHOT -->
+        <!-- SERVICES -->
         <div class="section">
-            <h3>Services</h3>
+            <h3>
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/services.png">
+                Services
+            </h3>
             <div class="card">
                 <p>• Power Apps Development</p>
                 <p>• Power Automate Workflows</p>
                 <p>• Dataverse Architecture & Security</p>
                 <p>• Process Mapping & Optimization</p>
             </div>
-            <a class="cta-button" href="mailto:shelby@flownovasolutions.com">View All Services</a>
         </div>
 
         <!-- WHY FLOWNOVA -->
         <div class="section">
-            <h3>Why FlowNova</h3>
+            <h3>
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png">
+                Why FlowNova
+            </h3>
             <p>
                 FlowNova is built on a simple belief: <strong>When systems are designed with clarity, people work better.</strong>
             </p>
@@ -216,7 +238,7 @@
             </ul>
         </div>
 
-        <!-- CTA BANNER -->
+        <!-- CTA -->
         <div class="section" style="text-align:center;">
             <h3>Ready to streamline your workflows?</h3>
             <p>Let’s build something that transforms how your team works.</p>
@@ -231,3 +253,4 @@
 
 </body>
 </html>
+
