@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FlowNova Solutions</title>
+
   <style>
     body {
       margin: 0;
@@ -30,7 +31,12 @@
       font-size: 1.6rem;
       font-weight: bold;
       letter-spacing: 1px;
-      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease;
     }
 
     .nav-links a {
@@ -47,7 +53,63 @@
       color: #00d4ff;
     }
 
-    /* HERO SECTION */
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 26px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* MOBILE MENU */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(10, 15, 31, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-links a {
+        margin: 12px 0;
+        font-size: 1.2rem;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav {
+        padding: 20px;
+      }
+    }
+
+    /* HERO */
     header {
       height: 100vh;
       background-image: url('hero-background.png');
@@ -70,7 +132,6 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      color: white;
       padding: 0 20px;
     }
 
@@ -148,10 +209,6 @@
       background: rgba(255, 255, 255, 0.12);
     }
 
-    ul li {
-      margin-bottom: 6px;
-    }
-
     footer {
       text-align: center;
       padding: 40px;
@@ -168,6 +225,13 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="logo">FlowNova</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#">Services</a>
@@ -245,14 +309,25 @@
     <div class="section" style="text-align:center;">
       <h3>Ready to streamline your workflows?</h3>
       <p>Let’s build something that transforms how your team works.</p>
-      <a class="cta-button" href="mailto:shelby@flownovasolutions.com">Book a Consultation</a>
+      <a class="cta-button" href="mailto:shelby@flownovasolutions.com">Get Started</a>
     </div>
 
   </div>
 
   <footer>
-    © 2026 FlowNova Solutions — All Rights Reserved
+    © 2026 FlowNova Solutions — Built with clarity and intention.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.nav-links');
+      const burger = document.querySelector('.hamburger');
+
+      const isOpen = menu.style.display === 'flex';
+      menu.style.display = isOpen ? 'none' : 'flex';
+      burger.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
