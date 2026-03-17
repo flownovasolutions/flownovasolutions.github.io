@@ -6,6 +6,39 @@
   <title>FlowNova Solutions</title>
 
   <style>
+    .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    .floating-contact {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #00d4ff;
+  color: #000;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(0, 212, 255, 0.6);
+  backdrop-filter: blur(6px);
+  transition: 0.25s ease;
+  z-index: 999;
+}
+
+.floating-contact:hover {
+  background: #00e1ff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(0, 225, 255, 0.8);
+}
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -328,6 +361,34 @@
       burger.classList.toggle('active');
     }
   </script>
+<a href="mailto:shelby@flownovasolutions.com" class="floating-contact">
+  Contact
+</a>
+<script>
+  // Mobile menu toggle
+  function toggleMenu() {
+    const menu = document.querySelector('.nav-links');
+    const burger = document.querySelector('.hamburger');
+
+    const isOpen = menu.style.display === 'flex';
+    menu.style.display = isOpen ? 'none' : 'flex';
+    burger.classList.toggle('active');
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.section, .card').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
