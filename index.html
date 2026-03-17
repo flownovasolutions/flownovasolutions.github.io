@@ -25,7 +25,7 @@
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo {
@@ -109,7 +109,7 @@
       }
     }
 
-    /* HERO WITH PARALLAX */
+    /* HERO */
     header.hero {
       height: 100vh;
       background-image: url('hero-background.png');
@@ -122,6 +122,7 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
+      z-index: 1;
     }
 
     .hero-overlay {
@@ -173,17 +174,12 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ANGLED DIVIDERS WITH NEON GLOW */
-    .angled-top,
-    .angled-bottom {
+    /* ANGLED DIVIDERS */
+    .angled-divider {
       width: 100%;
       height: 80px;
       position: relative;
-    }
-
-    .angled-top {
-      background: linear-gradient(135deg, #050814, #0d1a33);
-      clip-path: polygon(0 0, 100% 100%, 0 100%);
+      z-index: 2;
     }
 
     .angled-bottom {
@@ -191,8 +187,12 @@
       clip-path: polygon(100% 0, 100% 100%, 0 100%);
     }
 
-    .angled-top::after,
-    .angled-bottom::after {
+    .angled-top {
+      background: linear-gradient(135deg, #050814, #0d1a33);
+      clip-path: polygon(0 0, 100% 100%, 0 100%);
+    }
+
+    .angled-divider::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -202,8 +202,7 @@
       pointer-events: none;
     }
 
-    .angled-top::before,
-    .angled-bottom::before {
+    .angled-divider::before {
       content: "";
       position: absolute;
       width: 100%;
@@ -212,28 +211,28 @@
       opacity: 0.7;
     }
 
-    .angled-top::before {
-      bottom: 0;
-    }
+    .angled-bottom::before { top: 0; }
+    .angled-top::before { bottom: 0; }
 
-    .angled-bottom::before {
-      top: 0;
-    }
-
-    /* SECTIONS */
+    /* SECTION WRAPPERS */
     .section-wrapper {
       background: #050814;
+      position: relative;
+      z-index: 3;
     }
 
+    .gradient-section-wrapper {
+      background: radial-gradient(circle at top, #101b3a 0%, #050814 55%, #02030a 100%);
+      position: relative;
+      z-index: 3;
+    }
+
+    /* SECTION */
     .section {
       padding: 80px 20px;
       max-width: 1000px;
       margin: auto;
       position: relative;
-    }
-
-    .gradient-section-wrapper {
-      background: radial-gradient(circle at top, #101b3a 0%, #050814 55%, #02030a 100%);
     }
 
     .section h3 {
@@ -243,12 +242,7 @@
       padding-left: 12px;
     }
 
-    /* FUTURISTIC GRID BACKDROP FOR "WHAT WE DELIVER" */
-    .grid-bg {
-      position: relative;
-      overflow: hidden;
-    }
-
+    /* GRID BACKDROP */
     .grid-bg::before {
       content: "";
       position: absolute;
@@ -289,15 +283,8 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: 0.3s;
       position: relative;
-      transform-style: preserve-3d;
     }
 
-    .card h4 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-    /* GLOW-PULSE EFFECT */
     .card::after {
       content: "";
       position: absolute;
@@ -405,8 +392,10 @@
       <h2>Clarity. Automation. Transformation.</h2>
       <a class="cta-button" href="mailto:shelby@flownovasolutions.com">Book a Consultation</a>
     </div>
-    <div class="angled-bottom"></div>
   </header>
+
+  <!-- ANGLED DIVIDER -->
+  <div class="angled-divider angled-bottom"></div>
 
   <!-- SECTION 1 -->
   <div class="section-wrapper">
@@ -419,9 +408,9 @@
     </section>
   </div>
 
-  <div class="angled-top"></div>
+  <div class="angled-divider angled-top"></div>
 
-  <!-- SECTION 2: WHAT WE DELIVER -->
+  <!-- SECTION 2 -->
   <div class="gradient-section-wrapper grid-bg">
     <section id="services" class="section fade-in">
       <h3>What We Deliver</h3>
@@ -442,9 +431,9 @@
     </section>
   </div>
 
-  <div class="angled-bottom"></div>
+  <div class="angled-divider angled-bottom"></div>
 
-  <!-- SECTION 3: WHY FLOWNOVA -->
+  <!-- SECTION 3 -->
   <div class="section-wrapper">
     <section id="about" class="section fade-in">
       <h3>Why FlowNova</h3>
@@ -461,7 +450,7 @@
     </section>
   </div>
 
-  <div class="angled-top"></div>
+  <div class="angled-divider angled-top"></div>
 
   <!-- CTA SECTION -->
   <div class="gradient-section-wrapper">
@@ -480,17 +469,14 @@
   </footer>
 
   <script>
-    /* MOBILE MENU */
     function toggleMenu() {
       const menu = document.querySelector('.nav-links');
       const burger = document.querySelector('.hamburger');
-
       const isOpen = menu.style.display === 'flex';
       menu.style.display = isOpen ? 'none' : 'flex';
       burger.classList.toggle('active');
     }
 
-    /* SCROLL ANIMATIONS */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
