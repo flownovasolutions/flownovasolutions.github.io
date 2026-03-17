@@ -109,12 +109,13 @@
       }
     }
 
-    /* HERO */
+    /* HERO WITH PARALLAX */
     header.hero {
       height: 100vh;
       background-image: url('hero-background.png');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       position: relative;
       display: flex;
       align-items: center;
@@ -170,19 +171,53 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ANGLED DIVIDERS */
-    .angled-top {
+    /* ANGLED DIVIDERS WITH NEON GLOW */
+    .angled-top,
+    .angled-bottom {
       width: 100%;
       height: 80px;
+      position: relative;
+    }
+
+    .angled-top {
       background: linear-gradient(135deg, #0a0f1f, #0d1a33);
       clip-path: polygon(0 0, 100% 100%, 0 100%);
     }
 
     .angled-bottom {
-      width: 100%;
-      height: 80px;
       background: linear-gradient(225deg, #0d1a33, #0a0f1f);
       clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Neon glow */
+    .angled-top::after,
+    .angled-bottom::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(0,212,255,0.35), transparent 70%);
+      opacity: 0.4;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    /* Neon edge line */
+    .angled-top::before,
+    .angled-bottom::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #00d4ff, #0066ff);
+      opacity: 0.7;
+    }
+
+    .angled-top::before {
+      bottom: 0;
+    }
+
+    .angled-bottom::before {
+      top: 0;
     }
 
     /* SECTIONS */
@@ -190,6 +225,7 @@
       padding: 80px 20px;
       max-width: 1000px;
       margin: auto;
+      position: relative;
     }
 
     .gradient-section {
