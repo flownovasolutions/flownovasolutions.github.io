@@ -16,8 +16,7 @@
       --pink: #ff3dfc;
 
       --bg-dark: #050814;
-      --bg-darker: #070a16;
-      --bg-panel: rgba(5, 8, 20, 0.96);
+      --bg-deep: #040612;
 
       --gradient-primary: linear-gradient(90deg, var(--blue), var(--pink));
       --gradient-heading: linear-gradient(120deg, #c3f4ff, #ffb8ff);
@@ -138,7 +137,7 @@
       position: absolute;
       top: 36px;
       left: 0;
-      background: var(--bg-panel);
+      background: rgba(5, 8, 20, 0.98);
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--glow-blue), var(--glow-pink);
       padding: 10px 0;
@@ -186,7 +185,7 @@
     .mobile-nav {
       display: none;
       flex-direction: column;
-      background: var(--bg-panel);
+      background: rgba(5, 8, 20, 0.96);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       animation: slideDown 0.3s ease forwards;
     }
@@ -345,20 +344,34 @@
     }
 
     /* ------------------------------ */
-    /* 4. DIVIDERS                    */
+    /* 4. DIVIDERS (ALTERNATING)      */
     /* ------------------------------ */
 
-    .angled-divider {
+    .divider-wrap {
       width: 100%;
+      overflow: hidden;
+    }
+
+    .angled-divider {
+      width: 140%;
       height: 90px;
       background: linear-gradient(90deg, var(--blue), var(--pink));
-      clip-path: polygon(0 0, 100% 100%, 0 100%);
       opacity: 0.35;
     }
 
     .angled-divider.subtle {
       height: 60px;
       opacity: 0.22;
+    }
+
+    .angled-divider.down-right {
+      clip-path: polygon(0 0, 100% 100%, 0 100%);
+      transform: translateX(-10%);
+    }
+
+    .angled-divider.up-right {
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      transform: translateX(-10%);
     }
 
     /* ------------------------------ */
@@ -371,21 +384,25 @@
       margin: 0 auto;
     }
 
-    .section-dark {
-      background: radial-gradient(
-          circle at top,
-          rgba(0,212,255,0.10),
-          transparent 70%
-        ),
-        radial-gradient(
-          circle at bottom,
-          rgba(255,0,255,0.08),
-          transparent 80%
-        ),
-        var(--bg-darker);
+    .section-atmos-dark {
+      background:
+        radial-gradient(circle at top, rgba(0,212,255,0.12), transparent 70%),
+        radial-gradient(circle at bottom, rgba(255,0,255,0.10), transparent 80%),
+        var(--bg-deep);
+      border-radius: 26px;
+      padding: 80px 32px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
     }
 
-    .section-light {
+    .section-atmos-soft {
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 70%),
+        radial-gradient(circle at bottom, rgba(0,0,0,0.4), transparent 80%);
+      border-radius: 26px;
+      padding: 80px 32px;
+    }
+
+    .section-plain {
       background: transparent;
     }
 
@@ -419,6 +436,11 @@
     @media (max-width: 768px) {
       .section {
         padding: var(--space-section-mobile) 20px;
+      }
+      .section-atmos-dark,
+      .section-atmos-soft {
+        padding: 60px 20px;
+        border-radius: 20px;
       }
       .section h2 {
         font-size: 1.8rem;
@@ -491,19 +513,16 @@
       opacity: 0.9;
     }
 
-    /* Core Services – floating, no black box */
+    /* Core Services – floating, atmospheric */
     .section-core-services {
-      background: radial-gradient(
-          circle at top,
-          rgba(0,212,255,0.14),
-          transparent 70%
-        ),
-        radial-gradient(
-          circle at bottom,
-          rgba(255,0,255,0.12),
-          transparent 80%
-        );
-      padding: var(--space-section) 20px;
+      background:
+        radial-gradient(circle at top, rgba(0,212,255,0.16), transparent 75%),
+        radial-gradient(circle at bottom, rgba(255,0,255,0.14), transparent 80%);
+      border-radius: 26px;
+      padding: 90px 32px;
+      box-shadow:
+        0 0 40px rgba(0,0,0,0.7),
+        0 0 40px rgba(0,212,255,0.18);
     }
 
     .card-grid {
@@ -726,29 +745,35 @@
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="angled-divider"></div>
+    <!-- DIVIDER (DRAMATIC DOWN-RIGHT) -->
+    <div class="divider-wrap">
+      <div class="angled-divider down-right"></div>
+    </div>
 
-    <!-- DESIGNING SYSTEMS -->
-    <section class="section section-dark">
-      <div class="section-header">
-        <div class="section-eyebrow">Studio overview</div>
-        <h2>Designing Systems That Move You Forward</h2>
+    <!-- STUDIO OVERVIEW (ATMOS DARK) -->
+    <section class="section">
+      <div class="section-atmos-dark">
+        <div class="section-header">
+          <div class="section-eyebrow">Studio overview</div>
+          <h2>Designing Systems That Move You Forward</h2>
+        </div>
+        <p>
+          FlowNova is a modern automation studio focused on clarity, precision, and
+          experience-driven design. We help teams eliminate friction, streamline
+          operations, and build digital systems that scale with confidence. Every
+          solution is engineered with intention — blending technical depth with
+          creative problem-solving so your tools feel as considered as your brand.
+        </p>
       </div>
-      <p>
-        FlowNova is a modern automation studio focused on clarity, precision, and
-        experience-driven design. We help teams eliminate friction, streamline
-        operations, and build digital systems that scale with confidence. Every
-        solution is engineered with intention — blending technical depth with
-        creative problem-solving so your tools feel as considered as your brand.
-      </p>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="angled-divider subtle"></div>
+    <!-- DIVIDER (SUBTLE UP-RIGHT) -->
+    <div class="divider-wrap">
+      <div class="angled-divider subtle up-right"></div>
+    </div>
 
-    <!-- WHY FLOWNOVA -->
-    <section class="section section-light">
+    <!-- WHY FLOWNOVA (PLAIN, LIGHTER FEEL) -->
+    <section class="section section-plain">
       <div class="section-header">
         <div class="section-eyebrow">Why FlowNova</div>
         <h2>More Than Automations. A System You Can Trust.</h2>
@@ -770,33 +795,39 @@
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="angled-divider"></div>
+    <!-- DIVIDER (DRAMATIC UP-RIGHT) -->
+    <div class="divider-wrap">
+      <div class="angled-divider up-right"></div>
+    </div>
 
-    <!-- CAPABILITIES -->
-    <section class="section section-dark">
-      <div class="section-header">
-        <div class="section-eyebrow">Capabilities</div>
-        <h2>What FlowNova Brings Into Your Ecosystem</h2>
+    <!-- CAPABILITIES (ATMOS SOFT) -->
+    <section class="section">
+      <div class="section-atmos-soft">
+        <div class="section-header">
+          <div class="section-eyebrow">Capabilities</div>
+          <h2>What FlowNova Brings Into Your Ecosystem</h2>
+        </div>
+        <p>Under the hood, FlowNova combines automation, AI, and experience design into a cohesive systems layer:</p>
+
+        <ul class="capabilities-list">
+          <li>Process mapping and future-state design</li>
+          <li>Automation architecture and workflow orchestration</li>
+          <li>Applied AI for content, decisions, and operations</li>
+          <li>Custom Power Apps and internal tool design</li>
+          <li>Dataverse schema design and data modeling</li>
+          <li>Integration strategy and API connectivity</li>
+          <li>Governance, documentation, and enablement</li>
+        </ul>
       </div>
-      <p>Under the hood, FlowNova combines automation, AI, and experience design into a cohesive systems layer:</p>
-
-      <ul class="capabilities-list">
-        <li>Process mapping and future-state design</li>
-        <li>Automation architecture and workflow orchestration</li>
-        <li>Applied AI for content, decisions, and operations</li>
-        <li>Custom Power Apps and internal tool design</li>
-        <li>Dataverse schema design and data modeling</li>
-        <li>Integration strategy and API connectivity</li>
-        <li>Governance, documentation, and enablement</li>
-      </ul>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="angled-divider subtle"></div>
+    <!-- DIVIDER (SUBTLE DOWN-RIGHT) -->
+    <div class="divider-wrap">
+      <div class="angled-divider subtle down-right"></div>
+    </div>
 
-    <!-- FLOWNOVA APPROACH -->
-    <section class="section section-light">
+    <!-- FLOWNOVA APPROACH (PLAIN) -->
+    <section class="section section-plain">
       <div class="section-header">
         <div class="section-eyebrow">Philosophy</div>
         <h2>The FlowNova Approach</h2>
@@ -827,44 +858,50 @@
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="angled-divider"></div>
+    <!-- DIVIDER (DRAMATIC DOWN-RIGHT) -->
+    <div class="divider-wrap">
+      <div class="angled-divider down-right"></div>
+    </div>
 
-    <!-- CORE SERVICES – FLOATING CARDS -->
-    <section class="section section-core-services">
-      <div class="section-header">
-        <div class="section-eyebrow">Core services</div>
-        <h2>What We Actually Build For You</h2>
-      </div>
-
-      <div class="card-grid card-grid-2x2">
-        <div class="card card-floating">
-          <h3>Process Improvement & Future-State Design</h3>
-          <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
+    <!-- CORE SERVICES – FLOATING CARDS, ATMOSPHERIC -->
+    <section class="section">
+      <div class="section-core-services">
+        <div class="section-header">
+          <div class="section-eyebrow">Core services</div>
+          <h2>What We Actually Build For You</h2>
         </div>
 
-        <div class="card card-floating">
-          <h3>Workflow Automation</h3>
-          <p>Reliable, scalable automations that reduce manual work, increase visibility, and unlock operational clarity.</p>
-        </div>
+        <div class="card-grid card-grid-2x2">
+          <div class="card card-floating">
+            <h3>Process Improvement & Future-State Design</h3>
+            <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
+          </div>
 
-        <div class="card card-floating">
-          <h3>App & Experience Design</h3>
-          <p>Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic.</p>
-        </div>
+          <div class="card card-floating">
+            <h3>Workflow Automation</h3>
+            <p>Reliable, scalable automations that reduce manual work, increase visibility, and unlock operational clarity.</p>
+          </div>
 
-        <div class="card card-floating">
-          <h3>Applied AI Solutions</h3>
-          <p>Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real workflows.</p>
+          <div class="card card-floating">
+            <h3>App & Experience Design</h3>
+            <p>Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic.</p>
+          </div>
+
+          <div class="card card-floating">
+            <h3>Applied AI Solutions</h3>
+            <p>Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real workflows.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="angled-divider subtle"></div>
+    <!-- DIVIDER (SUBTLE UP-RIGHT) -->
+    <div class="divider-wrap">
+      <div class="angled-divider subtle up-right"></div>
+    </div>
 
     <!-- READY TO TRANSFORM -->
-    <section class="section text-center section-light">
+    <section class="section text-center section-plain">
       <div class="section-header">
         <div class="section-eyebrow">Next step</div>
         <h2>Ready to Transform Your Workflow?</h2>
