@@ -410,19 +410,25 @@ header.hero {
 
 @media (max-width: 768px) {
   .floating-contact {
-    bottom: 18px;
-    right: 18px;
-    padding: 12px;
+    bottom: 20px;
+    right: 10px; /* pulls it safely inside */
+    width: 46px;
+    height: 46px;
+    padding: 0; /* removes inherited padding */
     border-radius: 50%;
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    box-shadow: 0 0 12px rgba(255,0,255,0.45);
+    font-size: 0.75rem;
+
+    /* much smaller glow so it doesn't spill off-screen */
+    box-shadow:
+      0 0 6px rgba(255,0,255,0.35),
+      0 0 8px rgba(0,212,255,0.35);
+
+    /* ensures no leftover transforms from desktop */
+    transform: none !important;
   }
 }
+  
+
 </style>
 </head>
 
