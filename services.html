@@ -90,6 +90,39 @@
       color: var(--blue);
     }
 
+    /* DROPDOWN */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(5, 8, 20, 0.95);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 0;
+  border-radius: 8px;
+  display: none;
+  min-width: 180px;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
     /* BUTTONS */
     .cta-button,
     .button {
@@ -216,6 +249,14 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+    }
+
+    .section.tight {
+      padding: var(--space-tight) 20px;
+    }
+
+    .section.big {
+      padding: var(--space-big) 20px;
     }
 
     /* SERVICE CARDS */
