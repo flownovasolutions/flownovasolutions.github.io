@@ -281,6 +281,33 @@
         0 0 40px rgba(0,212,255,0.35),
         0 0 50px rgba(255,0,255,0.30);
     }
+
+    /* BUTTONS — RESTORED */
+    .cta-button,
+    .button {
+      display: inline-block;
+      padding: 13px 26px;
+      background: var(--gradient-primary);
+      color: white;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 0 24px rgba(0,212,255,0.35);
+      transition: var(--transition);
+      font-size: 0.98rem;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: none;
+    }
+
+    .cta-button:hover,
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255,0,255,0.4);
+    }
   </style>
 </head>
 
@@ -450,8 +477,7 @@
   <!-- DIVIDER -->
   <div class="divider"></div>
 
-
-<!-- CORE SERVICES — 4-WIDE DESKTOP -->
+    <!-- CORE SERVICES — 4-WIDE DESKTOP -->
   <section class="section big" style="padding-top: 110px; padding-bottom: 110px;">
     <div class="section-header">
       <div class="section-eyebrow">Core services</div>
@@ -478,7 +504,7 @@
         <h3>Applied AI Solutions</h3>
         <p>Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real workflows.</p>
       </div>
-    </div>
+    </div> <!-- FIXED: this closing div was missing -->
   </section>
 
   <!-- DIVIDER (SUBTLE REVERSE) -->
