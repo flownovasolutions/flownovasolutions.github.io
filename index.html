@@ -16,6 +16,7 @@
       --pink: #ff3dfc;
 
       --bg-dark: #050814;
+      --bg-darker: #030510;
       --bg-panel: rgba(5, 8, 20, 0.96);
 
       --gradient-primary: linear-gradient(90deg, var(--blue), var(--pink));
@@ -28,7 +29,6 @@
       --glow-pink: 0 0 32px rgba(255,0,255,0.25);
 
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-      --font-size-base: 16px;
       --font-size-h1: 3.6rem;
       --font-size-h2: 2.5rem;
 
@@ -283,9 +283,10 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top, rgba(0,212,255,0.35), transparent 60%),
-                  radial-gradient(circle at bottom, rgba(255,0,255,0.35), transparent 65%),
-                  rgba(5, 8, 20, 0.7);
+      background:
+        radial-gradient(circle at top, rgba(0,212,255,0.35), transparent 60%),
+        radial-gradient(circle at bottom, rgba(255,0,255,0.35), transparent 65%),
+        rgba(5, 8, 20, 0.7);
       backdrop-filter: blur(2px);
     }
 
@@ -313,6 +314,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-shadow: 0 0 40px rgba(0,0,0,0.6);
     }
 
     .hero p {
@@ -330,6 +332,18 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 768px) {
+      .hero {
+        padding: 150px 20px 130px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 0.98rem;
+      }
+    }
+
     /* ------------------------------ */
     /* 4. DIVIDERS                    */
     /* ------------------------------ */
@@ -339,7 +353,12 @@
       height: 90px;
       background: linear-gradient(90deg, var(--blue), var(--pink));
       clip-path: polygon(0 0, 100% 100%, 0 100%);
-      opacity: 0.3;
+      opacity: 0.35;
+    }
+
+    .angled-divider.subtle {
+      height: 60px;
+      opacity: 0.22;
     }
 
     /* ------------------------------ */
@@ -350,6 +369,14 @@
       padding: var(--space-section) 20px;
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    .section-dark {
+      background: var(--bg-darker);
+    }
+
+    .section-light {
+      background: transparent;
     }
 
     .section-header {
@@ -380,21 +407,16 @@
     }
 
     @media (max-width: 768px) {
-      .hero {
-        padding: 150px 20px 130px;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero p {
-        font-size: 0.98rem;
-      }
       .section {
         padding: var(--space-section-mobile) 20px;
       }
       .section h2 {
         font-size: 1.8rem;
       }
+    }
+
+    .text-center {
+      text-align: center;
     }
 
     /* Why FlowNova */
@@ -415,7 +437,7 @@
       opacity: 0.9;
     }
 
-    /* Capabilities — editorial but structured */
+    /* Capabilities */
     .capabilities-list {
       margin-top: 26px;
       display: grid;
@@ -440,7 +462,7 @@
       color: var(--blue);
     }
 
-    /* FlowNova Approach — 5 principles */
+    /* FlowNova Approach */
     .approach-list {
       margin-top: 30px;
       display: grid;
@@ -459,7 +481,7 @@
       opacity: 0.9;
     }
 
-    /* Core Services — 4 premium cards */
+    /* Core Services */
     .card-grid {
       display: grid;
       gap: 30px;
@@ -467,15 +489,30 @@
       margin-top: 34px;
     }
 
+    .card-grid-2x2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 900px) {
+      .card-grid-2x2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
     .card {
-      background: radial-gradient(circle at top left, rgba(0,212,255,0.12), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(255,0,255,0.12), transparent 55%),
-                  rgba(8, 12, 30, 0.96);
+      background:
+        radial-gradient(circle at top left, rgba(0,212,255,0.12), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(255,0,255,0.12), transparent 55%),
+        rgba(8, 12, 30, 0.96);
       border: 1px solid rgba(255,255,255,0.08);
       padding: 26px 24px 24px;
       border-radius: 16px;
       box-shadow: var(--glow-blue), var(--glow-pink);
       transition: var(--transition);
+    }
+
+    .card-large {
+      min-height: 190px;
     }
 
     .card h3 {
@@ -491,10 +528,6 @@
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 34px rgba(0,212,255,0.45);
-    }
-
-    .text-center {
-      text-align: center;
     }
 
     /* ------------------------------ */
@@ -531,7 +564,6 @@
       box-shadow: 0 0 30px rgba(255,0,255,0.4);
     }
 
-    /* Floating CTA */
     .floating-cta {
       position: fixed;
       right: 24px;
@@ -642,7 +674,8 @@
 
         <p>
           FlowNova builds modern systems that help teams move faster, work smarter,
-          and scale with confidence — blending engineering discipline with experience-driven design.
+          and scale with confidence — blending engineering discipline with
+          experience-driven design.
         </p>
 
         <div class="hero-actions">
@@ -656,7 +689,7 @@
     <div class="angled-divider"></div>
 
     <!-- DESIGNING SYSTEMS -->
-    <section class="section">
+    <section class="section section-dark">
       <div class="section-header">
         <div class="section-eyebrow">Studio overview</div>
         <h2>Designing Systems That Move You Forward</h2>
@@ -670,8 +703,11 @@
       </p>
     </section>
 
+    <!-- DIVIDER -->
+    <div class="angled-divider subtle"></div>
+
     <!-- WHY FLOWNOVA -->
-    <section class="section">
+    <section class="section section-light">
       <div class="section-header">
         <div class="section-eyebrow">Why FlowNova</div>
         <h2>More Than Automations. A System You Can Trust.</h2>
@@ -693,8 +729,11 @@
       </div>
     </section>
 
+    <!-- DIVIDER -->
+    <div class="angled-divider"></div>
+
     <!-- CAPABILITIES -->
-    <section class="section">
+    <section class="section section-dark">
       <div class="section-header">
         <div class="section-eyebrow">Capabilities</div>
         <h2>What FlowNova Brings Into Your Ecosystem</h2>
@@ -712,8 +751,11 @@
       </ul>
     </section>
 
+    <!-- DIVIDER -->
+    <div class="angled-divider subtle"></div>
+
     <!-- FLOWNOVA APPROACH -->
-    <section class="section">
+    <section class="section section-light">
       <div class="section-header">
         <div class="section-eyebrow">Philosophy</div>
         <h2>The FlowNova Approach</h2>
@@ -744,30 +786,33 @@
       </div>
     </section>
 
+    <!-- DIVIDER -->
+    <div class="angled-divider"></div>
+
     <!-- CORE SERVICES -->
-    <section class="section">
+    <section class="section section-dark">
       <div class="section-header">
         <div class="section-eyebrow">Core services</div>
         <h2>What We Actually Build For You</h2>
       </div>
 
-      <div class="card-grid">
-        <div class="card">
+      <div class="card-grid card-grid-2x2">
+        <div class="card card-large">
           <h3>Process Improvement & Future-State Design</h3>
           <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
         </div>
 
-        <div class="card">
+        <div class="card card-large">
           <h3>Workflow Automation</h3>
           <p>Reliable, scalable automations that reduce manual work, increase visibility, and unlock operational clarity.</p>
         </div>
 
-        <div class="card">
+        <div class="card card-large">
           <h3>App & Experience Design</h3>
           <p>Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic.</p>
         </div>
 
-        <div class="card">
+        <div class="card card-large">
           <h3>Applied AI Solutions</h3>
           <p>Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real workflows.</p>
         </div>
@@ -775,10 +820,10 @@
     </section>
 
     <!-- DIVIDER -->
-    <div class="angled-divider"></div>
+    <div class="angled-divider subtle"></div>
 
     <!-- READY TO TRANSFORM -->
-    <section class="section text-center">
+    <section class="section text-center section-light">
       <div class="section-header">
         <div class="section-eyebrow">Next step</div>
         <h2>Ready to Transform Your Workflow?</h2>
