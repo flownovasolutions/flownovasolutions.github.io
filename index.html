@@ -4,945 +4,917 @@
   <meta charset="UTF-8" />
   <title>FlowNova Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="description" content="FlowNova builds modern systems, workflows, and automations for teams ready for their next chapter." />
   <style>
-    /* ------------------------------ */
-    /* 1. RESET + VARIABLES           */
-    /* ------------------------------ */
-
     :root {
-      --blue: #00d4ff;
-      --violet: #8a2bff;
-      --pink: #ff3dfc;
-
-      --bg-dark: #050814;
-      --bg-deep: #040612;
-
-      --gradient-primary: linear-gradient(90deg, var(--blue), var(--pink));
-      --gradient-heading: linear-gradient(120deg, #c3f4ff, #ffb8ff);
-      --gradient-soft:
-        radial-gradient(circle at top, rgba(0,212,255,0.25), transparent 60%),
-        radial-gradient(circle at bottom, rgba(255,0,255,0.20), transparent 70%);
-
-      --glow-blue: 0 0 24px rgba(0,212,255,0.35);
-      --glow-pink: 0 0 32px rgba(255,0,255,0.25);
-
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-      --font-size-h1: 3.6rem;
-      --font-size-h2: 2.5rem;
-
-      --space-section: 120px;
-      --space-section-mobile: 80px;
-
-      --transition: 0.25s ease;
+      --bg: #05060a;
+      --bg-soft: #0b0d14;
+      --bg-softer: #10121b;
+      --accent: #f4b86a;
+      --accent-soft: rgba(244, 184, 106, 0.16);
+      --accent-strong: #ffcf88;
+      --text: #f7f7fb;
+      --muted: #a4a7b8;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --card-bg: rgba(10, 12, 20, 0.96);
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+      --shadow-subtle: 0 12px 30px rgba(0, 0, 0, 0.35);
+      --max-width: 1120px;
+      --transition-fast: 160ms ease-out;
     }
 
-    *, *::before, *::after {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
     }
 
     body {
-      background: var(--bg-dark);
-      color: white;
-      font-family: var(--font-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background:
+        radial-gradient(circle at top left, #151824 0, #05060a 52%, #020308 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
       text-decoration: none;
-      transition: var(--transition);
     }
 
     main {
-      min-height: calc(100vh - 160px);
-      background-image: var(--gradient-soft);
-      background-repeat: no-repeat;
-      background-size: cover;
+      min-height: 100vh;
     }
 
-    /* ------------------------------ */
-    /* 2. HEADER + NAV                */
-    /* ------------------------------ */
-
-    .header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 999;
-      background: rgba(5, 8, 20, 0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .header-inner {
-      max-width: 1400px;
+    .page-shell {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 24px 20px 72px;
     }
 
-    .logo img {
-      height: 48px;
-      width: auto;
-    }
+    /* NAV */
 
     .nav {
-      display: block;
-    }
-
-    .nav-list {
       display: flex;
-      gap: 28px;
-      list-style: none;
       align-items: center;
-      font-size: 0.95rem;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 6px 0 18px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 6, 10, 0.96),
+        rgba(5, 6, 10, 0.88),
+        transparent
+      );
     }
 
-    .nav-list a {
-      opacity: 0.9;
-    }
-
-    .nav-list a:hover {
-      color: var(--blue);
-      opacity: 1;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-toggle::after {
-      content: "▾";
-      font-size: 0.7rem;
-      margin-left: 6px;
-      opacity: 0.8;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 36px;
-      left: 0;
-      background: rgba(5, 8, 20, 0.98);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--glow-blue), var(--glow-pink);
-      padding: 10px 0;
-      display: none;
-      flex-direction: column;
-      min-width: 190px;
-      border-radius: 10px;
-      z-index: 1000;
-    }
-
-    .dropdown:hover .dropdown-menu {
+    .nav-left {
       display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .dropdown-menu li {
-      list-style: none;
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, var(--accent-strong), var(--accent));
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 12px 30px rgba(0, 0, 0, 0.7);
     }
 
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 18px;
-      font-size: 0.9rem;
-      opacity: 0.9;
+    .logo-text {
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
-    .dropdown-menu a:hover {
-      background: rgba(255,255,255,0.06);
-      opacity: 1;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
+    .nav-link {
+      position: relative;
+      padding-bottom: 3px;
       cursor: pointer;
     }
 
-    .hamburger span {
-      width: 24px;
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-    }
-
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: rgba(5, 8, 20, 0.96);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      animation: slideDown 0.3s ease forwards;
-    }
-
-    .mobile-nav ul {
-      list-style: none;
-      padding: 14px 0 18px;
-      text-align: center;
-    }
-
-    .mobile-nav li {
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .mobile-nav li:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-nav a {
-      display: block;
-      padding: 11px 0;
-      font-size: 1.02rem;
-      opacity: 0.95;
-    }
-
-    .mobile-nav a:hover {
-      color: var(--blue);
-    }
-
-    .mobile-dropdown-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font: inherit;
-      padding: 11px 0;
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .mobile-dropdown-toggle::after {
-      content: "▾";
-      font-size: 0.7rem;
-      margin-left: 6px;
-      opacity: 0.8;
-    }
-
-    .mobile-dropdown-menu {
-      display: none;
-      flex-direction: column;
-      background: rgba(0,0,0,0.25);
-    }
-
-    .mobile-dropdown-menu li {
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .mobile-dropdown.open .mobile-dropdown-menu {
-      display: flex;
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 900px) {
-      .nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .logo img {
-        height: 40px;
-      }
-    }
-
-    /* ------------------------------ */
-    /* 3. HERO                        */
-    /* ------------------------------ */
-
-    .hero {
+    .nav-link span {
       position: relative;
-      padding: 190px 20px 170px;
-      text-align: center;
-      overflow: hidden;
+      z-index: 1;
     }
 
-    .hero-image {
-      background: url('images/hero-background.png') center/cover no-repeat;
-    }
-
-    .hero-image::before {
+    .nav-link::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top, rgba(0,212,255,0.35), transparent 60%),
-        radial-gradient(circle at bottom, rgba(255,0,255,0.35), transparent 65%),
-        rgba(5, 8, 20, 0.7);
-      backdrop-filter: blur(2px);
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transition: width var(--transition-fast);
     }
 
-    .hero-content {
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #1a1207;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.14);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
+
+    /* SECTION WRAPPERS */
+
+    section {
+      padding: 56px 0;
       position: relative;
-      z-index: 2;
-      max-width: 900px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
       margin: 0 auto;
     }
 
-    .hero-eyebrow {
-      font-size: 0.9rem;
+    .section-label {
+      font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      opacity: 0.8;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .section-divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.16),
+        transparent
+      );
+      margin: 32px 0 0;
+      opacity: 0.7;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 64px;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      padding: 32px 26px 30px;
+      background:
+        radial-gradient(circle at top left, rgba(244, 184, 106, 0.16), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(90, 120, 255, 0.16), transparent 55%),
+        linear-gradient(135deg, rgba(10, 12, 20, 0.96), rgba(5, 6, 12, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-micro {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-heading {
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.1;
       margin-bottom: 14px;
     }
 
-    .hero h1 {
-      font-size: var(--font-size-h1);
-      line-height: 1.12;
-      margin-bottom: 22px;
-      letter-spacing: -0.03em;
-      background: var(--gradient-heading);
+    .hero-heading span {
+      background: linear-gradient(120deg, #ffffff, #f4e1c0);
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
-      text-shadow: 0 0 40px rgba(0,0,0,0.6);
     }
 
-    .hero p {
-      max-width: 720px;
-      margin: 0 auto;
-      opacity: 0.92;
-      font-size: 1.08rem;
+    .hero-body {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 22px;
     }
 
-    .hero-actions {
-      margin-top: 30px;
+    .hero-cta-row {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .hero-meta {
+      margin-left: auto;
+      text-align: right;
+      font-size: 11px;
+      color: var(--muted);
+      max-width: 220px;
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* STUDIO OVERVIEW */
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .card-floating {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 20px 18px 18px;
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-floating::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(244, 184, 106, 0.16), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .card-floating-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .studio-subheading {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .studio-body {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .studio-right-label {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .studio-right-heading {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .studio-right-body {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* WHY FLOWNOVA */
+
+    .why-intro {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
+
+    .why-pillars {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pillar {
+      max-width: 420px;
+    }
+
+    .pillar:nth-child(2) {
+      margin-left: 40px;
+    }
+
+    .pillar:nth-child(3) {
+      margin-left: 80px;
+    }
+
+    .pillar-title {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .pillar-body {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* CAPABILITIES */
+
+    .cap-intro {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 26px;
+    }
+
+    .cap-group-title {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .cap-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .cap-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+    }
+
+    .cap-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy-intro {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 520px;
+    }
+
+    .philosophy-row {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+
+    .philosophy-card {
+      min-width: 210px;
+      max-width: 240px;
+      background: rgba(10, 12, 20, 0.96);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 12px 12px;
+      box-shadow: var(--shadow-subtle);
+      flex-shrink: 0;
+    }
+
+    .philosophy-title {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .philosophy-body {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* CORE SERVICES */
+
+    .services-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .service:nth-child(odd) .service-text {
+      order: 1;
+    }
+
+    .service:nth-child(odd) .service-card {
+      order: 2;
+    }
+
+    .service:nth-child(even) .service-text {
+      order: 2;
+    }
+
+    .service:nth-child(even) .service-card {
+      order: 1;
+    }
+
+    .service-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .service-title {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 16px 16px;
+      box-shadow: var(--shadow-subtle);
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(244, 184, 106, 0.16), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .service-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-card-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    /* FINAL CTA */
+
+    .cta-band {
+      margin-top: 18px;
+      border-radius: 24px;
+      padding: 26px 22px 24px;
+      background:
+        radial-gradient(circle at top left, rgba(244, 184, 106, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(90, 120, 255, 0.18), transparent 55%),
+        linear-gradient(135deg, #10121b, #05060a);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-heading {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .cta-body {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 18px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding-top: 40px;
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        padding: 150px 20px 130px;
+    @media (max-width: 840px) {
+      .nav-links {
+        display: none;
       }
-      .hero h1 {
-        font-size: 2.2rem;
+
+      .hero-shell {
+        padding: 26px 18px 22px;
       }
-      .hero p {
-        font-size: 0.98rem;
+
+      .hero-meta {
+        display: none;
       }
-    }
 
-    /* ------------------------------ */
-    /* 4. DIVIDERS (ALTERNATING)      */
-    /* ------------------------------ */
-
-    .divider-wrap {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .angled-divider {
-      width: 140%;
-      height: 90px;
-      background: linear-gradient(90deg, var(--blue), var(--pink));
-      opacity: 0.35;
-    }
-
-    .angled-divider.subtle {
-      height: 60px;
-      opacity: 0.22;
-    }
-
-    .angled-divider.down-right {
-      clip-path: polygon(0 0, 100% 100%, 0 100%);
-      transform: translateX(-10%);
-    }
-
-    .angled-divider.up-right {
-      clip-path: polygon(0 100%, 100% 0, 100% 100%);
-      transform: translateX(-10%);
-    }
-
-    /* ------------------------------ */
-    /* 5. SECTIONS                    */
-    /* ------------------------------ */
-
-    .section {
-      padding: var(--space-section) 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-atmos-dark {
-      background:
-        radial-gradient(circle at top, rgba(0,212,255,0.12), transparent 70%),
-        radial-gradient(circle at bottom, rgba(255,0,255,0.10), transparent 80%),
-        var(--bg-deep);
-      border-radius: 26px;
-      padding: 80px 32px;
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
-    }
-
-    .section-atmos-soft {
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 70%),
-        radial-gradient(circle at bottom, rgba(0,0,0,0.4), transparent 80%);
-      border-radius: 26px;
-      padding: 80px 32px;
-    }
-
-    .section-plain {
-      background: transparent;
-    }
-
-    .section-header {
-      margin-bottom: 18px;
-    }
-
-    .section-eyebrow {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 8px;
-    }
-
-    .section h2 {
-      font-size: var(--font-size-h2);
-      letter-spacing: -0.02em;
-      background: var(--gradient-heading);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .section p {
-      max-width: 780px;
-      opacity: 0.86;
-      font-size: 0.98rem;
-    }
-
-    @media (max-width: 768px) {
-      .section {
-        padding: var(--space-section-mobile) 20px;
-      }
-      .section-atmos-dark,
-      .section-atmos-soft {
-        padding: 60px 20px;
-        border-radius: 20px;
-      }
-      .section h2 {
-        font-size: 1.8rem;
-      }
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    /* Why FlowNova */
-    .why-grid {
-      display: grid;
-      gap: 28px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      margin-top: 28px;
-    }
-
-    .why-item h3 {
-      font-size: 1.02rem;
-      margin-bottom: 6px;
-    }
-
-    .why-item p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* Capabilities */
-    .capabilities-list {
-      margin-top: 26px;
-      display: grid;
-      gap: 10px 40px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .capabilities-list li {
-      position: relative;
-      padding-left: 16px;
-      font-size: 0.96rem;
-      opacity: 0.9;
-    }
-
-    .capabilities-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--blue);
-    }
-
-    /* FlowNova Approach */
-    .approach-list {
-      margin-top: 30px;
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    .approach-item h3 {
-      font-size: 1.02rem;
-      margin-bottom: 6px;
-      letter-spacing: 0.02em;
-    }
-
-    .approach-item p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* Core Services – floating, atmospheric */
-    .section-core-services {
-      background:
-        radial-gradient(circle at top, rgba(0,212,255,0.16), transparent 75%),
-        radial-gradient(circle at bottom, rgba(255,0,255,0.14), transparent 80%);
-      border-radius: 26px;
-      padding: 90px 32px;
-      box-shadow:
-        0 0 40px rgba(0,0,0,0.7),
-        0 0 40px rgba(0,212,255,0.18);
-    }
-
-    .card-grid {
-      display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      margin-top: 34px;
-    }
-
-    .card-grid-2x2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media (max-width: 900px) {
-      .card-grid-2x2 {
+      .studio-grid,
+      .cap-grid,
+      .service {
         grid-template-columns: minmax(0, 1fr);
       }
-    }
 
-    .card {
-      background:
-        radial-gradient(circle at top left, rgba(0,212,255,0.12), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(255,0,255,0.12), transparent 55%),
-        rgba(8, 12, 30, 0.96);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 26px 24px 24px;
-      border-radius: 16px;
-      box-shadow: var(--glow-blue), var(--glow-pink);
-      transition: var(--transition);
-    }
-
-    .card-large {
-      min-height: 190px;
-    }
-
-    .card-floating {
-      background: rgba(255,255,255,0.03);
-      border-radius: 18px;
-      padding: 32px 28px;
-      min-height: 210px;
-      box-shadow:
-        0 0 30px rgba(0,212,255,0.25),
-        0 0 40px rgba(255,0,255,0.20);
-    }
-
-    .card h3 {
-      font-size: 1.08rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 34px rgba(0,212,255,0.45);
-    }
-
-    .card-floating:hover {
-      transform: translateY(-6px);
-      box-shadow:
-        0 0 40px rgba(0,212,255,0.35),
-        0 0 50px rgba(255,0,255,0.30);
-    }
-
-    /* ------------------------------ */
-    /* 6. BUTTONS + CTA               */
-    /* ------------------------------ */
-
-    .button,
-    .cta-button {
-      display: inline-block;
-      padding: 13px 26px;
-      background: var(--gradient-primary);
-      color: white;
-      font-weight: 600;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: var(--glow-blue);
-      transition: var(--transition);
-      font-size: 0.98rem;
-      border: none;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .button.secondary {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: none;
-      opacity: 0.9;
-    }
-
-    .button:hover,
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(255,0,255,0.4);
-    }
-
-    .floating-cta {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      z-index: 1000;
-    }
-
-    .floating-cta .cta-button {
-      padding: 11px 22px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .floating-cta {
-        right: 16px;
-        bottom: 16px;
+      .pillar:nth-child(2),
+      .pillar:nth-child(3) {
+        margin-left: 0;
       }
-    }
 
-    /* ------------------------------ */
-    /* 7. FOOTER                      */
-    /* ------------------------------ */
-
-    footer {
-      text-align: center;
-      padding: 50px 20px 40px;
-      opacity: 0.85;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      margin-top: 40px;
-    }
-
-    .footer-logo {
-      height: 70px;
-      margin: 0 auto 14px;
+      .service {
+        gap: 14px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <img src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
-      </a>
-
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/approach">Approach</a></li>
-
-          <li class="dropdown">
-            <a href="/about" class="dropdown-toggle">About</a>
-            <ul class="dropdown-menu">
-              <li><a href="/about">About FlowNova</a></li>
-              <li><a href="/founder">Founder</a></li>
-              <li><a href="/philosophy">Philosophy</a></li>
-              <li><a href="/brand">Brand</a></li>
-            </ul>
-          </li>
-
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-
-    <!-- MOBILE NAV -->
-    <nav class="mobile-nav" id="mobileNav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/approach">Approach</a></li>
-
-        <li class="mobile-dropdown" id="mobileAbout">
-          <button class="mobile-dropdown-toggle" type="button">About</button>
-          <ul class="mobile-dropdown-menu">
-            <li><a href="/about">About FlowNova</a></li>
-            <li><a href="/founder">Founder</a></li>
-            <li><a href="/philosophy">Philosophy</a></li>
-            <li><a href="/brand">Brand</a></li>
-          </ul>
-        </li>
-
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
   <main>
-
-    <!-- HERO -->
-    <section class="hero hero-image">
-      <div class="hero-content">
-        <div class="hero-eyebrow">Modern automation studio</div>
-        <h1>
-          Clarity engineered.<br>
-          Automation elevated.<br>
-          Experiences transformed.
-        </h1>
-
-        <p>
-          FlowNova builds modern systems that help teams move faster, work smarter,
-          and scale with confidence — blending engineering discipline with
-          experience-driven design.
-        </p>
-
-        <div class="hero-actions">
-          <a href="/contact" class="cta-button">Book a Consultation</a>
-          <a href="/services" class="button secondary">Explore Services</a>
+    <div class="page-shell">
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-left">
+          <div class="logo-mark"></div>
+          <div class="logo-text">FlowNova Solutions</div>
         </div>
-      </div>
-    </section>
-
-    <!-- DIVIDER (DRAMATIC DOWN-RIGHT) -->
-    <div class="divider-wrap">
-      <div class="angled-divider down-right"></div>
-    </div>
-
-    <!-- STUDIO OVERVIEW (ATMOS DARK) -->
-    <section class="section">
-      <div class="section-atmos-dark">
-        <div class="section-header">
-          <div class="section-eyebrow">Studio overview</div>
-          <h2>Designing Systems That Move You Forward</h2>
+        <nav class="nav-links">
+          <a href="#studio" class="nav-link"><span>Studio</span></a>
+          <a href="#services" class="nav-link"><span>Services</span></a>
+          <a href="#approach" class="nav-link"><span>Approach</span></a>
+          <a href="#work" class="nav-link"><span>Work</span></a>
+          <a href="#resources" class="nav-link"><span>Resources</span></a>
+        </nav>
+        <div class="nav-cta-group">
+          <button class="btn btn-ghost">Explore services</button>
+          <button class="btn btn-primary">Book a consultation</button>
         </div>
-        <p>
-          FlowNova is a modern automation studio focused on clarity, precision, and
-          experience-driven design. We help teams eliminate friction, streamline
-          operations, and build digital systems that scale with confidence. Every
-          solution is engineered with intention — blending technical depth with
-          creative problem-solving so your tools feel as considered as your brand.
-        </p>
-      </div>
-    </section>
+      </header>
 
-    <!-- DIVIDER (SUBTLE UP-RIGHT) -->
-    <div class="divider-wrap">
-      <div class="angled-divider subtle up-right"></div>
-    </div>
-
-    <!-- WHY FLOWNOVA (PLAIN, LIGHTER FEEL) -->
-    <section class="section section-plain">
-      <div class="section-header">
-        <div class="section-eyebrow">Why FlowNova</div>
-        <h2>More Than Automations. A System You Can Trust.</h2>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-item">
-          <h3>Clarity First</h3>
-          <p>We design systems that make sense — intuitive, structured, and aligned with how your team actually works.</p>
-        </div>
-        <div class="why-item">
-          <h3>Experience-Driven</h3>
-          <p>Every workflow, interface, and automation is crafted to feel intentional and effortless for the people using it.</p>
-        </div>
-        <div class="why-item">
-          <h3>Scalable by Design</h3>
-          <p>Your systems grow with you — not against you — with future-ready architecture and modular components.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIVIDER (DRAMATIC UP-RIGHT) -->
-    <div class="divider-wrap">
-      <div class="angled-divider up-right"></div>
-    </div>
-
-    <!-- CAPABILITIES (ATMOS SOFT) -->
-    <section class="section">
-      <div class="section-atmos-soft">
-        <div class="section-header">
-          <div class="section-eyebrow">Capabilities</div>
-          <h2>What FlowNova Brings Into Your Ecosystem</h2>
-        </div>
-        <p>Under the hood, FlowNova combines automation, AI, and experience design into a cohesive systems layer:</p>
-
-        <ul class="capabilities-list">
-          <li>Process mapping and future-state design</li>
-          <li>Automation architecture and workflow orchestration</li>
-          <li>Applied AI for content, decisions, and operations</li>
-          <li>Custom Power Apps and internal tool design</li>
-          <li>Dataverse schema design and data modeling</li>
-          <li>Integration strategy and API connectivity</li>
-          <li>Governance, documentation, and enablement</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- DIVIDER (SUBTLE DOWN-RIGHT) -->
-    <div class="divider-wrap">
-      <div class="angled-divider subtle down-right"></div>
-    </div>
-
-    <!-- FLOWNOVA APPROACH (PLAIN) -->
-    <section class="section section-plain">
-      <div class="section-header">
-        <div class="section-eyebrow">Philosophy</div>
-        <h2>The FlowNova Approach</h2>
-      </div>
-      <p>We don’t chase shortcuts. We design systems that feel intentional from day one and stay reliable as you grow.</p>
-
-      <div class="approach-list">
-        <div class="approach-item">
-          <h3>Clarity First</h3>
-          <p>We map your processes, pain points, and goals to design solutions that make sense.</p>
-        </div>
-        <div class="approach-item">
-          <h3>Experience-Driven</h3>
-          <p>Every interface, flow, and decision is crafted with the end-user in mind.</p>
-        </div>
-        <div class="approach-item">
-          <h3>Technical Precision</h3>
-          <p>Clean architecture, scalable patterns, and reliable automation — no brittle shortcuts.</p>
-        </div>
-        <div class="approach-item">
-          <h3>Collaborative Delivery</h3>
-          <p>We build with you — not at you — ensuring alignment at every step.</p>
-        </div>
-        <div class="approach-item">
-          <h3>Future-Ready</h3>
-          <p>Solutions designed to evolve as your team and needs grow.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIVIDER (DRAMATIC DOWN-RIGHT) -->
-    <div class="divider-wrap">
-      <div class="angled-divider down-right"></div>
-    </div>
-
-    <!-- CORE SERVICES – FLOATING CARDS, ATMOSPHERIC -->
-    <section class="section">
-      <div class="section-core-services">
-        <div class="section-header">
-          <div class="section-eyebrow">Core services</div>
-          <h2>What We Actually Build For You</h2>
-        </div>
-
-        <div class="card-grid card-grid-2x2">
-          <div class="card card-floating">
-            <h3>Process Improvement & Future-State Design</h3>
-            <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
-          </div>
-
-          <div class="card card-floating">
-            <h3>Workflow Automation</h3>
-            <p>Reliable, scalable automations that reduce manual work, increase visibility, and unlock operational clarity.</p>
-          </div>
-
-          <div class="card card-floating">
-            <h3>App & Experience Design</h3>
-            <p>Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic.</p>
-          </div>
-
-          <div class="card card-floating">
-            <h3>Applied AI Solutions</h3>
-            <p>Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real workflows.</p>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="section-inner">
+          <div class="hero-shell">
+            <div class="hero-micro">Modern systems for teams that are ready to move.</div>
+            <h1 class="hero-heading">
+              <span>FlowNova builds the operational backbone for your next chapter.</span>
+            </h1>
+            <p class="hero-body">
+              We design and implement the workflows, automations, and AI‑driven systems that let your team move with clarity,
+              confidence, and momentum—without burning out your people or your processes.
+            </p>
+            <div class="hero-cta-row">
+              <button class="btn btn-primary">Book a consultation</button>
+              <button class="btn btn-ghost">Explore services</button>
+              <div class="hero-meta">
+                <strong>For founders, operators, and small teams</strong><br />
+                who are outgrowing duct‑taped workflows and scattered tools.
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- DIVIDER (SUBTLE UP-RIGHT) -->
-    <div class="divider-wrap">
-      <div class="angled-divider subtle up-right"></div>
+      <!-- STUDIO OVERVIEW -->
+      <section id="studio">
+        <div class="section-inner">
+          <div class="section-label">Studio</div>
+          <div class="studio-grid">
+            <article class="card-floating">
+              <div class="card-floating-inner">
+                <h2 class="studio-subheading">A studio built for the in‑between moments.</h2>
+                <p class="studio-body">
+                  FlowNova sits at the intersection of strategy, operations, and experience design. We’re not just here to
+                  “optimize” your tools—we’re here to build a system that feels like it was made for the way your team actually
+                  works.
+                </p>
+              </div>
+            </article>
+            <article>
+              <div class="studio-right-label">What we do</div>
+              <h3 class="studio-right-heading">Turning the messy middle into a clear, repeatable system.</h3>
+              <p class="studio-right-body">
+                We partner with founders, operators, and small teams who are outgrowing improvised workflows and scattered tools.
+                Together, we turn your launches, handoffs, and client experiences into something intentional—so the work feels
+                smoother, not heavier, as you grow.
+              </p>
+            </article>
+          </div>
+          <div class="section-divider"></div>
+        </div>
+      </section>
+
+      <!-- WHY FLOWNOVA -->
+      <section id="approach">
+        <div class="section-inner">
+          <div class="section-label">Why FlowNova</div>
+          <p class="why-intro">
+            You don’t need more tools. You need a system that knows what to do with them.
+          </p>
+          <div class="why-pillars">
+            <div class="pillar">
+              <h3 class="pillar-title">Clarity first</h3>
+              <p class="pillar-body">
+                We map your ecosystem end‑to‑end so everyone knows what lives where, what happens when, and who owns what—no more
+                guessing or chasing down context.
+              </p>
+            </div>
+            <div class="pillar">
+              <h3 class="pillar-title">Experience‑driven</h3>
+              <p class="pillar-body">
+                Every workflow is designed from the perspective of the humans using it—your team, your clients, your partners—so
+                the system feels natural, not forced.
+              </p>
+            </div>
+            <div class="pillar">
+              <h3 class="pillar-title">Scalable by design</h3>
+              <p class="pillar-body">
+                We build with your next chapter in mind, so adding new offers, teammates, or tools doesn’t mean starting over or
+                rebuilding from scratch.
+              </p>
+            </div>
+          </div>
+          <div class="section-divider"></div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES -->
+      <section id="services">
+        <div class="section-inner">
+          <div class="section-label">Capabilities</div>
+          <p class="cap-intro">
+            From messy workflows to a living, breathing system that supports the way your team actually works.
+          </p>
+          <div class="cap-grid">
+            <div>
+              <h3 class="cap-group-title">Systems &amp; operations</h3>
+              <ul class="cap-list">
+                <li>Systems mapping and architecture</li>
+                <li>Workflow design and documentation</li>
+                <li>SOP creation and refinement</li>
+                <li>Cross‑tool integration strategy</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="cap-group-title">Automation &amp; AI</h3>
+              <ul class="cap-list">
+                <li>Automation design and implementation</li>
+                <li>AI‑assisted workflows and copilots</li>
+                <li>Data flow and handoff design</li>
+                <li>Tool selection and configuration</li>
+              </ul>
+            </div>
+          </div>
+          <div class="section-divider"></div>
+        </div>
+      </section>
+
+      <!-- PHILOSOPHY -->
+      <section id="resources">
+        <div class="section-inner">
+          <div class="section-label">Philosophy</div>
+          <p class="philosophy-intro">
+            How we think about building systems that actually get used—and keep working as you grow.
+          </p>
+          <div class="philosophy-row">
+            <article class="philosophy-card">
+              <h3 class="philosophy-title">Start with reality</h3>
+              <p class="philosophy-body">
+                We begin with how your team already works—habits, constraints, and all—then design from there instead of forcing a
+                new way of operating overnight.
+              </p>
+            </article>
+            <article class="philosophy-card">
+              <h3 class="philosophy-title">Design for momentum</h3>
+              <p class="philosophy-body">
+                Every workflow should make the next step obvious, so projects don’t stall in the in‑between and ownership is always
+                clear.
+              </p>
+            </article>
+            <article class="philosophy-card">
+              <h3 class="philosophy-title">Document as you go</h3>
+              <p class="philosophy-body">
+                We build documentation into the work itself, so your system doesn’t live in one person’s head—or disappear when
+                someone leaves.
+              </p>
+            </article>
+            <article class="philosophy-card">
+              <h3 class="philosophy-title">Protect the signal</h3>
+              <p class="philosophy-body">
+                We reduce noise, duplicate effort, and tool sprawl so your team can focus on the work that actually moves the
+                business forward.
+              </p>
+            </article>
+          </div>
+          <div class="section-divider"></div>
+        </div>
+      </section>
+
+      <!-- CORE SERVICES -->
+      <section id="work">
+        <div class="section-inner">
+          <div class="section-label">Core services</div>
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <article class="service">
+              <div class="service-text">
+                <h3 class="service-title">Systems audit &amp; roadmap</h3>
+                <p>
+                  We take a full inventory of your tools, workflows, and bottlenecks, then deliver a clear, prioritized roadmap for
+                  where to go next—what to keep, what to fix, and what to finally let go.
+                </p>
+              </div>
+              <div class="service-card">
+                <div class="service-card-inner">
+                  <div class="service-card-label">Phase 01</div>
+                  <p>
+                    A focused engagement to understand how work actually moves through your business today, and what needs to
+                    change for your next chapter.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="service">
+              <div class="service-card">
+                <div class="service-card-inner">
+                  <div class="service-card-label">Phase 02</div>
+                  <p>
+                    We co‑design your new operating system in real time—mapping workflows, configuring tools, and pressure‑testing
+                    edge cases together.
+                  </p>
+                </div>
+              </div>
+              <div class="service-text">
+                <h3 class="service-title">Done‑with‑you systems build</h3>
+                <p>
+                  We build your system alongside you and your team, so the final result feels intuitive, owned, and ready to use
+                  from day one—not like something that was dropped on top of you.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="service">
+              <div class="service-text">
+                <h3 class="service-title">Automation &amp; AI implementation</h3>
+                <p>
+                  We identify the moments where automation and AI actually create leverage, then implement them in a way that feels
+                  natural, explainable, and easy to maintain over time.
+                </p>
+              </div>
+              <div class="service-card">
+                <div class="service-card-inner">
+                  <div class="service-card-label">Phase 03</div>
+                  <p>
+                    Thoughtful automations and AI‑assisted workflows that support your team’s judgment instead of replacing it,
+                    with clear guardrails and documentation.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="service">
+              <div class="service-card">
+                <div class="service-card-inner">
+                  <div class="service-card-label">Phase 04</div>
+                  <p>
+                    A long‑term partner to keep your system healthy—tuning, extending, and evolving it as your offers, team, and
+                    tools change.
+                  </p>
+                </div>
+              </div>
+              <div class="service-text">
+                <h3 class="service-title">Ongoing systems stewardship</h3>
+                <p>
+                  For teams that want continuity, we stay close—reviewing what’s working, catching drift early, and making sure
+                  your system grows with you instead of against you.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section>
+        <div class="section-inner">
+          <div class="cta-band">
+            <h2 class="cta-heading">Ready to build the system your next chapter deserves?</h2>
+            <p class="cta-body">
+              Whether you’re untangling a growing tech stack or finally formalizing the way your team works, FlowNova gives you a
+              clear path forward—and a system that feels like it was built just for you.
+            </p>
+            <div class="cta-row">
+              <button class="btn btn-primary">Start the conversation</button>
+              <button class="btn btn-ghost">Book a consultation</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="section-inner footer-inner">
+          <div>© <span id="year"></span> FlowNova Solutions. All rights reserved.</div>
+          <div>Built for teams who are ready to move with clarity, not chaos.</div>
+        </div>
+      </footer>
     </div>
-
-    <!-- READY TO TRANSFORM -->
-    <section class="section text-center section-plain">
-      <div class="section-header">
-        <div class="section-eyebrow">Next step</div>
-        <h2>Ready to Transform Your Workflow?</h2>
-      </div>
-      <p style="margin: 0 auto; max-width: 640px;">
-        Let’s build systems that move your team forward — with clarity, intention, and momentum.
-      </p>
-      <div style="margin-top: 30px;">
-        <a href="/contact" class="cta-button">Start the Conversation</a>
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
-    <p>© 2026 FlowNova Solutions. All rights reserved.</p>
-  </footer>
-
-  <!-- FLOATING CTA -->
-  <div class="floating-cta">
-    <a href="/contact" class="cta-button">Book a Consultation</a>
-  </div>
-
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileAbout = document.getElementById('mobileAbout');
-    const mobileAboutToggle = mobileAbout?.querySelector('.mobile-dropdown-toggle');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.style.display === 'flex';
-      mobileNav.style.display = isOpen ? 'none' : 'flex';
-    });
-
-    if (mobileAboutToggle) {
-      mobileAboutToggle.addEventListener('click', () => {
-        mobileAbout.classList.toggle('open');
-      });
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
