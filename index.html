@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>FlowNova Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     /* ------------------------------ */
     /* 1. RESET + VARIABLES           */
@@ -42,10 +43,6 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-    }
-
     body {
       background: var(--bg-dark);
       color: white;
@@ -54,22 +51,17 @@
       overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    main {
+      min-height: calc(100vh - 160px);
+      background-image: var(--gradient-soft);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     a {
       color: inherit;
       text-decoration: none;
       transition: var(--transition);
-    }
-
-    main {
-      min-height: calc(100vh - 160px);
-      background-image: var(--gradient-soft);
-      background-repeat: no-repeat;
-      background-size: cover;
     }
 
     /* ------------------------------ */
@@ -100,25 +92,12 @@
       width: auto;
     }
 
-    .nav {
-      display: block;
-    }
-
     .nav-list {
       display: flex;
       gap: 28px;
       list-style: none;
       align-items: center;
       font-size: 0.95rem;
-    }
-
-    .nav-list a {
-      opacity: 0.9;
-    }
-
-    .nav-list a:hover {
-      color: var(--blue);
-      opacity: 1;
     }
 
     .dropdown {
@@ -151,22 +130,6 @@
       display: flex;
     }
 
-    .dropdown-menu li {
-      list-style: none;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 18px;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .dropdown-menu a:hover {
-      background: rgba(255,255,255,0.06);
-      opacity: 1;
-    }
-
     .hamburger {
       display: none;
       flex-direction: column;
@@ -189,83 +152,20 @@
       animation: slideDown 0.35s ease forwards;
     }
 
-    .mobile-nav ul {
-      list-style: none;
-      padding: 16px 0 20px;
-      text-align: center;
-    }
-
-    .mobile-nav li {
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .mobile-nav li:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-nav a {
-      display: block;
-      padding: 12px 0;
-      font-size: 1.05rem;
-      opacity: 0.95;
-    }
-
-    .mobile-nav a:hover {
-      color: var(--blue);
-    }
-
-    .mobile-dropdown-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font: inherit;
-      padding: 12px 0;
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .mobile-dropdown-toggle::after {
-      content: "▾";
-      font-size: 0.7rem;
-      margin-left: 6px;
-      opacity: 0.8;
-    }
-
-    .mobile-dropdown-menu {
-      display: none;
-      flex-direction: column;
-      background: rgba(0,0,0,0.25);
-    }
-
-    .mobile-dropdown-menu li {
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .mobile-dropdown.open .mobile-dropdown-menu {
-      display: flex;
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @media (max-width: 900px) {
       .nav {
         display: none;
       }
-
       .hamburger {
         display: flex;
       }
-
       .logo img {
         height: 40px;
       }
     }
 
     /* ------------------------------ */
-    /* 3. HERO + DIVIDERS             */
+    /* 3. HERO                        */
     /* ------------------------------ */
 
     .hero {
@@ -307,27 +207,12 @@
       font-size: 1.1rem;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        padding: 140px 20px 120px;
-      }
-
-      .hero h1 {
-        font-size: 2.1rem;
-        line-height: 1.25;
-      }
-
-      .hero p {
-        font-size: 0.98rem;
-      }
-    }
-
-    .divider {
-      width: 100%;
-      margin: 0;
-    }
+    /* ------------------------------ */
+    /* 4. DIVIDERS                    */
+    /* ------------------------------ */
 
     .angled-divider {
+      width: 100%;
       height: 80px;
       background: linear-gradient(90deg, var(--blue), var(--pink));
       clip-path: polygon(0 0, 100% 100%, 0 100%);
@@ -335,7 +220,7 @@
     }
 
     /* ------------------------------ */
-    /* 4. SECTIONS                    */
+    /* 5. SECTIONS                    */
     /* ------------------------------ */
 
     .section {
@@ -356,13 +241,7 @@
       font-size: 0.98rem;
     }
 
-    @media (max-width: 768px) {
-      .section {
-        padding: var(--space-section-mobile) 20px;
-      }
-    }
-
-    /* Why FlowNova: columns, not cards */
+    /* Why FlowNova */
     .why-grid {
       display: grid;
       gap: 28px;
@@ -370,67 +249,29 @@
       margin-top: 28px;
     }
 
-    .why-item h3 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    .why-item p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* Capabilities: simple list layout */
+    /* Capabilities — editorial list */
     .capabilities-list {
-      display: grid;
-      gap: 10px 40px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       margin-top: 24px;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .capabilities-list li {
-      font-size: 0.98rem;
+      padding-left: 18px;
       opacity: 0.9;
-      position: relative;
-      padding-left: 16px;
+      line-height: 1.7;
     }
 
-    .capabilities-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--blue);
-    }
-
-    /* Approach: step layout, not cards */
-    .approach-steps {
+    /* FlowNova Approach — 5 principles */
+    .approach-list {
+      margin-top: 28px;
       display: grid;
       gap: 24px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      margin-top: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
-    .approach-step {
-      padding: 10px 0;
-    }
-
-    .approach-step h3 {
-      font-size: 1rem;
+    .approach-item h3 {
+      font-size: 1.05rem;
       margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.9;
+      letter-spacing: 0.02em;
     }
 
-    .approach-step p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* Core Services: cards (the only real cards) */
+    /* Core Services — 4 premium cards */
     .card-grid {
       display: grid;
       gap: 28px;
@@ -447,64 +288,23 @@
       transition: var(--transition);
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 30px rgba(0,212,255,0.4);
     }
 
-    .text-center { text-align: center; }
-    .mt-40 { margin-top: 40px; }
-
-    /* ------------------------------ */
-    /* 5. COMPONENTS + FOOTER         */
-    /* ------------------------------ */
-
-    .button,
+    /* CTA */
     .cta-button {
       display: inline-block;
       padding: 13px 26px;
       background: var(--gradient-primary);
-      color: white;
-      font-weight: 600;
       border-radius: 999px;
-      text-decoration: none;
+      font-weight: 600;
       box-shadow: var(--glow-blue);
-      transition: var(--transition);
-      font-size: 0.98rem;
-      border: none;
-      cursor: pointer;
+      margin-top: 24px;
     }
 
-    .button:hover,
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(255,0,255,0.4);
-    }
-
-    footer {
-      text-align: center;
-      padding: 50px 20px 40px;
-      opacity: 0.85;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      margin-top: 40px;
-    }
-
-    .footer-logo {
-      height: 70px;
-      margin: 0 auto 14px;
-    }
-
-    /* Floating CTA button */
+    /* Floating CTA */
     .floating-cta {
       position: fixed;
       right: 24px;
@@ -512,19 +312,17 @@
       z-index: 1000;
     }
 
-    .floating-cta .cta-button {
-      padding: 11px 22px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .floating-cta {
-        right: 16px;
-        bottom: 16px;
-      }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 20px 40px;
+      opacity: 0.85;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -559,27 +357,6 @@
         <span></span><span></span><span></span>
       </div>
     </div>
-
-    <nav class="mobile-nav" id="mobileNav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/approach">Approach</a></li>
-
-        <li class="mobile-dropdown" id="mobileAbout">
-          <button class="mobile-dropdown-toggle" type="button">About</button>
-          <ul class="mobile-dropdown-menu">
-            <li><a href="/about">About FlowNova</a></li>
-            <li><a href="/founder">Founder</a></li>
-            <li><a href="/philosophy">Philosophy</a></li>
-            <li><a href="/brand">Brand</a></li>
-          </ul>
-        </li>
-
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- MAIN -->
@@ -603,8 +380,7 @@
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="divider angled-divider"></div>
+    <div class="angled-divider"></div>
 
     <!-- DESIGNING SYSTEMS -->
     <section class="section">
@@ -622,15 +398,15 @@
     <section class="section">
       <h2>Why FlowNova</h2>
       <div class="why-grid">
-        <div class="why-item">
+        <div>
           <h3>Clarity First</h3>
           <p>We design systems that make sense — intuitive, structured, and aligned with how your team actually works.</p>
         </div>
-        <div class="why-item">
+        <div>
           <h3>Experience Driven</h3>
           <p>Every workflow, interface, and automation is crafted to feel intentional and effortless.</p>
         </div>
-        <div class="why-item">
+        <div>
           <h3>Scalable by Design</h3>
           <p>Your systems grow with you — not against you — with future-proof architecture and modular components.</p>
         </div>
@@ -640,14 +416,14 @@
     <!-- CAPABILITIES -->
     <section class="section">
       <h2>Capabilities</h2>
-      <p>What FlowNova can bring into your ecosystem:</p>
+      <p>What FlowNova brings into your ecosystem:</p>
       <ul class="capabilities-list">
+        <li>Process mapping and future-state design</li>
         <li>Automation architecture and workflow orchestration</li>
         <li>Applied AI for content, decisions, and operations</li>
-        <li>Custom Power Apps and Power Automate solutions</li>
-        <li>Process mapping and optimization</li>
-        <li>UX and experience design for internal tools</li>
-        <li>Systems integration and data connectivity</li>
+        <li>Custom Power Apps and internal tool design</li>
+        <li>Dataverse schema design and data modeling</li>
+        <li>Integration strategy and API connectivity</li>
         <li>Governance, documentation, and enablement</li>
       </ul>
     </section>
@@ -655,64 +431,72 @@
     <!-- FLOWNOVA APPROACH -->
     <section class="section">
       <h2>The FlowNova Approach</h2>
-      <p>We don’t just ship automations — we design systems that feel intentional from day one.</p>
-
-      <div class="approach-steps">
-        <div class="approach-step">
-          <h3>1 · Clarity</h3>
-          <p>We map your workflows, identify friction, and define the outcomes that matter most.</p>
+      <div class="approach-list">
+        <div class="approach-item">
+          <h3>Clarity First</h3>
+          <p>We map your processes, pain points, and goals to design solutions that make sense.</p>
         </div>
-        <div class="approach-step">
-          <h3>2 · Design</h3>
-          <p>We architect intuitive systems that blend automation, AI, and experience design.</p>
+        <div class="approach-item">
+          <h3>Experience-Driven</h3>
+          <p>Every interface, flow, and decision is crafted with the end-user in mind.</p>
         </div>
-        <div class="approach-step">
-          <h3>3 · Build</h3>
-          <p>We develop scalable solutions using modern tools and best practices.</p>
+        <div class="approach-item">
+          <h3>Technical Precision</h3>
+          <p>Clean architecture, scalable patterns, and reliable automation.</p>
         </div>
-        <div class="approach-step">
-          <h3>4 · Refine</h3>
-          <p>We iterate, optimize, and evolve your systems as your needs grow.</p>
+        <div class="approach-item">
+          <h3>Collaborative Delivery</h3>
+          <p>We build with you — not at you — ensuring alignment at every step.</p>
+        </div>
+        <div class="approach-item">
+          <h3>Future-Ready</h3>
+          <p>Solutions designed to evolve as your team and needs grow.</p>
         </div>
       </div>
     </section>
 
-    <!-- CORE SERVICES (CARDS) -->
+    <!-- CORE SERVICES -->
     <section class="section">
       <h2>Core Services</h2>
       <div class="card-grid">
+
         <div class="card">
-          <h3>Automation Systems</h3>
-          <p>Streamline operations with intelligent, scalable workflows that reduce manual effort and unlock capacity.</p>
+          <h3>Process Improvement & Future-State Design</h3>
+          <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
         </div>
+
         <div class="card">
-          <h3>AI Integration</h3>
-          <p>Enhance decision-making and efficiency with applied AI that fits your context and constraints.</p>
+          <h3>Workflow Automation</h3>
+          <p>Reliable, scalable automations that reduce manual work and unlock operational clarity.</p>
         </div>
+
         <div class="card">
-          <h3>Custom Power Apps</h3>
-          <p>Build tailored applications that connect your data, people, and processes into a cohesive experience.</p>
+          <h3>App & Experience Design</h3>
+          <p>Modern Power Apps with thoughtful UX, clean interfaces, and data-driven logic.</p>
         </div>
+
+        <div class="card">
+          <h3>Applied AI Solutions</h3>
+          <p>Practical, context-aware AI that enhances decisions, content, and operations.</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="divider angled-divider"></div>
+    <div class="angled-divider"></div>
 
     <!-- READY TO TRANSFORM -->
-    <section class="section text-center">
+    <section class="section" style="text-align:center;">
       <h2>Ready to Transform Your Workflow?</h2>
       <p>Let’s build systems that move your team forward — with clarity, intention, and momentum.</p>
-      <div class="mt-40">
-        <a href="/contact" class="cta-button">Start the Conversation</a>
-      </div>
+      <a href="/contact" class="cta-button">Start the Conversation</a>
     </section>
 
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
+    <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo" style="height:70px;">
     <p>© 2026 FlowNova Solutions. All rights reserved.</p>
   </footer>
 
@@ -721,22 +505,5 @@
     <a href="/contact" class="cta-button">Book a Consultation</a>
   </div>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileAbout = document.getElementById('mobileAbout');
-    const mobileAboutToggle = mobileAbout?.querySelector('.mobile-dropdown-toggle');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.style.display === 'flex';
-      mobileNav.style.display = isOpen ? 'none' : 'flex';
-    });
-
-    if (mobileAboutToggle) {
-      mobileAboutToggle.addEventListener('click', () => {
-        mobileAbout.classList.toggle('open');
-      });
-    }
-  </script>
 </body>
 </html>
