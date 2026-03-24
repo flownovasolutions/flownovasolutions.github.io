@@ -378,6 +378,58 @@
       box-shadow: 0 0 30px rgba(0,212,255,0.4);
     }
 
+    .hero-image {
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  padding: 180px 20px 160px;
+  position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 20, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-image h1 {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.hero-image p {
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    padding: 140px 20px 120px;
+  }
+
+  .hero-image h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+
+  .hero-image p {
+    font-size: 0.95rem;
+  }
+}
+
+    
     /* ------------------------------ */
     /* SECTION 4 — COMPONENTS         */
     /* ------------------------------ */
@@ -483,11 +535,23 @@
   <!-- MAIN CONTENT -->
   <main>
     <!-- HERO -->
-    <section class="hero">
-      <h1>FlowNova Solutions</h1>
-      <p>Automation, AI, and experience-driven systems that scale with you and feel intentionally designed.</p>
-      <a href="/contact" class="cta-button">Let’s build something better.</a>
-    </section>
+<section class="hero hero-image">
+  <div class="hero-content">
+    <h1>
+      Clarity engineered.<br>
+      Automation elevated.<br>
+      Experiences transformed.
+    </h1>
+
+    <p>
+      FlowNova builds modern systems that help teams move faster, work smarter,
+      and scale with confidence.
+    </p>
+
+    <a href="/contact" class="cta-button">Book a Consultation</a>
+  </div>
+</section>
+
 
     <!-- SERVICES -->
     <section class="section" id="services">
