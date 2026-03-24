@@ -109,7 +109,9 @@ nav {
   .nav-links {
     position: absolute;
     top: 70px;
+    left: 0;
     right: 0;
+    margin: 0 auto;
     width: 100%;
     background:
       radial-gradient(circle at top, rgba(0,212,255,0.25), transparent 60%),
@@ -265,6 +267,14 @@ header.hero {
 header.hero {
   height: auto !important;
   min-height: 70vh; /* keeps it tall enough but not locked */
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
 }
 
 .cta-button {
