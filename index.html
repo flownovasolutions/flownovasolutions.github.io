@@ -106,7 +106,7 @@
       padding: 10px 0;
       border-radius: 8px;
       display: none;
-      min-width: 160px;
+      min-width: 180px;
     }
 
     .dropdown-menu li {
@@ -283,6 +283,27 @@
         0 0 50px rgba(255,0,255,0.30);
     }
 
+    /* CORE SERVICES — 4-WIDE DESKTOP, 2×2 MOBILE/TABLET */
+
+    .services-grid {
+      display: grid;
+      gap: 34px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 34px;
+    }
+
+    @media (max-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* BUTTONS */
 
     .cta-button,
@@ -355,20 +376,21 @@
       <nav>
         <ul class="nav-list">
           <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/approach">Approach</a></li>
+          <li><a href="/pricing">Pricing</a></li>
 
           <!-- RESTORED ABOUT DROPDOWN -->
           <li class="dropdown">
             <a href="/about">About</a>
             <ul class="dropdown-menu">
-              <li><a href="/about">Overview</a></li>
-              <li><a href="/about#values">Values</a></li>
-              <li><a href="/about#team">Team</a></li>
+              <li><a href="/about">About FlowNova</a></li>
+              <li><a href="/about#founder">Founder</a></li>
+              <li><a href="/about#philosophy">Philosophy</a></li>
+              <li><a href="/about#brand">Brand</a></li>
             </ul>
           </li>
 
-          <li><a href="/services">Services</a></li>
-          <li><a href="/approach">Approach</a></li>
-          <li><a href="/pricing">Pricing</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
@@ -467,29 +489,41 @@
   <!-- DIVIDER (SUBTLE) -->
   <div class="divider subtle"></div>
 
-  <!-- PHILOSOPHY / APPROACH -->
+  <!-- PHILOSOPHY / APPROACH — 5 PRINCIPLES, EDITORIAL -->
   <section class="section tight">
     <div class="section-header">
       <div class="section-eyebrow">Philosophy</div>
       <h2>The FlowNova Approach</h2>
     </div>
+
     <p>
       We don’t chase shortcuts. We design systems that feel intentional from day one and stay reliable as you grow.
     </p>
 
-    <!-- REDUCED TO 3 CARDS -->
-    <div class="card-grid" style="margin-top: 26px;">
-      <div class="card">
+    <div style="margin-top: 34px; display: grid; gap: 34px;">
+      <div>
         <h3>Clarity First</h3>
         <p>We map your processes, pain points, and goals to design solutions that make sense.</p>
       </div>
-      <div class="card">
+
+      <div>
         <h3>Experience-Driven</h3>
         <p>Every interface, flow, and decision is crafted with the end-user in mind.</p>
       </div>
-      <div class="card">
+
+      <div>
         <h3>Technical Precision</h3>
         <p>Clean architecture, scalable patterns, and reliable automation — no brittle shortcuts.</p>
+      </div>
+
+      <div>
+        <h3>Collaborative Delivery</h3>
+        <p>We build with you — not at you — ensuring alignment at every step.</p>
+      </div>
+
+      <div>
+        <h3>Future-Ready</h3>
+        <p>Solutions designed to evolve as your team and needs grow.</p>
       </div>
     </div>
   </section>
@@ -497,26 +531,29 @@
   <!-- DIVIDER (DRAMATIC) -->
   <div class="divider"></div>
 
-  <!-- CORE SERVICES -->
+  <!-- CORE SERVICES — 4-WIDE DESKTOP -->
   <section class="section big">
     <div class="section-header">
       <div class="section-eyebrow">Core services</div>
       <h2>What We Actually Build For You</h2>
     </div>
 
-    <div class="card-grid">
+    <div class="services-grid">
       <div class="card">
         <h3>Process Improvement &amp; Future-State Design</h3>
         <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
       </div>
+
       <div class="card">
         <h3>Workflow Automation</h3>
         <p>Reliable, scalable automations that reduce manual work, increase visibility, and unlock operational clarity.</p>
       </div>
+
       <div class="card">
         <h3>App &amp; Experience Design</h3>
         <p>Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic.</p>
       </div>
+
       <div class="card">
         <h3>Applied AI Solutions</h3>
         <p>Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real workflows.</p>
@@ -549,3 +586,6 @@
 
 </body>
 </html>
+
+
+      <div class="card
