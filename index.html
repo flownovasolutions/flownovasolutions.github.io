@@ -429,7 +429,68 @@
   }
 }
 
-    
+    /* HERO IMAGE RESTORE */
+.hero-image {
+  background: url('images/hero-background.png') center/cover no-repeat;
+  padding: 180px 20px 160px;
+  position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 20, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-image h1 {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.hero-image p {
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    padding: 140px 20px 120px;
+  }
+
+  .hero-image h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+
+  .hero-image p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ANGLED DIVIDER */
+.angled-divider {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(90deg, var(--blue), var(--pink));
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  opacity: 0.25;
+  margin: 0;
+}
+
     /* ------------------------------ */
     /* SECTION 4 — COMPONENTS         */
     /* ------------------------------ */
