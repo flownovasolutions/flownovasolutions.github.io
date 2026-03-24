@@ -282,6 +282,27 @@
         0 0 50px rgba(255,0,255,0.30);
     }
 
+    /* CORE SERVICES GRID */
+.services-grid {
+  display: grid;
+  gap: 34px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 34px;
+}
+
+@media (max-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    
     /* BUTTONS — RESTORED */
     .cta-button,
     .button {
