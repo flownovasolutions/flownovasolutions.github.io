@@ -281,85 +281,6 @@
         0 0 40px rgba(0,212,255,0.35),
         0 0 50px rgba(255,0,255,0.30);
     }
-
-    /* CORE SERVICES — 4-WIDE DESKTOP, 2×2 MOBILE/TABLET */
-
-    .services-grid {
-      display: grid;
-      gap: 34px;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 34px;
-    }
-
-    @media (max-width: 1100px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* BUTTONS */
-
-    .cta-button,
-    .button {
-      display: inline-block;
-      padding: 13px 26px;
-      background: var(--gradient-primary);
-      color: white;
-      font-weight: 600;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 0 24px rgba(0,212,255,0.35);
-      transition: var(--transition);
-      font-size: 0.98rem;
-    }
-
-    .button.secondary {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: none;
-    }
-
-    .cta-button:hover,
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(255,0,255,0.4);
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 50px 20px 40px;
-      opacity: 0.85;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      margin-top: 40px;
-    }
-
-    .footer-logo {
-      height: 70px;
-      margin: 0 auto 14px;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        padding: 140px 20px 100px;
-      }
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-      .section {
-        padding: 60px 20px;
-      }
-      .section.big {
-        padding: 80px 20px;
-      }
-    }
   </style>
 </head>
 
@@ -379,7 +300,6 @@
           <li><a href="/approach">Approach</a></li>
           <li><a href="/pricing">Pricing</a></li>
 
-          <!-- ABOUT DROPDOWN -->
           <li class="dropdown">
             <a href="/about">About</a>
             <ul class="dropdown-menu">
@@ -422,7 +342,7 @@
   <div class="divider"></div>
 
   <!-- STUDIO OVERVIEW -->
-  <section class="section">
+  <section class="section" style="padding-top: 100px; padding-bottom: 70px;">
     <div class="section-header">
       <div class="section-eyebrow">Studio overview</div>
       <h2>Designing Systems That Move You Forward</h2>
@@ -440,7 +360,7 @@
   <div class="divider subtle reverse"></div>
 
   <!-- WHY FLOWNOVA -->
-  <section class="section tight">
+  <section class="section tight" style="padding-top: 70px; padding-bottom: 60px;">
     <div class="section-header">
       <div class="section-eyebrow">Why FlowNova</div>
       <h2>More Than Automations. A System You Can Trust.</h2>
@@ -474,7 +394,7 @@
     <p>
       Under the hood, FlowNova combines automation, AI, and experience design into a cohesive systems layer:
     </p>
-    <ul style="margin-top: 26px; list-style: none; padding-left: 0;">
+    <ul style="margin-top: 34px; list-style: none; padding-left: 0; line-height: 1.75;">
       <li>• Process mapping and future-state design</li>
       <li>• Automation architecture and workflow orchestration</li>
       <li>• Applied AI for content, decisions, and operations</li>
@@ -488,56 +408,56 @@
   <!-- DIVIDER (SUBTLE) -->
   <div class="divider subtle"></div>
 
-  <!-- PHILOSOPHY / APPROACH — 5 PRINCIPLES, EDITORIAL -->
-  <section class="section tight">
+  <!-- PHILOSOPHY / APPROACH — 5 PRINCIPLES -->
+  <section class="section tight" style="padding-top: 80px; padding-bottom: 80px;">
     <div class="section-header">
       <div class="section-eyebrow">Philosophy</div>
       <h2>The FlowNova Approach</h2>
     </div>
 
-    <p>
+    <p style="max-width: 760px;">
       We don’t chase shortcuts. We design systems that feel intentional from day one and stay reliable as you grow.
     </p>
 
-    <div style="margin-top: 40px; display: grid; gap: 40px;">
+    <div style="margin-top: 50px; display: grid; gap: 48px;">
       <div>
-        <h3>Clarity First</h3>
+        <h3 style="margin-bottom: 6px;">Clarity First</h3>
         <p>We map your processes, pain points, and goals to design solutions that make sense.</p>
       </div>
 
       <div>
-        <h3>Experience-Driven</h3>
+        <h3 style="margin-bottom: 6px;">Experience-Driven</h3>
         <p>Every interface, flow, and decision is crafted with the end-user in mind.</p>
       </div>
 
       <div>
-        <h3>Technical Precision</h3>
+        <h3 style="margin-bottom: 6px;">Technical Precision</h3>
         <p>Clean architecture, scalable patterns, and reliable automation — no brittle shortcuts.</p>
       </div>
 
       <div>
-        <h3>Collaborative Delivery</h3>
+        <h3 style="margin-bottom: 6px;">Collaborative Delivery</h3>
         <p>We build with you — not at you — ensuring alignment at every step.</p>
       </div>
 
       <div>
-        <h3>Future-Ready</h3>
+        <h3 style="margin-bottom: 6px;">Future-Ready</h3>
         <p>Solutions designed to evolve as your team and needs grow.</p>
       </div>
     </div>
   </section>
 
-  <!-- DIVIDER (DRAMATIC) -->
+  <!-- DIVIDER -->
   <div class="divider"></div>
 
-  <!-- CORE SERVICES — 4-WIDE DESKTOP -->
-  <section class="section big">
+    <!-- CORE SERVICES — 4-WIDE DESKTOP -->
+  <section class="section big" style="padding-top: 110px; padding-bottom: 110px;">
     <div class="section-header">
       <div class="section-eyebrow">Core services</div>
       <h2>What We Actually Build For You</h2>
     </div>
 
-    <div class="services-grid">
+    <div class="services-grid" style="gap: 40px;">
       <div class="card">
         <h3>Process Improvement &amp; Future-State Design</h3>
         <p>We map workflows, eliminate friction, and architect the systems your team should be using — not the ones you’ve inherited.</p>
@@ -564,7 +484,7 @@
   <div class="divider subtle reverse"></div>
 
   <!-- CTA -->
-  <section class="section text-center">
+  <section class="section text-center" style="padding-top: 90px; padding-bottom: 120px;">
     <div class="section-header">
       <div class="section-eyebrow">Next step</div>
       <h2>Let’s build systems that move your team forward.</h2>
@@ -572,13 +492,13 @@
     <p style="max-width: 640px; margin: 0 auto;">
       Let’s build systems that move your team forward — with clarity, intention, and momentum.
     </p>
-    <div style="margin-top: 30px;">
+    <div style="margin-top: 36px;">
       <a href="/contact" class="cta-button">Start the Conversation</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer style="padding-top: 60px; padding-bottom: 50px;">
     <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
     <p>© 2026 FlowNova Solutions. All rights reserved.</p>
   </footer>
