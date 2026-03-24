@@ -356,6 +356,117 @@
       margin: 0 auto 14px;
       display: block;
     }
+
+/* MOBILE NAV — PREMIUM FLOWNOVA */
+.mobile-nav-toggle {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  z-index: 1001;
+}
+
+.mobile-nav-toggle span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,212,255,0.6);
+}
+
+.mobile-nav-toggle span:nth-child(1) { top: 0; }
+.mobile-nav-toggle span:nth-child(2) { top: 10px; }
+.mobile-nav-toggle span:nth-child(3) { top: 20px; }
+
+/* Checkbox hack */
+#mobile-menu-checkbox {
+  display: none;
+}
+
+#mobile-menu-checkbox:checked ~ nav .mobile-menu {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,0.25), transparent 60%),
+    radial-gradient(circle at bottom, rgba(255,0,255,0.20), transparent 70%),
+    rgba(5, 8, 20, 0.95);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 0 20px rgba(0,212,255,0.25),
+    0 0 30px rgba(255,0,255,0.20);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.mobile-menu a {
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.mobile-menu a:hover {
+  color: var(--blue);
+}
+
+/* RESPONSIVE BEHAVIOR */
+@media (max-width: 900px) {
+  .nav-list {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+/* MOBILE HERO FIXES */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-top: 10px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+  }
+}
   </style>
 </head>
 
