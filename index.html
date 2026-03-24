@@ -91,12 +91,50 @@
       color: var(--blue);
     }
 
+    /* DROPDOWN */
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(5, 8, 20, 0.95);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 0;
+      border-radius: 8px;
+      display: none;
+      min-width: 160px;
+    }
+
+    .dropdown-menu li {
+      list-style: none;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 16px;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
     /* HERO */
 
     .hero {
       padding: var(--space-hero) 20px var(--space-big);
       text-align: center;
       position: relative;
+
+      /* RESTORED HERO IMAGE */
+      background-image: url("images/hero-background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero::before {
@@ -304,6 +342,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -316,9 +355,19 @@
       <nav>
         <ul class="nav-list">
           <li><a href="/">Home</a></li>
+
+          <!-- RESTORED ABOUT DROPDOWN -->
+          <li class="dropdown">
+            <a href="/about">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="/about">Overview</a></li>
+              <li><a href="/about#values">Values</a></li>
+              <li><a href="/about#team">Team</a></li>
+            </ul>
+          </li>
+
           <li><a href="/services">Services</a></li>
           <li><a href="/approach">Approach</a></li>
-          <li><a href="/about">About</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
@@ -428,6 +477,7 @@
       We don’t chase shortcuts. We design systems that feel intentional from day one and stay reliable as you grow.
     </p>
 
+    <!-- REDUCED TO 3 CARDS -->
     <div class="card-grid" style="margin-top: 26px;">
       <div class="card">
         <h3>Clarity First</h3>
@@ -441,21 +491,13 @@
         <h3>Technical Precision</h3>
         <p>Clean architecture, scalable patterns, and reliable automation — no brittle shortcuts.</p>
       </div>
-      <div class="card">
-        <h3>Collaborative Delivery</h3>
-        <p>We build with you — not at you — ensuring alignment at every step.</p>
-      </div>
-      <div class="card">
-        <h3>Future-Ready</h3>
-        <p>Solutions designed to evolve as your team and needs grow.</p>
-      </div>
     </div>
   </section>
 
   <!-- DIVIDER (DRAMATIC) -->
   <div class="divider"></div>
 
-  <!-- CORE SERVICES (FLOATING CARDS, HYBRID SPACING) -->
+  <!-- CORE SERVICES -->
   <section class="section big">
     <div class="section-header">
       <div class="section-eyebrow">Core services</div>
