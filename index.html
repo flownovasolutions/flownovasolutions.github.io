@@ -472,35 +472,59 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <img src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
-      </a>
+<!-- HEADER -->
+<header class="header">
 
-      <nav>
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/approach">Approach</a></li>
-          <li><a href="/pricing">Pricing</a></li>
+  <!-- Mobile toggle checkbox -->
+  <input type="checkbox" id="mobile-menu-checkbox">
 
-          <li class="dropdown">
-            <a href="/about">About</a>
-            <ul class="dropdown-menu">
-              <li><a href="/about">About FlowNova</a></li>
-              <li><a href="/about#founder">Founder</a></li>
-              <li><a href="/about#philosophy">Philosophy</a></li>
-              <li><a href="/about#brand">Brand</a></li>
-            </ul>
-          </li>
+  <div class="header-inner">
 
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <a href="/" class="logo">
+      <img src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
+    </a>
+
+    <!-- Hamburger -->
+    <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Desktop Nav -->
+    <nav>
+      <ul class="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/approach">Approach</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+
+        <li class="dropdown">
+          <a href="/about">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="/about">About FlowNova</a></li>
+            <li><a href="/about#founder">Founder</a></li>
+            <li><a href="/about#philosophy">Philosophy</a></li>
+            <li><a href="/about#brand">Brand</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/approach">Approach</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+
+  </div>
+</header> 
 
   <!-- HERO -->
   <section class="hero">
