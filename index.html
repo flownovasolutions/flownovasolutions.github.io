@@ -261,6 +261,11 @@ header.hero {
   margin-bottom: 30px;   /* Slightly tighter */
 }
 
+/* Remove forced full-screen height so spacing works properly */
+header.hero {
+  height: auto !important;
+  min-height: 70vh; /* keeps it tall enough but not locked */
+}
 
 .cta-button {
   margin-top: 10px; /* Subtle lift */
