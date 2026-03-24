@@ -475,22 +475,16 @@
 <header class="header">
   <div class="header-inner">
 
-    <!-- Mobile toggle checkbox MUST be inside header-inner -->
+    <!-- Mobile toggle checkbox -->
     <input type="checkbox" id="mobile-menu-checkbox">
 
+    <!-- Logo -->
     <a href="/" class="logo">
       <img src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
     </a>
 
-    <!-- Hamburger -->
-    <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
+    <!-- Desktop Nav -->
     <nav>
-      <!-- Desktop Nav -->
       <ul class="nav-list">
         <li><a href="/">Home</a></li>
         <li><a href="/services">Services</a></li>
@@ -520,6 +514,13 @@
         <a href="/contact">Contact</a>
       </div>
     </nav>
+
+    <!-- Hamburger (must be LAST inside header-inner) -->
+    <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
   </div>
 </header> 
