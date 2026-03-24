@@ -236,6 +236,142 @@ header.hero {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* -------------------------------------------------- */
+/* REFINED NEON SECTION SYSTEM — FLOWNOVA 3.0         */
+/* -------------------------------------------------- */
+
+/* Section Layout */
+.section {
+  padding: 120px 20px;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.section p,
+.section ul {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
+  opacity: 0.92;
+}
+
+/* Section Headers */
+.section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink), var(--accent-purple));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* Gradient Section Wrapper (Refined) */
+.gradient-section-wrapper {
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,0.18), transparent 65%),
+    radial-gradient(circle at bottom, rgba(255,0,255,0.12), transparent 70%),
+    #050814;
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid Background (Subtle) */
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Angled Dividers (Refined) */
+.angled-divider {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+
+.angled-bottom {
+  background: linear-gradient(225deg, #0b1224, #050814);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.angled-top {
+  background: linear-gradient(135deg, #050814, #0b1224);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.angled-divider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink), var(--accent-purple));
+  opacity: 0.7;
+}
+
+/* Card Grid */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+/* Refined Neon Cards */
+.card {
+  background: rgba(255,255,255,0.06);
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 18px rgba(0,212,255,0.25),
+    0 0 28px rgba(255,0,255,0.25);
+}
+
+/* Subtle Glow Ring */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle, rgba(0,212,255,0.35), transparent 70%),
+    radial-gradient(circle, rgba(255,0,255,0.25), transparent 75%);
+  opacity: 0.15;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 0.45;
+}
+
 </style>
 </head>
 
