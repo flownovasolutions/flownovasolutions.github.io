@@ -427,7 +427,55 @@ header.hero {
     transform: none !important;
   }
 }
-  
+
+  /* ICON VERSION — MOBILE + DESKTOP */
+.floating-contact svg {
+  stroke: #000; /* icon color inside neon button */
+}
+
+/* DESKTOP LOOK */
+.floating-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #00d4ff, #ff4fd8);
+  box-shadow:
+    0 0 14px rgba(255,0,255,0.45),
+    0 0 22px rgba(0,212,255,0.45);
+  transition: 0.25s ease;
+}
+
+.floating-contact:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* MOBILE VERSION */
+@media (max-width: 768px) {
+  .floating-contact {
+    bottom: 20px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 50%;
+
+    box-shadow:
+      0 0 6px rgba(255,0,255,0.35),
+      0 0 10px rgba(0,212,255,0.35);
+
+    transform: none !important;
+  }
+
+  .floating-contact svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 
 </style>
 </head>
@@ -527,7 +575,13 @@ header.hero {
 </div>
 
 <!-- FLOATING CONTACT BUTTON -->
-<a href="mailto:shelby@flownovasolutions.com" class="floating-contact">Contact</a>
+<a href="mailto:shelby@flownovasolutions.com" class="floating-contact" aria-label="Contact">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16v16H4z" />
+    <polyline points="4,4 12,13 20,4" />
+  </svg>
+</a>
+
 
 <footer>
   © 2026 FlowNova Solutions — Built with clarity and intention.
