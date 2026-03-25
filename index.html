@@ -404,34 +404,36 @@
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* MOBILE DRAWER — FLOWNOVA CINEMATIC GLOW */
+/* FLOWNOVA — CINEMATIC GLASS DRAWER */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 60%;
   height: 100vh;
 
-  /* Translucent neon gradient */
+  /* Translucent, crisp gradient */
   background: linear-gradient(
     to bottom,
-    rgba(0,212,255,0.35),
-    rgba(255,61,252,0.35)
+    rgba(0,212,255,0.22),
+    rgba(255,61,252,0.22)
   );
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
 
-  /* Neon left-edge border */
-  border-left: 1px solid rgba(255,255,255,0.25);
+  /* Engineered neon edge */
+  border-left: 1px solid rgba(255,255,255,0.28);
   box-shadow:
-    -4px 0 18px rgba(0,212,255,0.35),
-    -6px 0 28px rgba(255,61,252,0.25);
+    -6px 0 18px rgba(0,212,255,0.25),
+    -10px 0 28px rgba(255,61,252,0.20);
 
   display: flex;
   flex-direction: column;
-  padding-top: 110px; /* space below header */
 
-  /* Start hidden off-screen */
+  padding-top: 110px; /* space below header */
+  padding-bottom: 40px;
+
+  /* Start hidden */
   transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
@@ -441,18 +443,26 @@
     opacity 0.35s ease;
 }
 
+/* Menu links — FlowNova typography */
 .mobile-menu a {
   padding: 18px 28px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.35s ease, transform 0.35s ease;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+/* Gradient hover — subtle, premium */
 .mobile-menu a:hover {
-  color: var(--blue);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
 
 /* When menu is open */
 #mobile-menu-checkbox:checked ~ .mobile-menu {
