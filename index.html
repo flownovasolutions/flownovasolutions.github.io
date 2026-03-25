@@ -468,10 +468,9 @@
 
 <body>
 
-
 <header class="header">
 
-  <!-- Checkbox MUST be outside .header-inner -->
+  <!-- Mobile toggle checkbox (must be first inside header) -->
   <input type="checkbox" id="mobile-menu-checkbox">
 
   <div class="header-inner">
@@ -481,7 +480,7 @@
       <img src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
     </a>
 
-    <!-- Desktop Nav -->
+    <!-- Desktop Navigation -->
     <nav class="desktop-nav">
       <ul class="nav-list">
         <li><a href="/">Home</a></li>
@@ -503,7 +502,7 @@
       </ul>
     </nav>
 
-    <!-- Hamburger -->
+    <!-- Mobile Hamburger -->
     <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
       <span></span>
       <span></span>
@@ -511,17 +510,19 @@
     </label>
 
   </div>
+
+  <!-- MOBILE MENU (must be inside header for toggle to work) -->
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/approach">Approach</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+
 </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu">
-  <a href="/">Home</a>
-  <a href="/services">Services</a>
-  <a href="/approach">Approach</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
-</div>
 
   <!-- HERO -->
   <section class="hero">
