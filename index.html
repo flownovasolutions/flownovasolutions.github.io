@@ -474,10 +474,11 @@
 
 
 <header class="header">
-  <div class="header-inner">
 
-    <!-- Mobile toggle checkbox -->
-    <input type="checkbox" id="mobile-menu-checkbox">
+  <!-- Checkbox MUST be outside .header-inner -->
+  <input type="checkbox" id="mobile-menu-checkbox">
+
+  <div class="header-inner">
 
     <!-- Logo -->
     <a href="/" class="logo">
@@ -506,7 +507,7 @@
       </ul>
     </nav>
 
-    <!-- Hamburger (must be last inside header-inner) -->
+    <!-- Hamburger -->
     <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
       <span></span>
       <span></span>
@@ -515,6 +516,17 @@
 
   </div>
 </header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <a href="/">Home</a>
+  <a href="/services">Services</a>
+  <a href="/approach">Approach</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+</div>
+
 
 <!-- MOBILE MENU (moved OUTSIDE header-inner) -->
 <div class="mobile-menu">
