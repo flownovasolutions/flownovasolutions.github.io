@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+? <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -472,6 +472,7 @@
 
 <body>
 
+
 <header class="header">
   <div class="header-inner">
 
@@ -484,7 +485,7 @@
     </a>
 
     <!-- Desktop Nav -->
-    <nav>
+    <nav class="desktop-nav">
       <ul class="nav-list">
         <li><a href="/">Home</a></li>
         <li><a href="/services">Services</a></li>
@@ -503,19 +504,9 @@
 
         <li><a href="/contact">Contact</a></li>
       </ul>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu">
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/approach">Approach</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </div>
     </nav>
 
-    <!-- Hamburger (must be LAST inside header-inner) -->
+    <!-- Hamburger (must be last inside header-inner) -->
     <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
       <span></span>
       <span></span>
@@ -523,7 +514,17 @@
     </label>
 
   </div>
-</header> 
+</header>
+
+<!-- MOBILE MENU (moved OUTSIDE header-inner) -->
+<div class="mobile-menu">
+  <a href="/">Home</a>
+  <a href="/services">Services</a>
+  <a href="/approach">Approach</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+</div>
 
   <!-- HERO -->
   <section class="hero">
