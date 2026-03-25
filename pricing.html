@@ -239,6 +239,21 @@
       opacity: 0.85;
     }
 
+    /* FULL-WIDTH ANGLED DIVIDERS */
+    .section-divider {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+      height: 90px; /* adjust if needed */
+    }
+
+    .section-divider svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     @media (max-width: 800px) {
       .pricing-grid {
         grid-template-columns: minmax(0, 1fr);
