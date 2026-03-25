@@ -350,6 +350,21 @@
       }
     }
 
+    .logo-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .logo-desktop {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+    height: 36px; /* adjust as needed */
+  }
+}
+
+
     /* FOOTER LOGO */
 
     .footer-logo {
@@ -357,8 +372,9 @@
       margin: 0 auto 14px;
       display: block;
     }
+    
 
-/* MOBILE NAV — PREMIUM FLOWNOVA */
+/* MOBILE NAV — PREMIUM  */
 .mobile-nav-toggle {
   display: none;
   cursor: pointer;
@@ -417,7 +433,13 @@
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* FlowNova — Final Glass Drawer */
+#mobile-menu-checkbox:checked ~ .header .logo img {
+  opacity: 0.4;
+  filter: blur(1px);
+  transition: 0.35s ease;
+}
+    
+/*  — Final Glass Drawer */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -470,7 +492,7 @@
     opacity 0.35s ease;
 }
 
-/* Menu links — FlowNova typography */
+/* Menu links —  typography */
 .mobile-menu a {
   padding: 18px 28px;
   font-size: 1.15rem;
@@ -553,9 +575,10 @@
   <div class="header-inner">
 
     <!-- Logo -->
-    <a href="/" class="logo">
-      <img src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
-    </a>
+<a href="/" class="logo">
+  <img class="logo-desktop" src="images/flownova-horizontal.png" alt="FlowNova Solutions Logo">
+  <img class="logo-mobile" src="images/flownova-icon (2).png" alt="FlowNova Icon">
+</a>
 
     <!-- Desktop Navigation -->
     <nav class="desktop-nav">
@@ -568,7 +591,7 @@
         <li class="dropdown">
           <a href="/about">About</a>
           <ul class="dropdown-menu">
-            <li><a href="/about">About FlowNova</a></li>
+            <li><a href="/about">About </a></li>
             <li><a href="/about#founder">Founder</a></li>
             <li><a href="/about#philosophy">Philosophy</a></li>
             <li><a href="/about#brand">Brand</a></li>
@@ -611,7 +634,7 @@
         Experiences transformed.
       </h1>
       <p>
-        FlowNova builds modern systems that help teams move faster, work smarter,
+         builds modern systems that help teams move faster, work smarter,
         and scale with confidence — blending engineering discipline with
         experience-driven design.
       </p>
@@ -633,7 +656,7 @@
       <h2>Designing Systems That Move You Forward</h2>
     </div>
     <p>
-      FlowNova is a modern automation studio focused on clarity, precision, and
+       is a modern automation studio focused on clarity, precision, and
       experience-driven design. We help teams eliminate friction, streamline
       operations, and build digital systems that scale with confidence. Every
       solution is engineered with intention — blending technical depth with
@@ -644,10 +667,10 @@
   <!-- DIVIDER (SUBTLE REVERSE) -->
   <div class="divider subtle reverse"></div>
 
-  <!-- WHY FLOWNOVA -->
+  <!-- WHY  -->
   <section class="section tight" style="padding-top: 70px; padding-bottom: 60px;">
     <div class="section-header">
-      <div class="section-eyebrow">Why FlowNova</div>
+      <div class="section-eyebrow">Why </div>
       <h2>More Than Automations. A System You Can Trust.</h2>
     </div>
 
