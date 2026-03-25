@@ -124,6 +124,14 @@ img {
   min-width: 180px;
 }
 
+/* Remove bullets from dropdown items */
+.dropdown-menu,
+.dropdown-menu li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .dropdown-menu a {
   display: block;
   padding: 10px 16px;
