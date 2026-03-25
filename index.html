@@ -412,14 +412,19 @@
   width: 60%;
   height: 100vh;
 
-  /* Translucent, crisp gradient */
-  background: linear-gradient(
-    to bottom,
-    rgba(0,212,255,0.22),
-    rgba(255,61,252,0.22)
-  );
+/* Translucent but solid glass gradient */
+background: linear-gradient(
+  to bottom,
+  rgba(0,212,255,0.55),
+  rgba(255,61,252,0.55)
+);
 
-  backdrop-filter: blur(12px);
+/* Stronger, cleaner glass blur */
+backdrop-filter: blur(20px);
+
+/* Add a subtle dark base for structure */
+background-color: rgba(5, 8, 20, 0.35);
+
 
   /* Engineered neon edge */
   border-left: 1px solid rgba(255,255,255,0.28);
