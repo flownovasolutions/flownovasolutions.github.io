@@ -446,3 +446,55 @@ img {
 .divider-light-strong {
   fill: rgba(255,255,255,0.12);
 }
+
+/* ------------------------------------------------------ */
+/* FLOWNOVA GLOBAL TYPOGRAPHY SYSTEM                      */
+/* ------------------------------------------------------ */
+
+/* Eyebrows / Kickers */
+.eyebrow,
+.section-eyebrow,
+.hero-eyebrow,
+.pricing-hero-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* H1 — Signature FlowNova Headline */
+h1,
+.heading-xl,
+.hero h1,
+.pricing-hero-title {
+  font-size: 3.4rem;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* H2 — Section Headers */
+h2,
+.heading-lg,
+.section h2 {
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Body Text */
+p,
+.body-text {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 720px;
+}
