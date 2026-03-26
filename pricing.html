@@ -8,12 +8,9 @@
   <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="/css/global.css">
 
-  <!-- OPTIONAL: external pricing stylesheet -->
-  <!-- <link rel="stylesheet" href="/css/pricing.css"> -->
-
   <style>
     /* ------------------------------------------------------ */
-    /* PRICING PAGE SPECIFIC (INLINE VERSION)                 */
+    /* PRICING PAGE — EDITORIAL, LEFT-ANCHORED                */
     /* ------------------------------------------------------ */
 
     .page-shell {
@@ -22,45 +19,69 @@
       padding: 40px 20px 80px;
     }
 
-    .pricing-header {
-      max-width: 720px;
-      margin-bottom: 48px;
+    /* --------------------------------------------- */
+    /* HERO — LEFT-ANCHORED, TIGHT, EDITORIAL        */
+    /* --------------------------------------------- */
+
+    .pricing-hero {
+      max-width: 600px;
+      padding-top: 40px;
+      padding-bottom: 60px;
     }
 
-    .pricing-kicker {
-      font-size: 0.8rem;
+    .pricing-hero-kicker {
+      font-size: 0.78rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       opacity: 0.7;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .pricing-title {
-      font-size: 2.4rem;
-      line-height: 1.15;
+    .pricing-hero-title {
+      font-size: 2.3rem;
+      line-height: 1.18;
       margin-bottom: 14px;
       background: var(--gradient-heading);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      letter-spacing: -0.02em;
+      font-weight: 600;
     }
 
-    .pricing-subtitle {
-      opacity: 0.8;
-      max-width: 560px;
-    }
-
-    .pricing-intro {
-      margin-top: 18px;
+    .pricing-hero-subtitle,
+    .pricing-hero-intro {
+      max-width: 520px;
       opacity: 0.85;
-      max-width: 640px;
-      font-size: 0.98rem;
-      line-height: 1.6;
+      font-size: 0.96rem;
+      line-height: 1.55;
     }
+
+    .pricing-hero-subtitle {
+      margin-bottom: 18px;
+    }
+
+    .pricing-hero-intro {
+      margin-bottom: 50px; /* tuned to divider */
+    }
+
+    @media (max-width: 800px) {
+      .pricing-hero {
+        padding-top: 28px;
+        padding-bottom: 48px;
+      }
+      .pricing-hero-title {
+        font-size: 1.9rem;
+      }
+    }
+
+    /* --------------------------------------------- */
+    /* PRICING GRID                                  */
+    /* --------------------------------------------- */
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 28px 32px;
       margin-top: 40px;
     }
@@ -130,6 +151,16 @@
       top: 0;
       opacity: 0.7;
     }
+
+    @media (max-width: 800px) {
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* --------------------------------------------- */
+    /* RETAINERS                                     */
+    /* --------------------------------------------- */
 
     .pricing-section-title {
       font-size: 1.1rem;
@@ -203,6 +234,16 @@
       opacity: 0.7;
     }
 
+    @media (max-width: 800px) {
+      .retainer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* --------------------------------------------- */
+    /* CTA                                           */
+    /* --------------------------------------------- */
+
     .pricing-cta {
       margin-top: 52px;
       padding-top: 32px;
@@ -238,96 +279,16 @@
     .pricing-cta a:hover {
       opacity: 0.85;
     }
-
-    /* --------------------------------------------- */
-/* PRICING HERO — TIGHT, EDITORIAL, LEFT-ANCHORED */
-/* --------------------------------------------- */
-
-.pricing-hero {
-  max-width: 600px;        /* tighter, more intentional */
-  padding-top: 40px;
-  padding-bottom: 60px;    /* tighter vertical rhythm */
-}
-
-.pricing-hero-kicker {
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 12px;
-}
-
-.pricing-hero-title {
-  font-size: 2.3rem;
-  line-height: 1.18;
-  margin-bottom: 14px;
-  background: var(--gradient-heading);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.pricing-hero-subtitle {
-  max-width: 520px;        /* consistent editorial width */
-  opacity: 0.82;
-  margin-bottom: 18px;
-  font-size: 1rem;
-  line-height: 1.55;
-}
-
-.pricing-hero-intro {
-  max-width: 520px;        /* matches subtitle */
-  opacity: 0.85;
-  font-size: 0.96rem;
-  line-height: 1.55;
-  margin-bottom: 50px;     /* tuned to the divider */
-}
-    
-/* Mobile */
-@media (max-width: 800px) {
-  .pricing-hero {
-    padding-top: 28px;
-    padding-bottom: 48px;
-  }
-
-  .pricing-hero-title {
-    font-size: 1.9rem;
-  }
-}
-
-
-    @media (max-width: 800px) {
-      .pricing-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .retainer-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .page-shell {
-        padding-top: 32px;
-      }
-
-      .pricing-title {
-        font-size: 2rem;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- MOBILE MENU CHECKBOX -->
-  <input type="checkbox" id="mobile-menu-checkbox">
-  <div class="drawer-backdrop"></div>
-
-  <!-- HEADER -->
+  <!-- HEADER (from global.css) -->
   <header class="header">
     <div class="header-inner">
-
       <a href="/" class="logo">
-        <img class="logo-desktop" src="images/flownova-horizontal (2).png" alt="FlowNova Solutions Logo">
+        <img class="logo-desktop" src="images/flownova-horizontal-megan.png" alt="FlowNova Solutions Logo">
         <img class="logo-mobile" src="images/flownova-icon (2).png" alt="FlowNova Icon">
       </a>
 
@@ -337,274 +298,237 @@
           <li><a href="/services">Services</a></li>
           <li><a href="/approach">Approach</a></li>
           <li><a href="/pricing" class="active">Pricing</a></li>
-
-          <li class="dropdown">
-            <a href="/about">About</a>
-            <ul class="dropdown-menu">
-              <li><a href="/about">About</a></li>
-              <li><a href="/about#founder">Founder</a></li>
-              <li><a href="/about#philosophy">Philosophy</a></li>
-              <li><a href="/about#brand">Brand</a></li>
-            </ul>
-          </li>
-
+          <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
-
-      <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-    </div>
-
-    <div class="mobile-menu">
-      <a href="/">Home</a>
-      <a href="/services">Services</a>
-      <a href="/approach">Approach</a>
-      <a href="/pricing" class="active">Pricing</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
     </div>
   </header>
 
-  <!-- PAGE CONTENT -->
   <main>
 
-  <!-- HERO -->
-<section class="pricing-hero page-shell">
-  <p class="pricing-hero-kicker">Pricing</p>
+    <!-- HERO -->
+    <section class="pricing-hero page-shell">
+      <p class="pricing-hero-kicker">Pricing</p>
 
-  <h1 class="pricing-hero-title">
-    Clarity before commitment.
-  </h1>
+      <h1 class="pricing-hero-title">
+        Clarity before commitment.
+      </h1>
 
-  <p class="pricing-hero-subtitle">
-    Transparent, structured pricing designed for teams who value precision, momentum, and systems that scale.
-  </p>
-
-  <p class="pricing-hero-intro">
-    FlowNova isn’t a “mystery quote” studio. We believe in clarity, structured engagement, and pricing that reflects
-    the value of engineered systems — not guesswork. Every engagement begins with understanding, not assumptions.
-  </p>
-</section>
-
-
-  <!-- FULL-WIDTH DIVIDER 1 — dramatic (downward) -->
-  <div class="section-divider">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon class="divider-light-strong" points="0,100 100,20 100,100" />
-    </svg>
-  </div>
-
-  <!-- PRICING GRID -->
-  <section class="page-shell pricing-grid">
-
-    <!-- Process Mapping Workshop -->
-    <article class="pricing-card highlight">
-      <p class="pricing-label">Workshop</p>
-      <h2 class="pricing-name">Process Mapping Workshop</h2>
-      <p class="pricing-price"><span>Starting at $1,500</span> · 8-hour intensive</p>
-      <p class="pricing-description">
-        An 8‑hour intensive designed to bring clarity to chaos and align your team around what comes next.
+      <p class="pricing-hero-subtitle">
+        Transparent, structured pricing designed for teams who value precision, momentum, and systems that scale.
       </p>
-      <ul class="pricing-list">
-        <li>Current‑state process mapping</li>
-        <li>Future‑state design</li>
-        <li>Bottleneck + opportunity analysis</li>
-        <li>Automation roadmap</li>
-        <li>Prioritized next steps</li>
-        <li>System architecture recommendations</li>
-      </ul>
-    </article>
 
-    <!-- Workflow Automation -->
-    <article class="pricing-card">
-      <p class="pricing-label">Automation</p>
-      <h2 class="pricing-name">Workflow Automation</h2>
-      <p class="pricing-price"><span>Starting at $3,500</span></p>
-      <p class="pricing-description">
-        Engineered automation that removes friction, reduces manual work, and creates operational momentum.
+      <p class="pricing-hero-intro">
+        FlowNova isn’t a “mystery quote” studio. We believe in clarity, structured engagement, and pricing that reflects
+        the value of engineered systems — not guesswork. Every engagement begins with understanding, not assumptions.
       </p>
-      <ul class="pricing-list">
-        <li>Multi‑step workflows</li>
-        <li>Approvals + routing</li>
-        <li>System orchestration</li>
-        <li>Notifications + triggers</li>
-        <li>Governance + error handling</li>
-      </ul>
-    </article>
+    </section>
 
-    <!-- Power Apps / Internal Tools -->
-    <article class="pricing-card">
-      <p class="pricing-label">Internal Tools</p>
-      <h2 class="pricing-name">Power Apps / Internal Tools</h2>
-      <p class="pricing-price"><span>Starting at $5,000</span></p>
-      <p class="pricing-description">
-        Custom internal tools designed with intention, rhythm, and usability at the core.
-      </p>
-      <ul class="pricing-list">
-        <li>Dashboards and admin tools</li>
-        <li>Data entry + operational apps</li>
-        <li>Multi‑screen experiences</li>
-        <li>Dataverse‑backed systems</li>
-        <li>UX that feels native to your team</li>
-      </ul>
-    </article>
-
-    <!-- Applied AI Solutions -->
-    <article class="pricing-card">
-      <p class="pricing-label">Applied AI</p>
-      <h2 class="pricing-name">Applied AI Solutions</h2>
-      <p class="pricing-price"><span>Starting at $6,500</span></p>
-      <p class="pricing-description">
-        AI that enhances your systems — not replaces them.
-      </p>
-      <ul class="pricing-list">
-        <li>AI copilots embedded in internal tools</li>
-        <li>AI‑assisted workflows</li>
-        <li>Document intelligence</li>
-        <li>Azure OpenAI integrations</li>
-        <li>AI‑powered recommendations</li>
-      </ul>
-    </article>
-
-    <!-- Copilot Studio Bots -->
-    <article class="pricing-card">
-      <p class="pricing-label">Copilots</p>
-      <h2 class="pricing-name">Copilot Studio Bots</h2>
-      <p class="pricing-price"><span>Starting at $3,000</span></p>
-      <p class="pricing-description">
-        Conversational copilots that guide, assist, and streamline internal processes.
-      </p>
-      <ul class="pricing-list">
-        <li>Guided workflows</li>
-        <li>Knowledge grounding</li>
-        <li>Document Q&amp;A</li>
-        <li>Internal support bots</li>
-        <li>Conversational routing</li>
-      </ul>
-    </article>
-
-    <!-- Integration & API Work -->
-    <article class="pricing-card">
-      <p class="pricing-label">Integration</p>
-      <h2 class="pricing-name">Integration &amp; API Work</h2>
-      <p class="pricing-price"><span>Starting at $6,000</span></p>
-      <p class="pricing-description">
-        When your systems need to talk to each other — securely, reliably, and intelligently.
-      </p>
-      <ul class="pricing-list">
-        <li>External system integration</li>
-        <li>Authentication + security</li>
-        <li>Data pipelines</li>
-        <li>Webhooks + custom logic</li>
-        <li>Multi‑system orchestration</li>
-      </ul>
-    </article>
-
-  </section>
-
-  <!-- FULL-WIDTH DIVIDER 2 — subtle (upward) -->
-  <div class="section-divider">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon class="divider-light" points="0,100 100,0 100,100" />
-    </svg>
-  </div>
-
-  <!-- RETAINERS -->
-  <section class="page-shell" style="margin-top: 52px;">
-    <h2 class="pricing-section-title">Advisory Retainers</h2>
-    <p class="pricing-section-body">
-      Ongoing partnership for teams who want continuous improvement, not one‑off projects. Retainers are ideal when
-      you’re ready to treat automation and AI as a living system — something that evolves with your team, not a
-      one‑time launch.
-    </p>
-
-    <div class="retainer-grid">
-      <article class="retainer-card">
-        <p class="retainer-name">Starter</p>
-        <p class="retainer-price">$1,500/mo</p>
-        <p class="retainer-note">For teams beginning their automation journey.</p>
-      </article>
-
-      <article class="retainer-card">
-        <p class="retainer-name">Growth</p>
-        <p class="retainer-price">$3,000/mo</p>
-        <p class="retainer-note">For teams scaling systems across departments.</p>
-      </article>
-
-      <article class="retainer-card">
-        <p class="retainer-name">Enterprise</p>
-        <p class="retainer-price">$5,000/mo</p>
-        <p class="retainer-note">For teams who need governance, oversight, and strategic alignment.</p>
-      </article>
+    <!-- FULL-BLEED DIVIDER — subtle upward angle -->
+    <div class="section-divider">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="divider-light" points="0,100 100,0 100,100" />
+      </svg>
     </div>
 
-    <div class="retainer-includes">
-      <p>All retainers include:</p>
-      <ul>
-        <li>Priority access</li>
-        <li>Monthly improvements</li>
-        <li>Roadmap execution</li>
-        <li>Governance + oversight</li>
-        <li>Dedicated support</li>
-      </ul>
+    <!-- PRICING GRID -->
+    <section class="page-shell pricing-grid">
+
+      <!-- Process Mapping Workshop -->
+      <article class="pricing-card highlight">
+        <p class="pricing-label">Workshop</p>
+        <h2 class="pricing-name">Process Mapping Workshop</h2>
+        <p class="pricing-price"><span>Starting at $1,500</span> · 8-hour intensive</p>
+        <p class="pricing-description">
+          An 8‑hour intensive designed to bring clarity to chaos and align your team around what comes next.
+        </p>
+        <ul class="pricing-list">
+          <li>Current‑state process mapping</li>
+          <li>Future‑state design</li>
+          <li>Bottleneck + opportunity analysis</li>
+          <li>Automation roadmap</li>
+          <li>Prioritized next steps</li>
+          <li>System architecture recommendations</li>
+        </ul>
+      </article>
+
+      <!-- Workflow Automation -->
+      <article class="pricing-card">
+        <p class="pricing-label">Automation</p>
+        <h2 class="pricing-name">Workflow Automation</h2>
+        <p class="pricing-price"><span>Starting at $3,500</span></p>
+        <p class="pricing-description">
+          Engineered automation that removes friction, reduces manual work, and creates operational momentum.
+        </p>
+        <ul class="pricing-list">
+          <li>Multi‑step workflows</li>
+          <li>Approvals + routing</li>
+          <li>System orchestration</li>
+          <li>Notifications + triggers</li>
+          <li>Governance + error handling</li>
+        </ul>
+      </article>
+
+      <!-- Internal Tools -->
+      <article class="pricing-card">
+        <p class="pricing-label">Internal Tools</p>
+        <h2 class="pricing-name">Power Apps / Internal Tools</h2>
+        <p class="pricing-price"><span>Starting at $5,000</span></p>
+        <p class="pricing-description">
+          Custom internal tools designed with intention, rhythm, and usability at the core.
+        </p>
+        <ul class="pricing-list">
+          <li>Dashboards and admin tools</li>
+          <li>Data entry + operational apps</li>
+          <li>Multi‑screen experiences</li>
+          <li>Dataverse‑backed systems</li>
+          <li>UX that feels native to your team</li>
+        </ul>
+      </article>
+
+      <!-- Applied AI -->
+      <article class="pricing-card">
+        <p class="pricing-label">Applied AI</p>
+        <h2 class="pricing-name">Applied AI Solutions</h2>
+        <p class="pricing-price"><span>Starting at $6,500</span></p>
+        <p class="pricing-description">
+          AI that enhances your systems — not replaces them.
+        </p>
+        <ul class="pricing-list">
+          <li>AI copilots embedded in internal tools</li>
+          <li>AI‑assisted workflows</li>
+          <li>Document intelligence</li>
+          <li>Azure OpenAI integrations</li>
+          <li>AI‑powered recommendations</li>
+        </ul>
+      </article>
+
+      <!-- Copilot Studio Bots -->
+      <article class="pricing-card">
+        <p class="pricing-label">Copilots</p>
+        <h2 class="pricing-name">Copilot Studio Bots</h2>
+        <p class="pricing-price"><span>Starting at $3,000</span></p>
+        <p class="pricing-description">
+          Conversational copilots that guide, assist, and streamline internal processes.
+        </p>
+        <ul class="pricing-list">
+          <li>Guided workflows</li>
+          <li>Knowledge grounding</li>
+          <li>Document Q&amp;A</li>
+          <li>Internal support bots</li>
+          <li>Conversational routing</li>
+        </ul>
+      </article>
+
+      <!-- Integration & API Work -->
+      <article class="pricing-card">
+        <p class="pricing-label">Integration</p>
+        <h2 class="pricing-name">Integration &amp; API Work</h2>
+        <p class="pricing-price"><span>Starting at $6,000</span></p>
+        <p class="pricing-description">
+          When your systems need to talk to each other — securely, reliably, and intelligently.
+        </p>
+        <ul class="pricing-list">
+          <li>External system integration</li>
+          <li>Authentication + security</li>
+          <li>Data pipelines</li>
+          <li>Webhooks + custom logic</li>
+          <li>Multi‑system orchestration</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <!-- FULL-BLEED DIVIDER -->
+    <div class="section-divider">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="divider-light" points="0,100 100,0 100,100" />
+      </svg>
     </div>
-  </section>
 
-  <!-- FULL-WIDTH DIVIDER 3 — dramatic (downward) -->
-  <div class="section-divider">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon class="divider-light-strong" points="0,100 100,20 100,100" />
-    </svg>
-  </div>
+    <!-- RETAINERS -->
+    <section class="page-shell">
+      <h2 class="pricing-section-title">Advisory Retainers</h2>
+      <p class="pricing-section-body">
+        Ongoing partnership for teams who want continuous improvement, not one‑off projects. Retainers are ideal when
+        you’re ready to treat automation and AI as a living system — something that evolves with your team, not a
+        one‑time launch.
+      </p>
 
-  <!-- HOW PRICING WORKS -->
-  <section class="page-shell" style="margin-top: 48px;">
-    <h2 class="pricing-section-title">How pricing works</h2>
-    <p class="pricing-section-body">
-      Every engagement begins with clarity. Before we build anything, we map your processes, identify friction,
-      and define the outcomes that matter. Pricing is structured around the complexity of your systems, the depth
-      of integration, and the level of transformation required. No surprises — just intentional, engineered work.
-    </p>
-  </section>
+      <div class="retainer-grid">
+        <article class="retainer-card">
+          <p class="retainer-name">Starter</p>
+          <p class="retainer-price">$1,500/mo</p>
+          <p class="retainer-note">For teams beginning their automation journey.</p>
+        </article>
 
-  <!-- FULL-WIDTH DIVIDER 4 — subtle (upward) -->
-  <div class="section-divider">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon class="divider-light" points="0,100 100,0 100,100" />
-    </svg>
-  </div>
+        <article class="retainer-card">
+          <p class="retainer-name">Growth</p>
+          <p class="retainer-price">$3,000/mo</p>
+          <p class="retainer-note">For teams scaling systems across departments.</p>
+        </article>
 
-  <!-- CTA -->
-  <section class="page-shell pricing-cta">
-    <h2 class="pricing-cta-title">Ready to move forward?</h2>
-    <p class="pricing-cta-body">
-      Whether you need clarity, automation, or a long‑term partner, FlowNova helps you build systems that scale with
-      confidence. Let’s map your next step together.
-    </p>
-    <a href="/contact">Book a consultation</a>
-  </section>
+        <article class="retainer-card">
+          <p class="retainer-name">Enterprise</p>
+          <p class="retainer-price">$5,000/mo</p>
+          <p class="retainer-note">For teams who need governance, oversight, and strategic alignment.</p>
+        </article>
+      </div>
 
-  <!-- FULL-WIDTH DIVIDER 5 — dramatic (downward) -->
-  <div class="section-divider" style="margin-top: 48px;">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon class="divider-light-strong" points="0,100 100,20 100,100" />
-    </svg>
-  </div>
+      <div class="retainer-includes">
+        <p>All retainers include:</p>
+        <ul>
+          <li>Priority access</li>
+          <li>Monthly improvements</li>
+          <li>Roadmap execution</li>
+          <li>Governance + oversight</li>
+          <li>Dedicated support</li>
+        </ul>
+      </div>
+    </section>
 
-</main>
+    <!-- FULL-BLEED DIVIDER -->
+    <div class="section-divider">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="divider-light" points="0,100 100,0 100,100" />
+      </svg>
+    </div>
 
+    <!-- HOW PRICING WORKS -->
+    <section class="page-shell">
+      <h2 class="pricing-section-title">How pricing works</h2>
+      <p class="pricing-section-body">
+        Every engagement begins with clarity. Before we build anything, we map your processes, identify friction,
+        and define the outcomes that matter. Pricing is structured around the complexity of your systems, the depth
+        of integration, and the level of transformation required. No surprises — just intentional, engineered work.
+      </p>
+    </section>
+
+    <!-- FULL-BLEED DIVIDER -->
+    <div class="section-divider">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="divider-light" points="0,100 100,0 100,100" />
+      </svg>
+    </div>
+
+    <!-- CTA -->
+    <section class="page-shell pricing-cta">
+      <h2 class="pricing-cta-title">Ready to move forward?</h2>
+      <p class="pricing-cta-body">
+        Whether you're mapping your first process or scaling automation across your organization, FlowNova helps you
+        build systems that create clarity, momentum, and long-term confidence.
+      </p>
+      <a href="/contact">Start the Conversation</a>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-
-  <script>
-    // Auto-update footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer style="padding-top: 60px; padding-bottom: 50px; text-align: center;">
+    <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
+    <p style="opacity: 0.7; font-size: 0.9rem;">© 2026 FlowNova Solutions. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
