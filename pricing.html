@@ -108,9 +108,18 @@
 
 /* Retainer Section Improvements */
 .retainer-grid {
-  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 34px;
+  margin-top: 40px;
 }
+
+@media (max-width: 900px) {
+  .retainer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .retainer-card {
   padding: 24px 24px 26px;
@@ -211,241 +220,232 @@
     </div>
   </header>
 
-  <main>
+<main>
 
-    <!-- HERO -->
-    <section class="section pricing-header">
-      <div class="section-eyebrow">Pricing</div>
-      <h2>Clarity before commitment.</h2>
-      <p>
-        Transparent, structured pricing designed for teams who value precision,
-        momentum, and systems that scale.
+  <!-- PRICING INTRO -->
+  <section class="section pricing-header">
+    <div class="section-eyebrow">Pricing</div>
+    <h2>Clarity before commitment.</h2>
+    <p>
+      Transparent, structured pricing designed for teams
+      who value precision<br>, momentum, and systems that scale.
+    </p>
+  </section>
+
+  <!-- DIVIDER — subtle upward, lifted -->
+  <div class="section-divider divider-up divider-subtle divider-medium divider-lift">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100" />
+    </svg>
+  </div>
+
+  <!-- PRICING GRID -->
+  <section class="page-shell pricing-grid">
+
+    <!-- Process Mapping Workshop -->
+    <article class="pricing-card highlight">
+      <p class="pricing-label">Workshop</p>
+      <h2 class="pricing-name">Process Mapping Workshop</h2>
+      <p class="pricing-price"><span>Starting at $1,500</span> · 8-hour intensive</p>
+      <p class="pricing-description">
+        An 8‑hour intensive designed to bring clarity to chaos and align your team around what comes next.
       </p>
-    </section>
-
-    <!-- FULL-BLEED DIVIDER — subtle upward angle -->
-    <div class="section-divider">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon class="divider-light" points="0,100 100,0 100,100" />
-      </svg>
-    </div>
-
-    <!-- PRICING GRID -->
-    <section class="page-shell pricing-grid">
-
-      <!-- Process Mapping Workshop -->
-      <article class="pricing-card highlight">
-        <p class="pricing-label">Workshop</p>
-        <h2 class="pricing-name">Process Mapping Workshop</h2>
-        <p class="pricing-price"><span>Starting at $1,500</span> · 8-hour intensive</p>
-        <p class="pricing-description">
-          An 8‑hour intensive designed to bring clarity to chaos and align your team around what comes next.
-        </p>
-        <ul class="pricing-list">
-          <li>Current‑state process mapping</li>
-          <li>Future‑state design</li>
-          <li>Bottleneck + opportunity analysis</li>
-          <li>Automation roadmap</li>
-          <li>Prioritized next steps</li>
-          <li>System architecture recommendations</li>
-        </ul>
-      </article>
-
-      <!-- Workflow Automation -->
-      <article class="pricing-card">
-        <p class="pricing-label">Automation</p>
-        <h2 class="pricing-name">Workflow Automation</h2>
-        <p class="pricing-price"><span>Starting at $3,500</span></p>
-        <p class="pricing-description">
-          Engineered automation that removes friction, reduces manual work, and creates operational momentum.
-        </p>
-        <ul class="pricing-list">
-          <li>Multi‑step workflows</li>
-          <li>Approvals + routing</li>
-          <li>System orchestration</li>
-          <li>Notifications + triggers</li>
-          <li>Governance + error handling</li>
-        </ul>
-      </article>
-
-      <!-- Internal Tools -->
-      <article class="pricing-card">
-        <p class="pricing-label">Internal Tools</p>
-        <h2 class="pricing-name">Power Apps / Internal Tools</h2>
-        <p class="pricing-price"><span>Starting at $5,000</span></p>
-        <p class="pricing-description">
-          Custom internal tools designed with intention, rhythm, and usability at the core.
-        </p>
-        <ul class="pricing-list">
-          <li>Dashboards and admin tools</li>
-          <li>Data entry + operational apps</li>
-          <li>Multi‑screen experiences</li>
-          <li>Dataverse‑backed systems</li>
-          <li>UX that feels native to your team</li>
-        </ul>
-      </article>
-
-      <!-- Applied AI -->
-      <article class="pricing-card">
-        <p class="pricing-label">Applied AI</p>
-        <h2 class="pricing-name">Applied AI Solutions</h2>
-        <p class="pricing-price"><span>Starting at $6,500</span></p>
-        <p class="pricing-description">
-          AI that enhances your systems — not replaces them.
-        </p>
-        <ul class="pricing-list">
-          <li>AI copilots embedded in internal tools</li>
-          <li>AI‑assisted workflows</li>
-          <li>Document intelligence</li>
-          <li>Azure OpenAI integrations</li>
-          <li>AI‑powered recommendations</li>
-        </ul>
-      </article>
-
-      <!-- Copilot Studio Bots -->
-      <article class="pricing-card">
-        <p class="pricing-label">Copilots</p>
-        <h2 class="pricing-name">Copilot Studio Bots</h2>
-        <p class="pricing-price"><span>Starting at $3,000</span></p>
-        <p class="pricing-description">
-          Conversational copilots that guide, assist, and streamline internal processes.
-        </p>
-        <ul class="pricing-list">
-          <li>Guided workflows</li>
-          <li>Knowledge grounding</li>
-          <li>Document Q&amp;A</li>
-          <li>Internal support bots</li>
-          <li>Conversational routing</li>
-        </ul>
-      </article>
-
-      <!-- Integration & API Work -->
-      <article class="pricing-card">
-        <p class="pricing-label">Integration</p>
-        <h2 class="pricing-name">Integration &amp; API Work</h2>
-        <p class="pricing-price"><span>Starting at $6,000</span></p>
-        <p class="pricing-description">
-          When your systems need to talk to each other — securely, reliably, and intelligently.
-        </p>
-        <ul class="pricing-list">
-          <li>External system integration</li>
-          <li>Authentication + security</li>
-          <li>Data pipelines</li>
-          <li>Webhooks + custom logic</li>
-          <li>Multi‑system orchestration</li>
-        </ul>
-      </article>
-
-    </section>
-
-    <!-- FULL-BLEED DIVIDER -->
-    <div class="section-divider">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon class="divider-light" points="0,100 100,0 100,100" />
-      </svg>
-    </div>
-
-    <!-- RETAINERS -->
-<section class="section">
-  <div class="section-header">
-    <div class="section-eyebrow">Advisory Retainers</div>
-    <h2>Ongoing Partnership for Continuous Improvement</h2>
-  </div>
-
-  <p>
-    Retainers are ideal when you're ready to treat automation and AI as a living system —
-    something that evolves with your team, not a one‑time launch.
-  </p>
-
-  <div class="retainer-grid">
-    <article class="retainer-card">
-      <h3>Starter</h3>
-      <p class="retainer-price">$1,500/mo</p>
-      <p class="retainer-note">For teams beginning their automation journey.</p>
+      <ul class="pricing-list">
+        <li>Current‑state process mapping</li>
+        <li>Future‑state design</li>
+        <li>Bottleneck + opportunity analysis</li>
+        <li>Automation roadmap</li>
+        <li>Prioritized next steps</li>
+        <li>System architecture recommendations</li>
+      </ul>
     </article>
 
-    <article class="retainer-card">
-      <h3>Growth</h3>
-      <p class="retainer-price">$3,000/mo</p>
-      <p class="retainer-note">For teams scaling systems across departments.</p>
+    <!-- Workflow Automation -->
+    <article class="pricing-card">
+      <p class="pricing-label">Automation</p>
+      <h2 class="pricing-name">Workflow Automation</h2>
+      <p class="pricing-price"><span>Starting at $3,500</span></p>
+      <p class="pricing-description">
+        Engineered automation that removes friction, reduces manual work, and creates operational momentum.
+      </p>
+      <ul class="pricing-list">
+        <li>Multi‑step workflows</li>
+        <li>Approvals + routing</li>
+        <li>System orchestration</li>
+        <li>Notifications + triggers</li>
+        <li>Governance + error handling</li>
+      </ul>
     </article>
 
-    <article class="retainer-card">
-      <h3>Enterprise</h3>
-      <p class="retainer-price">$5,000/mo</p>
-      <p class="retainer-note">For teams who need governance, oversight, and strategic alignment.</p>
+    <!-- Internal Tools -->
+    <article class="pricing-card">
+      <p class="pricing-label">Internal Tools</p>
+      <h2 class="pricing-name">Power Apps / Internal Tools</h2>
+      <p class="pricing-price"><span>Starting at $5,000</span></p>
+      <p class="pricing-description">
+        Custom internal tools designed with intention, rhythm, and usability at the core.
+      </p>
+      <ul class="pricing-list">
+        <li>Dashboards and admin tools</li>
+        <li>Data entry + operational apps</li>
+        <li>Multi‑screen experiences</li>
+        <li>Dataverse‑backed systems</li>
+        <li>UX that feels native to your team</li>
+      </ul>
     </article>
+
+    <!-- Applied AI -->
+    <article class="pricing-card">
+      <p class="pricing-label">Applied AI</p>
+      <h2 class="pricing-name">Applied AI Solutions</h2>
+      <p class="pricing-price"><span>Starting at $6,500</span></p>
+      <p class="pricing-description">
+        AI that enhances your systems — not replaces them.
+      </p>
+      <ul class="pricing-list">
+        <li>AI copilots embedded in internal tools</li>
+        <li>AI‑assisted workflows</li>
+        <li>Document intelligence</li>
+        <li>Azure OpenAI integrations</li>
+        <li>AI‑powered recommendations</li>
+      </ul>
+    </article>
+
+    <!-- Copilot Studio Bots -->
+    <article class="pricing-card">
+      <p class="pricing-label">Copilots</p>
+      <h2 class="pricing-name">Copilot Studio Bots</h2>
+      <p class="pricing-price"><span>Starting at $3,000</span></p>
+      <p class="pricing-description">
+        Conversational copilots that guide, assist, and streamline internal processes.
+      </p>
+      <ul class="pricing-list">
+        <li>Guided workflows</li>
+        <li>Knowledge grounding</li>
+        <li>Document Q&amp;A</li>
+        <li>Internal support bots</li>
+        <li>Conversational routing</li>
+      </ul>
+    </article>
+
+    <!-- Integration & API Work -->
+    <article class="pricing-card">
+      <p class="pricing-label">Integration</p>
+      <h2 class="pricing-name">Integration &amp; API Work</h2>
+      <p class="pricing-price"><span>Starting at $6,000</span></p>
+      <p class="pricing-description">
+        When your systems need to talk to each other — securely, reliably, and intelligently.
+      </p>
+      <ul class="pricing-list">
+        <li>External system integration</li>
+        <li>Authentication + security</li>
+        <li>Data pipelines</li>
+        <li>Webhooks + custom logic</li>
+        <li>Multi‑system orchestration</li>
+      </ul>
+    </article>
+
+  </section>
+
+  <!-- DIVIDER — dramatic downward -->
+  <div class="section-divider divider-down divider-strong divider-tall">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,100 0,100" />
+    </svg>
   </div>
 
-  <div class="retainer-includes">
-    <p class="eyebrow">All retainers include</p>
-    <ul>
-      <li>Priority access</li>
-      <li>Monthly improvements</li>
-      <li>Roadmap execution</li>
-      <li>Governance + oversight</li>
-      <li>Dedicated support</li>
-    </ul>
-  </div>
-</section>
-
-
-    <!-- FULL-BLEED DIVIDER -->
-    <div class="section-divider">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon class="divider-light" points="0,100 100,0 100,100" />
-      </svg>
+  <!-- RETAINERS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Advisory Retainers</div>
+      <h2>Ongoing Partnership for Continuous Improvement</h2>
     </div>
 
-    <!-- HOW PRICING WORKS -->
-<section class="section">
-  <div class="section-header">
-    <div class="section-eyebrow">How pricing works</div>
-    <h2>Clarity Before We Build Anything</h2>
-  </div>
+    <p>
+      Retainers are ideal when you're ready to treat automation and AI as a living system —
+      something that evolves with your team, not a one‑time launch.
+    </p>
 
-  <p>
-    Every engagement begins with clarity. Before we build anything, we map your processes,
-    identify friction, and define the outcomes that matter. Pricing is structured around
-    the complexity of your systems, the depth of integration, and the level of transformation
-    required — no surprises, just intentional, engineered work.
-  </p>
-</section>
+    <div class="retainer-grid">
+      <article class="retainer-card">
+        <h3>Starter</h3>
+        <p class="retainer-price">$1,500/mo</p>
+        <p class="retainer-note">For teams beginning their automation journey.</p>
+      </article>
 
+      <article class="retainer-card">
+        <h3>Growth</h3>
+        <p class="retainer-price">$3,000/mo</p>
+        <p class="retainer-note">For teams scaling systems across departments.</p>
+      </article>
 
-    <!-- FULL-BLEED DIVIDER -->
-    <div class="section-divider">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon class="divider-light" points="0,100 100,0 100,100" />
-      </svg>
+      <article class="retainer-card">
+        <h3>Enterprise</h3>
+        <p class="retainer-price">$5,000/mo</p>
+        <p class="retainer-note">For teams who need governance, oversight, and strategic alignment.</p>
+      </article>
     </div>
 
-    <!-- CTA -->
-<!-- DIVIDER (SUBTLE REVERSE OR REGULAR, YOUR CHOICE) -->
-<div class="section-divider">
-  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-    <polygon class="divider-light" points="0,100 100,0 100,100" />
-  </svg>
-</div>
+    <div class="retainer-includes">
+      <p class="eyebrow">All retainers include</p>
+      <ul>
+        <li>Priority access</li>
+        <li>Monthly improvements</li>
+        <li>Roadmap execution</li>
+        <li>Governance + oversight</li>
+        <li>Dedicated support</li>
+      </ul>
+    </div>
+  </section>
 
-<section class="section text-center">
-  <div class="section-header">
-    <div class="section-eyebrow">Next step</div>
-    <h2>Ready to move forward?</h2>
+  <!-- DIVIDER — subtle upward -->
+  <div class="section-divider divider-up divider-subtle divider-short">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100" />
+    </svg>
   </div>
 
-  <p style="max-width: 640px; margin: 0 auto;">
-    Whether you're mapping your first process or scaling automation across your organization,
-    FlowNova helps you build systems that create clarity, momentum, and long‑term confidence.
-  </p>
+  <!-- HOW PRICING WORKS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">How pricing works</div>
+      <h2>Clarity Before We Build Anything</h2>
+    </div>
 
-  <div style="margin-top: 36px;">
-    <a href="/contact" class="cta-button">Start the Conversation</a>
+    <p>
+      Every engagement begins with clarity. Before we build anything, we map your processes,
+      identify friction, and define the outcomes that matter. Pricing is structured around
+      the complexity of your systems, the depth of integration, and the level of transformation
+      required — no surprises, just intentional, engineered work.
+    </p>
+  </section>
+
+  <!-- DIVIDER — dramatic downward -->
+  <div class="section-divider divider-down divider-strong divider-medium">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,100 0,100" />
+    </svg>
   </div>
-</section>
 
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="section-header">
+      <div class="section-eyebrow">Next step</div>
+      <h2>Ready to move forward?</h2>
+    </div>
 
-  </main>
+    <p style="max-width: 640px; margin: 0 auto;">
+      Whether you're mapping your first process or scaling automation across your organization,
+      FlowNova helps you build systems that create clarity, momentum, and long‑term confidence.
+    </p>
+
+    <div style="margin-top: 36px;">
+      <a href="/contact" class="cta-button">Start the Conversation</a>
+    </div>
+  </section>
+
+</main>
+
 
   <!-- FOOTER -->
   <footer style="padding-top: 60px; padding-bottom: 50px; text-align: center;">
