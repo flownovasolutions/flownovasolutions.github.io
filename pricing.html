@@ -106,77 +106,59 @@
     /* RETAINERS                                     */
     /* --------------------------------------------- */
 
-    .pricing-section-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 40px;
-      margin-bottom: 10px;
-    }
+/* Retainer Section Improvements */
+.retainer-grid {
+  margin-top: 32px;
+  gap: 28px;
+}
 
-    .pricing-section-body {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      max-width: 720px;
-      line-height: 1.6;
-    }
+.retainer-card {
+  padding: 24px 24px 26px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
-    .retainer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      margin-top: 18px;
-      max-width: 880px;
-    }
+.retainer-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
 
-    .retainer-card {
-      border-radius: 14px;
-      padding: 18px 18px 20px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
+.retainer-price {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
 
-    .retainer-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
+.retainer-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 
-    .retainer-price {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
+.retainer-includes {
+  margin-top: 40px;
+}
 
-    .retainer-note {
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
+.retainer-includes ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  line-height: 1.6;
+}
 
-    .retainer-includes {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
+.retainer-includes li {
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 4px;
+}
 
-    .retainer-includes ul {
-      list-style: none;
-      padding: 0;
-      margin: 6px 0 0;
-    }
-
-    .retainer-includes li {
-      margin-bottom: 4px;
-      position: relative;
-      padding-left: 16px;
-    }
-
-    .retainer-includes li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0.7;
-    }
+.retainer-includes li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  opacity: 0.7;
+}
 
     @media (max-width: 800px) {
       .retainer-grid {
@@ -384,45 +366,49 @@
     </div>
 
     <!-- RETAINERS -->
-    <section class="page-shell">
-      <h2 class="pricing-section-title">Advisory Retainers</h2>
-      <p class="pricing-section-body">
-        Ongoing partnership for teams who want continuous improvement, not one‑off projects. Retainers are ideal when
-        you’re ready to treat automation and AI as a living system — something that evolves with your team, not a
-        one‑time launch.
-      </p>
+<section class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Advisory Retainers</div>
+    <h2>Ongoing Partnership for Continuous Improvement</h2>
+  </div>
 
-      <div class="retainer-grid">
-        <article class="retainer-card">
-          <p class="retainer-name">Starter</p>
-          <p class="retainer-price">$1,500/mo</p>
-          <p class="retainer-note">For teams beginning their automation journey.</p>
-        </article>
+  <p>
+    Retainers are ideal when you're ready to treat automation and AI as a living system —
+    something that evolves with your team, not a one‑time launch.
+  </p>
 
-        <article class="retainer-card">
-          <p class="retainer-name">Growth</p>
-          <p class="retainer-price">$3,000/mo</p>
-          <p class="retainer-note">For teams scaling systems across departments.</p>
-        </article>
+  <div class="retainer-grid">
+    <article class="retainer-card">
+      <h3>Starter</h3>
+      <p class="retainer-price">$1,500/mo</p>
+      <p class="retainer-note">For teams beginning their automation journey.</p>
+    </article>
 
-        <article class="retainer-card">
-          <p class="retainer-name">Enterprise</p>
-          <p class="retainer-price">$5,000/mo</p>
-          <p class="retainer-note">For teams who need governance, oversight, and strategic alignment.</p>
-        </article>
-      </div>
+    <article class="retainer-card">
+      <h3>Growth</h3>
+      <p class="retainer-price">$3,000/mo</p>
+      <p class="retainer-note">For teams scaling systems across departments.</p>
+    </article>
 
-      <div class="retainer-includes">
-        <p>All retainers include:</p>
-        <ul>
-          <li>Priority access</li>
-          <li>Monthly improvements</li>
-          <li>Roadmap execution</li>
-          <li>Governance + oversight</li>
-          <li>Dedicated support</li>
-        </ul>
-      </div>
-    </section>
+    <article class="retainer-card">
+      <h3>Enterprise</h3>
+      <p class="retainer-price">$5,000/mo</p>
+      <p class="retainer-note">For teams who need governance, oversight, and strategic alignment.</p>
+    </article>
+  </div>
+
+  <div class="retainer-includes">
+    <p class="eyebrow">All retainers include</p>
+    <ul>
+      <li>Priority access</li>
+      <li>Monthly improvements</li>
+      <li>Roadmap execution</li>
+      <li>Governance + oversight</li>
+      <li>Dedicated support</li>
+    </ul>
+  </div>
+</section>
+
 
     <!-- FULL-BLEED DIVIDER -->
     <div class="section-divider">
@@ -432,14 +418,20 @@
     </div>
 
     <!-- HOW PRICING WORKS -->
-    <section class="page-shell">
-      <h2 class="pricing-section-title">How pricing works</h2>
-      <p class="pricing-section-body">
-        Every engagement begins with clarity. Before we build anything, we map your processes, identify friction,
-        and define the outcomes that matter. Pricing is structured around the complexity of your systems, the depth
-        of integration, and the level of transformation required. No surprises — just intentional, engineered work.
-      </p>
-    </section>
+<section class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">How pricing works</div>
+    <h2>Clarity Before We Build Anything</h2>
+  </div>
+
+  <p>
+    Every engagement begins with clarity. Before we build anything, we map your processes,
+    identify friction, and define the outcomes that matter. Pricing is structured around
+    the complexity of your systems, the depth of integration, and the level of transformation
+    required — no surprises, just intentional, engineered work.
+  </p>
+</section>
+
 
     <!-- FULL-BLEED DIVIDER -->
     <div class="section-divider">
