@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }}</title>
+
+  <link rel="stylesheet" href="/css/global.css">
+</head>
+
+<body>
+
+  {# GLOBAL SVG SPRITE #}
+  {% include "global/svg-sprite.html" %}
+
+  {# GLOBAL HEADER #}
+  {% include "global/header.html" %}
+
+  {# PAGE CONTENT #}
+  {{ content | safe }}
+
+  {# GLOBAL FOOTER #}
+  {% include "global/footer.html" %}
+
+</body>
+</html>
+

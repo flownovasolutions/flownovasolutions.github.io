@@ -1,246 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Services • FlowNova Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+---
+title: Services • FlowNova Solutions
+layout: layout.njk
+---
+<main>
 
-  <!-- GLOBAL CSS -->
-  <link rel="stylesheet" href="/css/global.css">
-</head>
+  <!-- HERO -->
+  <section class="section text-center" style="padding-top: 140px; padding-bottom: 100px;">
+    <div class="section-eyebrow">Our Services</div>
+    <h2>Systems That Move Your Team Forward</h2>
+    <p style="max-width: 720px; margin: 0 auto;">
+      FlowNova delivers modern automation, AI, and experience design solutions that help teams work smarter,
+      move faster, and scale with confidence.
+    </p>
+  </section>
 
-<body>
-
-  <!-- MOBILE NAV CHECKBOX -->
-  <input type="checkbox" id="mobile-menu-checkbox">
-  <div class="drawer-backdrop"></div>
-
-  <!-- HEADER -->
-<header class="header">
-  <div class="header-inner">
-
-    <!-- Logo -->
-    <a href="/" class="logo">
-      <img class="logo-desktop" src="images/flownova-horizontal-megan.png" alt="FlowNova Solutions Logo">
-      <img class="logo-mobile" src="images/flownova-icon (2).png" alt="FlowNova Icon">
-    </a>
-
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
-      <ul class="nav-list">
-        <li><a href="/">Home</a></li>
-
-        <!-- SERVICES DROPDOWN -->
-        <li class="dropdown">
-          <a href="/services">Services</a>
-          <ul class="dropdown-menu">
-            <li><a href="/services#automation">Process Improvement & Automation</a></li>
-            <li><a href="/services#apps">App & Experience Design</a></li>
-            <li><a href="/ai">AI & Copilot</a></li>
-          </ul>
-        </li>
-
-        <li><a href="/approach">Approach</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-
-        <!-- ABOUT DROPDOWN -->
-        <li class="dropdown">
-          <a href="/about">About</a>
-          <ul class="dropdown-menu">
-            <li><a href="/about">About FlowNova</a></li>
-            <li><a href="/about#founder">Founder</a></li>
-            <li><a href="/about#philosophy">Philosophy</a></li>
-            <li><a href="/brand">Brand</a></li>
-          </ul>
-        </li>
-
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Mobile Hamburger -->
-    <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
+  <!-- DIVIDER -->
+  <div class="section-divider divider-gradient-lite divider-down divider-strong divider-tall divider-glow">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,100 0,100"></polygon>
+    </svg>
   </div>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu">
-    <a href="/">Home</a>
-
-    <!-- SERVICES GROUP -->
-    <div class="mobile-menu-group">
-      <span class="mobile-menu-label">Services</span>
-      <a href="/services#automation">Process Improvement & Automation</a>
-      <a href="/services#apps">App & Experience Design</a>
-      <a href="/ai">AI & Copilot</a>
+  <!-- OVERVIEW -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">What we do</div>
+      <h2>Modern Systems, Built With Intention</h2>
     </div>
+    <p>
+      FlowNova blends automation, AI, and experience design into a cohesive systems layer — engineered to reduce
+      friction, increase clarity, and help your team operate at its best. Every service is crafted with precision
+      and designed to scale.
+    </p>
+  </section>
 
-    <a href="/approach">Approach</a>
-    <a href="/pricing">Pricing</a>
-
-    <!-- ABOUT GROUP -->
-    <div class="mobile-menu-group">
-      <span class="mobile-menu-label">About</span>
-      <a href="/about">About FlowNova</a>
-      <a href="/about#founder">Founder</a>
-      <a href="/about#philosophy">Philosophy</a>
-      <a href="/brand">Brand</a>
-    </div>
-
-    <a href="/contact">Contact</a>
+  <!-- DIVIDER -->
+  <div class="section-divider divider-gradient-lite divider-up divider-subtle divider-medium">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100"></polygon>
+    </svg>
   </div>
-</header>
 
-
-
-  <!-- MAIN CONTENT -->
-  <main>
-
-    <!-- HERO (shorter, subtle glow) -->
-    <section class="section text-center" style="padding-top: 140px; padding-bottom: 100px;">
-      <div class="section-eyebrow">Our Services</div>
-      <h2>Systems That Move Your Team Forward</h2>
-      <p style="max-width: 720px; margin: 0 auto;">
-        FlowNova delivers modern automation, AI, and experience design solutions that help teams work smarter,
-        move faster, and scale with confidence.
-      </p>
-    </section>
-
-    <!-- DIVIDER — cinematic downward -->
-    <div class="section-divider divider-down divider-strong divider-tall divider-glow">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+  <!-- SERVICE GRID -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Core offerings</div>
+      <h2>How We Transform Your Operations</h2>
     </div>
 
-    <!-- SERVICE OVERVIEW -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-eyebrow">What we do</div>
-        <h2>Modern Systems, Built With Intention</h2>
-      </div>
+    <div class="services-grid">
 
-      <p>
-        FlowNova blends automation, AI, and experience design into a cohesive systems layer — engineered to reduce
-        friction, increase clarity, and help your team operate at its best. Every service is crafted with precision
-        and designed to scale.
-      </p>
-    </section>
+      <!-- SERVICE 1 -->
+      <article class="card" id="automation">
+        <h3>Process Improvement &amp; Future-State Design</h3>
+        <p>
+          We map your workflows, uncover friction, and architect the systems your team should be using — not the
+          ones you’ve inherited.
+        </p>
+        <ul>
+          <li>Workflow mapping & analysis</li>
+          <li>Future-state system design</li>
+          <li>Operational clarity frameworks</li>
+          <li>Process optimization roadmaps</li>
+        </ul>
+      </article>
 
-    <!-- DIVIDER — subtle upward -->
-    <div class="section-divider divider-up divider-subtle divider-medium">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+      <!-- SERVICE 2 -->
+      <article class="card">
+        <h3>Workflow Automation</h3>
+        <p>
+          Reliable, scalable automations that eliminate manual work, increase visibility, and create operational
+          momentum across your ecosystem.
+        </p>
+        <ul>
+          <li>Automation architecture</li>
+          <li>Power Automate orchestration</li>
+          <li>Cross-system integrations</li>
+          <li>Governance & reliability patterns</li>
+        </ul>
+      </article>
+
+      <!-- SERVICE 3 -->
+      <article class="card" id="apps">
+        <h3>App &amp; Experience Design</h3>
+        <p>
+          Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic —
+          built to feel effortless for your team.
+        </p>
+        <ul>
+          <li>Canvas & model-driven apps</li>
+          <li>UX/UI for internal tools</li>
+          <li>Dataverse schema design</li>
+          <li>Role-based experiences</li>
+        </ul>
+      </article>
+
+      <!-- SERVICE 4 -->
+      <article class="card">
+        <h3>Applied AI Solutions</h3>
+        <p>
+          Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real
+          workflows.
+        </p>
+        <ul>
+          <li>AI-assisted workflows</li>
+          <li>Content generation systems</li>
+          <li>Decision-support automations</li>
+          <li>Responsible AI implementation</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider divider-gradient-lite divider-down divider-strong divider-tall">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,100 0,100"></polygon>
+    </svg>
+  </div>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="section-header">
+      <div class="section-eyebrow">Next step</div>
+      <h2>Let’s build systems that move your team forward.</h2>
     </div>
 
-    <!-- SERVICE GRID (2×2 using global cards) -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-eyebrow">Core offerings</div>
-        <h2>How We Transform Your Operations</h2>
-      </div>
+    <p style="max-width: 640px; margin: 0 auto;">
+      Whether you're optimizing workflows, designing modern internal tools, or exploring applied AI — FlowNova helps
+      you move with clarity, intention, and momentum.
+    </p>
 
-      <div class="services-grid">
-
-        <!-- SERVICE 1 -->
-        <article class="card">
-          <h3 style="margin-bottom: 10px;">Process Improvement &amp; Future-State Design</h3>
-          <p>
-            We map your workflows, uncover friction, and architect the systems your team *should* be using — not the
-            ones you’ve inherited. This is where clarity begins.
-          </p>
-          <ul style="margin-top: 20px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Workflow mapping & analysis</li>
-            <li>• Future-state system design</li>
-            <li>• Operational clarity frameworks</li>
-            <li>• Process optimization roadmaps</li>
-          </ul>
-        </article>
-
-        <!-- SERVICE 2 -->
-        <article class="card">
-          <h3 style="margin-bottom: 10px;">Workflow Automation</h3>
-          <p>
-            Reliable, scalable automations that eliminate manual work, increase visibility, and create operational
-            momentum across your entire ecosystem.
-          </p>
-          <ul style="margin-top: 20px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Automation architecture</li>
-            <li>• Power Automate orchestration</li>
-            <li>• Cross-system integrations</li>
-            <li>• Governance & reliability patterns</li>
-          </ul>
-        </article>
-
-        <!-- SERVICE 3 -->
-        <article class="card">
-          <h3 style="margin-bottom: 10px;">App &amp; Experience Design</h3>
-          <p>
-            Modern Power Apps and internal tools with thoughtful UX, clean interfaces, and data-driven logic — built
-            to feel effortless for your team.
-          </p>
-          <ul style="margin-top: 20px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Canvas & model-driven apps</li>
-            <li>• UX/UI for internal tools</li>
-            <li>• Dataverse schema design</li>
-            <li>• Role-based experiences</li>
-          </ul>
-        </article>
-
-        <!-- SERVICE 4 -->
-        <article class="card">
-          <h3 style="margin-bottom: 10px;">Applied AI Solutions</h3>
-          <p>
-            Practical, context-aware AI that enhances decisions, content, and operations — grounded in your real
-            workflows, not generic prompts.
-          </p>
-          <ul style="margin-top: 20px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• AI-assisted workflows</li>
-            <li>• Content generation systems</li>
-            <li>• Decision-support automations</li>
-            <li>• Responsible AI implementation</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- DIVIDER — dramatic downward -->
-    <div class="section-divider divider-down divider-strong divider-tall">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+    <div style="margin-top: 36px;">
+      <a href="/contact" class="cta-button">Start the Conversation</a>
     </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="section text-center">
-      <div class="section-header">
-        <div class="section-eyebrow">Next step</div>
-        <h2>Let’s build systems that move your team forward.</h2>
-      </div>
-
-      <p style="max-width: 640px; margin: 0 auto;">
-        Whether you're optimizing workflows, designing modern internal tools, or exploring applied AI — FlowNova helps
-        you move with clarity, intention, and momentum.
-      </p>
-
-      <div style="margin-top: 36px;">
-        <a href="/contact" class="cta-button">Start the Conversation</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer style="padding-top: 60px; padding-bottom: 50px; text-align: center;">
-    <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
-    <p style="opacity: 0.7; font-size: 0.9rem;">© 2026 FlowNova Solutions. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+</main>
