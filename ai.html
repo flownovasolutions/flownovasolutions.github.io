@@ -7,6 +7,40 @@
 
   <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="/css/global.css">
+
+  <style>
+    /* Updated grid for wider, equal-height cards */
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 40px auto 0;
+    }
+
+    .ai-grid .card {
+      display: flex;
+      flex-direction: column;
+      padding: 26px 26px; /* slightly reduced */
+      height: 100%;
+    }
+
+    .ai-grid .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .ai-grid .card p {
+      margin-bottom: 16px;
+    }
+
+    .ai-grid .card ul {
+      margin-top: auto; /* keeps lists at bottom if needed */
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
@@ -118,23 +152,20 @@
       </div>
 
       <p>
-        We design and build copilots in Microsoft Copilot Studio that feel like part of your existing tools —
-        not another chatbot floating off to the side. Each copilot is shaped around real tasks, real questions,
-        and real workflows inside your organization.
+        We build copilots that feel like part of your existing tools — not another chatbot floating off to the side.
+        Each copilot is shaped around real tasks, real questions, and real workflows inside your organization.
       </p>
 
-      <div class="services-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 0; gap: 40px;">
+      <div class="ai-grid">
 
         <article class="card">
           <h3>Task & Workflow Copilots</h3>
           <p>
-            Copilots that help your team complete specific tasks faster — from routing requests to updating records
-            to kicking off automations.
+            Copilots that help your team complete tasks faster and trigger the workflows your operations rely on.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
+          <ul>
             <li>• Task-focused copilots</li>
             <li>• Workflow-triggering copilots</li>
-            <li>• Copilots that update systems for you</li>
             <li>• Guided flows for complex processes</li>
           </ul>
         </article>
@@ -142,14 +173,12 @@
         <article class="card">
           <h3>Knowledge & Support Copilots</h3>
           <p>
-            Copilots that answer questions using your content — policies, procedures, documentation — so your team
-            can get answers without digging.
+            Copilots that answer questions using your content — policies, procedures, and documentation.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
+          <ul>
             <li>• Internal knowledge copilots</li>
             <li>• Policy & process Q&amp;A</li>
             <li>• Context-aware responses</li>
-            <li>• Escalation into real workflows</li>
           </ul>
         </article>
 
@@ -171,36 +200,33 @@
       </div>
 
       <p>
-        We use AI to enhance the workflows you already have — not replace them. From routing and classification
-        to summarization and decision support, AI becomes another tool in your operational toolkit, not the whole story.
+        We use AI to enhance the workflows you already have — not replace them. AI becomes another tool in your
+        operational toolkit, improving clarity, routing, and decision-making.
       </p>
 
-      <div class="services-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 0; gap: 40px;">
+      <div class="ai-grid">
 
         <article class="card">
           <h3>Routing, Classification & Summarization</h3>
           <p>
-            Let AI handle the noisy, repetitive work — sorting, tagging, and summarizing information so your team
-            can focus on what actually requires judgment.
+            AI handles the noisy, repetitive work — sorting, tagging, and summarizing information.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
+          <ul>
             <li>• AI-based request routing</li>
-            <li>• Content classification & tagging</li>
-            <li>• Email & ticket summarization</li>
-            <li>• Priority and next-step suggestions</li>
+            <li>• Content classification</li>
+            <li>• Ticket summarization</li>
           </ul>
         </article>
 
         <article class="card">
           <h3>Decision-Support & Content Generation</h3>
           <p>
-            AI that helps your team make better decisions and move faster — without taking humans out of the loop.
+            AI that helps your team move faster — without removing human judgment from the loop.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
+          <ul>
             <li>• Draft responses & summaries</li>
             <li>• AI-assisted approvals</li>
-            <li>• Suggested actions in workflows</li>
-            <li>• Human-in-the-loop review patterns</li>
+            <li>• Suggested actions</li>
           </ul>
         </article>
 
@@ -222,38 +248,33 @@
       </div>
 
       <p>
-        Instead of sending people to yet another interface, we embed AI directly into the apps and experiences your
-        team lives in every day — Power Apps, model-driven apps, and internal tools. AI becomes part of the flow,
-        not a separate destination.
+        Instead of sending people to another interface, we embed AI directly into the apps and experiences your
+        team uses every day — Power Apps, model-driven apps, and internal tools.
       </p>
 
-      <div class="services-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 0; gap: 40px;">
+      <div class="ai-grid">
 
         <article class="card">
           <h3>Copilots Inside Power Apps</h3>
           <p>
-            Context-aware copilots that sit alongside your forms and data — helping users understand, complete, and
-            act on information without leaving the app.
+            Context-aware copilots that sit alongside your forms and data — helping users complete tasks faster.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
+          <ul>
             <li>• Copilot panels in apps</li>
             <li>• Natural language form assistance</li>
-            <li>• Record summaries & explanations</li>
-            <li>• Suggested next steps in context</li>
+            <li>• Suggested next steps</li>
           </ul>
         </article>
 
         <article class="card">
           <h3>AI in Internal Tools & Portals</h3>
           <p>
-            AI woven into internal tools, portals, and dashboards — helping teams navigate complexity without
-            needing to become system experts.
+            AI woven into internal tools and dashboards — helping teams navigate complexity with clarity.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Guided experiences for complex tasks</li>
-            <li>• AI explanations of data & metrics</li>
-            <li>• Contextual help instead of static docs</li>
-            <li>• Embedded copilots in key workflows</li>
+          <ul>
+            <li>• Guided experiences</li>
+            <li>• AI explanations of data</li>
+            <li>• Embedded copilots</li>
           </ul>
         </article>
 
@@ -275,35 +296,33 @@
       </div>
 
       <p>
-        We design AI solutions that your security, compliance, and leadership teams can actually trust. That means
-        clear data boundaries, environment strategy, and patterns that keep humans in control of the outcomes.
+        We design AI solutions your security, compliance, and leadership teams can trust — with clear data
+        boundaries and responsible patterns.
       </p>
 
-      <div class="services-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 0; gap: 40px;">
+      <div class="ai-grid">
 
         <article class="card">
           <h3>Responsible AI Patterns</h3>
           <p>
             Guardrails that keep AI aligned with your policies, your data, and your risk tolerance.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
+          <ul>
             <li>• Data boundary design</li>
-            <li>• Environment & tenant strategy</li>
-            <li>• Role-based access & security</li>
-            <li>• Human-in-the-loop review points</li>
+            <li>• Environment strategy</li>
+            <li>• Role-based access</li>
           </ul>
         </article>
 
         <article class="card">
           <h3>Monitoring & Operational Readiness</h3>
           <p>
-            AI that doesn’t disappear after launch — with patterns for monitoring, iteration, and operational ownership.
+            AI that doesn’t disappear after launch — with patterns for monitoring and iteration.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Usage and behavior monitoring</li>
-            <li>• Feedback loops for improvement</li>
-            <li>• Ownership models for teams</li>
-            <li>• Change and rollout planning</li>
+          <ul>
+            <li>• Usage monitoring</li>
+            <li>• Feedback loops</li>
+            <li>• Ownership models</li>
           </ul>
         </article>
 
@@ -325,35 +344,33 @@
       </div>
 
       <p>
-        Not every problem needs AI — and not every AI idea is worth building. We help you identify the places where
-        AI will genuinely improve outcomes, and the places where automation, UX, or process changes are the better move.
+        Not every problem needs AI — and not every AI idea is worth building. We help you identify where AI will
+        genuinely improve outcomes.
       </p>
 
-      <div class="services-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 40px auto 0; gap: 40px;">
+      <div class="ai-grid">
 
         <article class="card">
           <h3>AI Opportunity Mapping</h3>
           <p>
             A clear view of where AI can add value across your operations — and where it shouldn’t.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Use case discovery workshops</li>
-            <li>• Feasibility & impact assessment</li>
-            <li>• Prioritized AI roadmap</li>
-            <li>• Alignment with existing systems</li>
+          <ul>
+            <li>• Use case discovery</li>
+            <li>• Feasibility assessment</li>
+            <li>• Prioritized roadmap</li>
           </ul>
         </article>
 
         <article class="card">
           <h3>Pragmatic AI Strategy</h3>
           <p>
-            A grounded, Microsoft-aligned AI approach that your leadership, IT, and operations teams can all stand behind.
+            A grounded, Microsoft-aligned AI approach your leadership, IT, and operations teams can stand behind.
           </p>
-          <ul style="margin-top: 18px; line-height: 1.7; opacity: 0.9; list-style: none; padding-left: 0;">
-            <li>• Power Platform & Copilot alignment</li>
-            <li>• Phased implementation plans</li>
-            <li>• Risk-aware decision making</li>
-            <li>• Clear success measures</li>
+          <ul>
+            <li>• Platform alignment</li>
+            <li>• Phased implementation</li>
+            <li>• Success measures</li>
           </ul>
         </article>
 
