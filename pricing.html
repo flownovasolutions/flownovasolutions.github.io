@@ -20,16 +20,20 @@
     }
 
     /* --------------------------------------------- */
-    /* HERO — LEFT-ANCHORED, TIGHT, EDITORIAL        */
+    /* HERO — FULL-BLEED CONTAINER, LEFT-ANCHORED    */
     /* --------------------------------------------- */
 
     .pricing-hero {
-      max-width: 600px;
       padding-top: 40px;
-      padding-bottom: 60px;
-      padding-left:-30px;
+      padding-bottom: 24px; /* tighter, aligns with divider */
     }
 
+    .pricing-hero-inner {
+      max-width: 600px;
+      margin-left: 20px; /* aligns with site rhythm */
+    }
+
+    /* Kicker */
     .pricing-hero-kicker {
       font-size: 0.78rem;
       letter-spacing: 0.18em;
@@ -38,6 +42,7 @@
       margin-bottom: 12px;
     }
 
+    /* Title */
     .pricing-hero-title {
       font-size: 2.3rem;
       line-height: 1.18;
@@ -46,33 +51,34 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em; /* matches global heading feel */
       font-weight: 600;
     }
 
+    /* Subtitle + Intro */
     .pricing-hero-subtitle,
     .pricing-hero-intro {
       max-width: 520px;
-      opacity: 0.85;
-      font-size: 0.96rem;
-      line-height: 1.55;
+      font-size: 1rem;      /* matches global body text */
+      line-height: 1.6;     /* matches global rhythm */
+      opacity: 0.9;         /* matches global opacity */
     }
 
     .pricing-hero-subtitle {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .pricing-hero-intro {
-      margin-bottom: 16px; /* tuned to divider */
+      margin-bottom: 16px;
     }
 
+    /* Mobile */
     @media (max-width: 800px) {
-      .pricing-hero {
-        padding-top: 28px;
-        padding-bottom: 48px;
-      }
       .pricing-hero-title {
         font-size: 1.9rem;
+      }
+      .pricing-hero-inner {
+        margin-left: 16px;
       }
     }
 
@@ -309,21 +315,23 @@
   <main>
 
     <!-- HERO -->
-    <section class="pricing-hero page-shell">
-      <p class="pricing-hero-kicker">Pricing</p>
+    <section class="pricing-hero">
+      <div class="pricing-hero-inner">
+        <p class="pricing-hero-kicker">Pricing</p>
 
-      <h1 class="pricing-hero-title">
-        Clarity before commitment.
-      </h1>
+        <h1 class="pricing-hero-title">
+          Clarity before commitment.
+        </h1>
 
-      <p class="pricing-hero-subtitle">
-        Transparent, structured pricing designed for teams who value precision, momentum, and systems that scale.
-      </p>
+        <p class="pricing-hero-subtitle">
+          Transparent, structured pricing designed for teams who value precision, momentum, and systems that scale.
+        </p>
 
-      <p class="pricing-hero-intro">
-        FlowNova isn’t a “mystery quote” studio. We believe in clarity, structured engagement, and pricing that reflects
-        the value of engineered systems — not guesswork. Every engagement begins with understanding, not assumptions.
-      </p>
+        <p class="pricing-hero-intro">
+          FlowNova isn’t a “mystery quote” studio. We believe in clarity, structured engagement, and pricing that reflects
+          the value of engineered systems — not guesswork. Every engagement begins with understanding, not assumptions.
+        </p>
+      </div>
     </section>
 
     <!-- FULL-BLEED DIVIDER — subtle upward angle -->
