@@ -422,30 +422,73 @@ img {
 }
 
 /* ------------------------------------------------------ */
-/* ANGLED DIVIDERS                                         */
+/* FLOWNOVA — GLOBAL DIVIDER SYSTEM                       */
 /* ------------------------------------------------------ */
 
+/* Base full‑bleed behavior */
 .section-divider {
   position: relative;
-  width: 100%;
-  height: 90px;
+  width: 100vw;                         /* full viewport width */
+  margin-left: calc(50% - 50vw);        /* break out of container */
   overflow: hidden;
+  display: block;
 }
 
 .section-divider svg {
-  position: absolute;
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.divider-light {
-  fill: rgba(255,255,255,0.06);
+/* ------------------------------------------------------ */
+/* HEIGHTS — match homepage cinematic rhythm              */
+/* ------------------------------------------------------ */
+
+.divider-short { height: 55px; }
+.divider-medium { height: 70px; }
+.divider-tall { height: 90px; }
+
+/* ------------------------------------------------------ */
+/* INTENSITY — subtle → strong                            */
+/* ------------------------------------------------------ */
+
+.divider-subtle svg polygon { opacity: 0.18; }
+.divider-regular svg polygon { opacity: 0.28; }
+.divider-strong svg polygon { opacity: 0.40; }
+
+/* ------------------------------------------------------ */
+/* DIRECTION — angled diagonals                           */
+/* ------------------------------------------------------ */
+
+/* Downward left → right */
+.divider-down svg polygon {
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
 
-.divider-light-strong {
-  fill: rgba(255,255,255,0.12);
+/* Upward left → right */
+.divider-up svg polygon {
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
 }
+
+/* ------------------------------------------------------ */
+/* GLOW — optional cinematic bloom                        */
+/* ------------------------------------------------------ */
+
+.divider-glow svg polygon {
+  filter:
+    drop-shadow(0 0 18px rgba(0,212,255,0.25))
+    drop-shadow(0 0 28px rgba(255,61,252,0.20));
+}
+
+/* ------------------------------------------------------ */
+/* ONE‑OFF ADJUSTMENTS                                    */
+/* ------------------------------------------------------ */
+
+/* Lift a single divider upward (use sparingly) */
+.divider-lift {
+  margin-top: -50px; /* adjust per section */
+}
+
 
 /* ------------------------------------------------------ */
 /* FLOWNOVA GLOBAL TYPOGRAPHY SYSTEM                      */
