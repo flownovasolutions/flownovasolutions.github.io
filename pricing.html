@@ -239,6 +239,63 @@
       opacity: 0.85;
     }
 
+    /* --------------------------------------------- */
+/* PRICING HERO — TIGHT, EDITORIAL, LEFT-ANCHORED */
+/* --------------------------------------------- */
+
+.pricing-hero {
+  max-width: 600px;        /* tighter, more intentional */
+  padding-top: 40px;
+  padding-bottom: 60px;    /* tighter vertical rhythm */
+}
+
+.pricing-hero-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.pricing-hero-title {
+  font-size: 2.3rem;
+  line-height: 1.18;
+  margin-bottom: 14px;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pricing-hero-subtitle {
+  max-width: 520px;        /* consistent editorial width */
+  opacity: 0.82;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.pricing-hero-intro {
+  max-width: 520px;        /* matches subtitle */
+  opacity: 0.85;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  margin-bottom: 50px;     /* tuned to the divider */
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .pricing-hero {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+  .pricing-hero-title {
+    font-size: 1.9rem;
+  }
+}
+
+
     @media (max-width: 800px) {
       .pricing-grid {
         grid-template-columns: minmax(0, 1fr);
