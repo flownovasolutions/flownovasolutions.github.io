@@ -1,19 +1,20 @@
 module.exports = function(eleventyConfig) {
 
-  // --- Passthrough Copy ---
+  // Passthrough copy
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("global");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
-  // --- Template Formats ---
+  // Copy global folder from _includes
+  eleventyConfig.addPassthroughCopy("_includes/global");
+
+  // Template formats
   eleventyConfig.setTemplateFormats(["njk", "html"]);
 
-  // --- Use Nunjucks for HTML files ---
+  // Use Nunjucks for HTML
   eleventyConfig.setLibrary("html", require("nunjucks"));
 
-  // --- Directory Structure ---
   return {
     dir: {
       input: ".",
@@ -23,3 +24,4 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+
