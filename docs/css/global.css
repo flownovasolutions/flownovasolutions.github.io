@@ -359,6 +359,62 @@ img {
   box-shadow: 0 0 30px rgba(255,0,255,0.4);
 }
 
+/* Learn More CTA — FlowNova Outline Button */
+.learn-more {
+  display: inline-block;
+  margin-top: auto;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: 0.25s ease;
+  width: 160px; /* or 160px if you want more presence */
+  text-align: center;
+}
+
+.learn-more:hover {
+  border-color: rgba(255,255,255,0.45);
+  box-shadow:
+    0 0 12px rgba(0,212,255,0.35),
+    0 0 18px rgba(255,61,252,0.25);
+}
+
+
+/* MOBILE BACK BUTTON */
+.mobile-back {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(5, 8, 20, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  display: none;
+}
+
+.mobile-back span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 900px) {
+  .mobile-back {
+    display: inline-block;
+  }
+}
+
+
 /* ------------------------------------------------------ */
 /* CARDS + GRIDS                                           */
 /* ------------------------------------------------------ */
@@ -380,6 +436,11 @@ img {
     0 0 28px rgba(255,0,255,0.12);
   transition: var(--transition);
   min-height: 210px;
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 40px;
+  position: relative;
 }
 
 .card:hover {
@@ -392,21 +453,16 @@ img {
 .services-grid {
   display: grid;
   gap: 40px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 34px;
 }
 
-@media (max-width: 1100px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
 }
+
 
 /* ------------------------------------------------------ */
 /* FLOWNOVA — GLOBAL GRID SYSTEM (UPGRADE)                */
@@ -422,7 +478,6 @@ img {
 
 /* 2) Semantic aliases — all inherit the global engine */
 .card-grid,
-.services-grid,
 .ai-grid {
   display: grid;
   gap: 34px;
@@ -433,19 +488,19 @@ img {
 /* 3) Page-specific overrides — only where needed */
 
 /* Homepage — 4-wide cinematic grid (keep your existing breakpoints) */
-.services-grid {
+.homepage-services-grid {
   gap: 40px;
   grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 1100px) {
-  .services-grid {
+  .homepage-services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .services-grid {
+  .homepage-services-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -482,6 +537,7 @@ img {
 .card ul {
   margin-top: 13px;
   padding-left: 20px; /* aligns bullets with text */
+  margin-bottom: 20px; /* adds cushion before the button */
 }
 
 .card li {
