@@ -1,21 +1,25 @@
 module.exports = function(eleventyConfig) {
+
+  // --- Passthrough Copy ---
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("global");
-};
-module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+
+  // --- Template Formats ---
   eleventyConfig.setTemplateFormats(["njk", "html"]);
+
+  // --- Use Nunjucks for HTML files ---
   eleventyConfig.setLibrary("html", require("nunjucks"));
-  
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("global");
-};
-module.exports = function(eleventyConfig) {
+
+  // --- Directory Structure ---
   return {
     dir: {
       input: ".",
-      output: "docs"
+      output: "docs",
+      includes: "_includes",
+      layouts: "_includes"
     }
   };
 };
