@@ -11,3 +11,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("global");
 };
+module.exports = function(eleventyConfig) {
+  return {
+    dir: {
+      input: ".",
+      output: "docs"
+    }
+  };
+};
