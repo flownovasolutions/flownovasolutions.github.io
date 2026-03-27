@@ -699,7 +699,7 @@ p,
 }
 
 /* ------------------------------------------------------ */
-/* APPROACH HERO VISUAL SYSTEM — Minimal‑Cinematic        */
+/* APPROACH HERO VISUAL SYSTEM — FlowNova Energy v7       */
 /* ------------------------------------------------------ */
 
 .approach-hero-visual {
@@ -710,69 +710,135 @@ p,
   pointer-events: none;
   overflow: hidden;
   z-index: 0;
+
+  /* Light, inviting gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 20, 0) 0%,
+    rgba(10, 10, 20, 0.08) 55%,
+    rgba(10, 10, 20, 0.16) 100%
+  );
 }
+
+/* ------------------------------------------------------ */
+/* ENERGY RIBBON — bright, cosmic, FlowNova signature     */
+/* ------------------------------------------------------ */
 
 .approach-ribbon {
   position: absolute;
-  width: 120%;
+  width: 130%;
   height: 260px;
-  top: 20%;
-  left: -10%;
-  background: linear-gradient(90deg, rgba(0,212,255,0.25), rgba(255,61,252,0.25));
-  filter: blur(48px);
-  transform: rotate(-12deg);
-  opacity: 0.28;
+  top: 16%; /* lifted into bright zone */
+  left: -12%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0,212,255,0.28),
+    rgba(255,61,252,0.28)
+  );
+
+  filter: blur(44px); /* tighter = brighter */
+  transform: rotate(-14deg); /* more motion */
+  opacity: 0.26; /* vivid but not overpowering */
 }
+
+/* ------------------------------------------------------ */
+/* MAIN VIVID CIRCLE — anchor of the composition          */
+/* ------------------------------------------------------ */
 
 .approach-arc {
   position: absolute;
   width: 420px;
   height: 420px;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: 50%;
-  top: 48%;
+
+  top: 38%;  /* lifted */
   left: 55%;
   transform: translate(-50%, -50%) rotate(8deg);
+
   opacity: 0.22;
+  filter: blur(1px);
 }
 
-/* Optional nodes */
-.approach-arc::after,
-.approach-arc::before {
-  content: "";
+/* ------------------------------------------------------ */
+/* SUPPORTING CIRCLES — depth, motion, system energy      */
+/* ------------------------------------------------------ */
+
+.approach-arc-small {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgba(255,255,255,0.35);
+  width: 260px; /* reduced for hierarchy */
+  height: 260px;
+  border: 1px solid rgba(255,255,255,0.24);
   border-radius: 50%;
+
+  top: 20%;  /* higher lift */
+  left: 42%; /* further left */
+  transform: translate(-50%, -50%) rotate(4deg);
+
+  opacity: 0.18; /* softer than main */
+  filter: blur(2px);
+  box-shadow: 0 0 12px rgba(255,255,255,0.12); /* subtle glow */
 }
 
-.approach-arc::after {
-  top: 18%;
-  left: 72%;
+.approach-arc-tiny {
+  position: absolute;
+  width: 150px; /* reduced for hierarchy */
+  height: 150px;
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 50%;
+
+  top: 50%;  /* dropped lower */
+  left: 68%; /* pushed right */
+  transform: translate(-50%, -50%) rotate(12deg);
+
+  opacity: 0.14; /* softer than main */
+  filter: blur(3px);
+  box-shadow: 0 0 10px rgba(255,255,255,0.10);
 }
 
-.approach-arc::before {
-  bottom: 22%;
-  right: 68%;
-}
+/* ------------------------------------------------------ */
+/* MOBILE REFINEMENTS — same vibe, scaled down            */
+/* ------------------------------------------------------ */
 
-/* Mobile adjustments */
 @media (max-width: 900px) {
   .approach-ribbon {
     width: 160%;
     height: 200px;
-    top: 28%;
+    top: 24%;
     left: -20%;
     transform: rotate(-6deg);
     filter: blur(36px);
+    opacity: 0.22;
   }
 
   .approach-arc {
     width: 260px;
     height: 260px;
-    top: 60%;
+    top: 50%;
     left: 50%;
+    opacity: 0.20;
+  }
+
+  .approach-arc-small {
+    width: 200px;
+    height: 200px;
+    top: 38%;
+    left: 44%;
+    opacity: 0.18;
+  }
+
+  .approach-arc-tiny {
+    width: 130px;
+    height: 130px;
+    top: 58%;
+    left: 62%;
     opacity: 0.16;
   }
 }
+
+
+
+
+
+
