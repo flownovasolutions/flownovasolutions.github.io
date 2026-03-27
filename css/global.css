@@ -216,17 +216,19 @@ img {
   pointer-events: auto;
 }
 
-#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(1) {
+/* HAMBURGER ANIMATION — corrected for new DOM */
+#mobile-menu-checkbox:checked ~ .header .header-inner .mobile-nav-toggle span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
 
-#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(2) {
+#mobile-menu-checkbox:checked ~ .header .header-inner .mobile-nav-toggle span:nth-child(2) {
   opacity: 0;
 }
 
-#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(3) {
+#mobile-menu-checkbox:checked ~ .header .header-inner .mobile-nav-toggle span:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
 }
+
 
 .mobile-menu {
   position: fixed;
