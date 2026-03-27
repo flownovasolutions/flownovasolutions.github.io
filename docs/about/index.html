@@ -2,235 +2,309 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About • FlowNova Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • FlowNova Solutions</title>
 
-  <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="/css/global.css">
 </head>
 
 <body>
 
+  
+  <svg width="0" height="0" style="position:absolute;">
+  <defs>
+
+    <!-- ------------------------------------------------------ -->
+    <!-- TIER 1 — CINEMATIC (Homepage Only)                     -->
+    <!-- Full neon, multi-stop, dramatic                        -->
+    <!-- ------------------------------------------------------ -->
+    <linearGradient id="flownova-cinematic-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00eaff" />
+      <stop offset="35%" stop-color="#00c8ff" />
+      <stop offset="65%" stop-color="#ff3dfc" />
+      <stop offset="100%" stop-color="#b400ff" />
+    </linearGradient>
+
+    <!-- ------------------------------------------------------ -->
+    <!-- TIER 2 — GRADIENT-LITE (Services, AI, Approach, About) -->
+    <!-- Diagonal: top-left → bottom-right                      -->
+    <!-- Medium saturation, soft blend                          -->
+    <!-- ------------------------------------------------------ -->
+    <linearGradient id="flownova-gradient-lite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,212,255,0.55)" />
+      <stop offset="50%" stop-color="rgba(0,240,255,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,61,252,0.55)" />
+    </linearGradient>
+
+  </defs>
+</svg>
+
+
+  
   <!-- MOBILE NAV CHECKBOX -->
-  <input type="checkbox" id="mobile-menu-checkbox">
-  <div class="drawer-backdrop"></div>
+<input type="checkbox" id="mobile-menu-checkbox">
+<div class="drawer-backdrop"></div>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
+<header class="header">
+  <div class="header-inner">
 
-      <!-- Logo -->
-      <a href="/" class="logo">
-        <img class="logo-desktop" src="images/flownova-horizontal-megan.png" alt="FlowNova Solutions Logo">
-        <img class="logo-mobile" src="images/flownova-icon (2).png" alt="FlowNova Icon">
-      </a>
+    <!-- LOGO -->
+    <a href="/" class="logo">
+      <img class="logo-desktop" src="/images/flownova-horizontal-megan.png" alt="FlowNova Solutions Logo">
+      <img class="logo-mobile" src="/images/flownova-icon (2).png" alt="FlowNova Icon">
+    </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="desktop-nav">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/approach">Approach</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li class="dropdown">
-            <a href="/about" class="active">About</a>
-            <ul class="dropdown-menu">
-              <li><a href="/about">About FlowNova</a></li>
-              <li><a href="/about#founder">Founder</a></li>
-              <li><a href="/about#philosophy">Philosophy</a></li>
-              <li><a href="/brand">Brand</a></li>
-            </ul>
-          </li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </nav>
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="desktop-nav">
+      <ul class="nav-list">
 
-      <!-- Mobile Hamburger -->
-      <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+        <li><a href="/">Home</a></li>
 
+        <!-- SERVICES DROPDOWN -->
+        <li class="dropdown">
+          <a href="/services">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="/automation">Process Improvement & Automation</a></li>
+            <li><a href="/apps">App & Experience Design</a></li>
+            <li><a href="/ai">AI & Copilot</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/approach">Approach</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+
+        <!-- ABOUT DROPDOWN -->
+        <li class="dropdown">
+          <a href="/about">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="/about">About FlowNova</a></li>
+            <li><a href="/about#founder">Founder</a></li>
+            <li><a href="/about#philosophy">Philosophy</a></li>
+            <li><a href="/brand">Brand</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/contact">Contact</a></li>
+
+      </ul>
+    </nav>
+
+    <!-- MOBILE HAMBURGER -->
+    <label for="mobile-menu-checkbox" class="mobile-nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+  </div>
+</header>
+
+<!-- MOBILE MENU (MOVED OUTSIDE HEADER) -->
+<div class="mobile-menu">
+
+  <a href="/">Home</a>
+
+  <!-- SERVICES GROUP -->
+  <div class="mobile-menu-group">
+    <span class="mobile-menu-label">Services</span>
+    <a href="/automation">Process Improvement & Automation</a>
+    <a href="/apps">App & Experience Design</a>
+    <a href="/ai">AI & Copilot</a>
+  </div>
+
+  <a href="/approach">Approach</a>
+  <a href="/pricing">Pricing</a>
+
+  <!-- ABOUT GROUP -->
+  <div class="mobile-menu-group">
+    <span class="mobile-menu-label">About</span>
+    <a href="/about">About FlowNova</a>
+    <a href="/about#founder">Founder</a>
+    <a href="/about#philosophy">Philosophy</a>
+    <a href="/brand">Brand</a>
+  </div>
+
+  <a href="/contact">Contact</a>
+
+</div>
+
+
+  
+  
+<main>
+
+  <!-- HERO -->
+<section class="section text-center hero-spacing about-hero">
+  <div class="about-hero-visual"></div>
+
+  <div class="section-eyebrow">About FlowNova</div>
+  <h2>Where clarity meets momentum.</h2>
+
+  <p class="hero-subtext">
+    FlowNova is a modern automation studio built on a simple belief:
+    systems should feel as intentional as the teams they support.
+  </p>
+</section>
+
+<!-- Divider OUTSIDE the hero -->
+<div class="section-divider divider-gradient-lite divider-down divider-regular divider-medium">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <polygon points="0,0 100,0 100,100 0,100" />
+  </svg>
+</div>
+
+
+  <!-- STUDIO OVERVIEW -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">The Studio</div>
+      <h2>Built for teams who want systems that actually work.</h2>
     </div>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu">
-      <a href="/">Home</a>
-      <a href="/services">Services</a>
-      <a href="/approach">Approach</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/about" class="active">About</a>
-      <a href="/contact">Contact</a>
-    </div>
-  </header>
+    <p>
+      FlowNova blends engineering discipline with experience‑driven design to help teams move faster,
+      work smarter, and scale with confidence. We don’t chase trends or shortcuts — we build systems
+      that feel intuitive, reliable, and aligned with how people actually work.
+    </p>
 
-  <!-- MAIN CONTENT -->
-  <main>
+    <p style="margin-top: 20px;">
+      Every engagement is grounded in clarity. We map your processes, identify friction, and design
+      solutions that create momentum — not more complexity. The result is a systems layer that feels
+      intentional from day one and stays resilient as you grow.
+    </p>
+  </section>
 
-    <!-- HERO -->
-    <section class="section text-center" style="padding-top: 140px; padding-bottom: 120px;">
-      <div class="section-eyebrow">About FlowNova</div>
-      <h2>Where clarity meets momentum.</h2>
-      <p style="max-width: 720px; margin: 0 auto;">
-        FlowNova is a modern automation studio built on a simple belief:
-        systems should feel as intentional as the teams they support.
-      </p>
-    </section>
+  <!-- DIVIDER — subtle upward -->
+  <div class="section-divider divider-gradient-lite divider-up divider-subtle divider-medium">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100" />
+    </svg>
+  </div>
 
-    <!-- DIVIDER — cinematic downward -->
-    <div class="section-divider divider-down divider-strong divider-tall divider-glow">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+  <!-- PHILOSOPHY -->
+  <section class="section" id="philosophy">
+    <div class="section-header">
+      <div class="section-eyebrow">Philosophy</div>
+      <h2>Systems should feel engineered — and human.</h2>
     </div>
 
-    <!-- STUDIO OVERVIEW -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-eyebrow">The Studio</div>
-        <h2>Built for teams who want systems that actually work.</h2>
+    <div class="three-up" style="margin-top: 40px;">
+      <div>
+        <h3>Clarity First</h3>
+        <p>We start with understanding — your processes, your pain points, your goals. Clarity drives every decision.</p>
       </div>
 
-      <p>
-        FlowNova blends engineering discipline with experience‑driven design to help teams move faster,
-        work smarter, and scale with confidence. We don’t chase trends or shortcuts — we build systems
-        that feel intuitive, reliable, and aligned with how people actually work.
-      </p>
+      <div>
+        <h3>Experience‑Driven</h3>
+        <p>Tools should feel effortless. We design systems that support people, not the other way around.</p>
+      </div>
 
-      <p style="margin-top: 20px;">
-        Every engagement is grounded in clarity. We map your processes, identify friction, and design
-        solutions that create momentum — not more complexity. The result is a systems layer that feels
-        intentional from day one and stays resilient as you grow.
-      </p>
-    </section>
+      <div>
+        <h3>Technical Precision</h3>
+        <p>Clean architecture, scalable patterns, and reliable automation — engineered for long‑term stability.</p>
+      </div>
 
-    <!-- DIVIDER — subtle upward -->
-    <div class="section-divider divider-up divider-subtle divider-medium">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+      <div>
+        <h3>Collaborative Delivery</h3>
+        <p>We build with you, not at you. Alignment is a feature, not a byproduct.</p>
+      </div>
+
+      <div>
+        <h3>Future‑Ready</h3>
+        <p>Systems evolve. We design with tomorrow in mind, not just today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER — dramatic downward -->
+  <div class="section-divider divider-gradient-lite divider-down divider-strong divider-tall">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,0 100,100 0,100" />
+    </svg>
+  </div>
+
+  <!-- FOUNDER -->
+  <section class="section" id="founder">
+    <div class="section-header">
+      <div class="section-eyebrow">Founder</div>
+      <h2>The story behind FlowNova.</h2>
     </div>
 
-    <!-- PHILOSOPHY -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-eyebrow">Philosophy</div>
-        <h2>Systems should feel engineered — and human.</h2>
-      </div>
+    <p>
+      FlowNova was founded by Shelby Williams — a systems thinker with a background in automation,
+      experience design, and operational clarity. After years of watching teams struggle with tools
+      that created more friction than momentum, Shelby set out to build something different.
+    </p>
 
-      <div style="margin-top: 40px; display: grid; gap: 50px;">
-        <div>
-          <h3 style="margin-bottom: 6px;">Clarity First</h3>
-          <p>We start with understanding — your processes, your pain points, your goals. Clarity drives every decision.</p>
-        </div>
+    <p style="margin-top: 20px;">
+      FlowNova exists to bring intention back into internal systems. To replace chaos with clarity.
+      To help teams operate with confidence instead of guesswork. And to prove that automation and AI
+      can feel human, intuitive, and empowering when they’re designed with care.
+    </p>
+  </section>
 
-        <div>
-          <h3 style="margin-bottom: 6px;">Experience‑Driven</h3>
-          <p>Tools should feel effortless. We design systems that support people, not the other way around.</p>
-        </div>
+  <!-- DIVIDER — subtle upward -->
+  <div class="section-divider divider-gradient-lite divider-up divider-subtle divider-short">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100" />
+    </svg>
+  </div>
 
-        <div>
-          <h3 style="margin-bottom: 6px;">Technical Precision</h3>
-          <p>Clean architecture, scalable patterns, and reliable automation — engineered for long‑term stability.</p>
-        </div>
-
-        <div>
-          <h3 style="margin-bottom: 6px;">Collaborative Delivery</h3>
-          <p>We build with you, not at you. Alignment is a feature, not a byproduct.</p>
-        </div>
-
-        <div>
-          <h3 style="margin-bottom: 6px;">Future‑Ready</h3>
-          <p>Systems evolve. We design with tomorrow in mind, not just today.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIVIDER — dramatic downward -->
-    <div class="section-divider divider-down divider-strong divider-tall">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+  <!-- BRAND -->
+  <section class="section" id="brand">
+    <div class="section-header">
+      <div class="section-eyebrow">Brand</div>
+      <h2>FlowNova is more than a name.</h2>
     </div>
 
-    <!-- FOUNDER -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-eyebrow">Founder</div>
-        <h2>The story behind FlowNova.</h2>
-      </div>
+    <p>
+      It’s a commitment to clarity.  
+      A promise of momentum.  
+      A belief that systems should elevate people — not overwhelm them.
+    </p>
 
-      <p>
-        FlowNova was founded by Shelby Williams — a systems thinker with a background in automation,
-        experience design, and operational clarity. After years of watching teams struggle with tools
-        that created more friction than momentum, Shelby set out to build something different.
-      </p>
+    <p style="margin-top: 20px;">
+      FlowNova represents the intersection of flow and innovation: the moment when complexity becomes
+      simple, when friction becomes movement, when teams finally feel aligned with the tools they use.
+    </p>
+  </section>
 
-      <p style="margin-top: 20px;">
-        FlowNova exists to bring intention back into internal systems. To replace chaos with clarity.
-        To help teams operate with confidence instead of guesswork. And to prove that automation and AI
-        can feel human, intuitive, and empowering when they’re designed with care.
-      </p>
-    </section>
+  <!-- DIVIDER — dramatic downward -->
+  <div class="section-divider divider-gradient-lite divider-down divider-strong divider-medium">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,0 100,100 0,100" />
+    </svg>
+  </div>
 
-    <!-- DIVIDER — subtle upward -->
-    <div class="section-divider divider-up divider-subtle divider-short">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="section-header">
+      <div class="section-eyebrow">Next step</div>
+      <h2>Let’s build systems that move you forward.</h2>
     </div>
 
-    <!-- BRAND -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-eyebrow">Brand</div>
-        <h2>FlowNova is more than a name.</h2>
-      </div>
+    <p class="cta-subtext" style="max-width: 640px; margin: 0 auto;">
+      If you’re ready for clarity, momentum, and systems that scale with intention,
+      FlowNova is ready to partner with you.
+    </p>
 
-      <p>
-        It’s a commitment to clarity.  
-        A promise of momentum.  
-        A belief that systems should elevate people — not overwhelm them.
-      </p>
-
-      <p style="margin-top: 20px;">
-        FlowNova represents the intersection of flow and innovation: the moment when complexity becomes
-        simple, when friction becomes movement, when teams finally feel aligned with the tools they use.
-      </p>
-    </section>
-
-    <!-- DIVIDER — dramatic downward -->
-    <div class="section-divider divider-down divider-strong divider-medium">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,0 100,0 100,100 0,100" />
-      </svg>
+    <div class="cta-button-wrapper">
+      <a href="/contact" class="cta-button">Start the Conversation</a>
     </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="section text-center">
-      <div class="section-header">
-        <div class="section-eyebrow">Next step</div>
-        <h2>Let’s build systems that move you forward.</h2>
-      </div>
+</main>
 
-      <p style="max-width: 640px; margin: 0 auto;">
-        If you’re ready for clarity, momentum, and systems that scale with intention,
-        FlowNova is ready to partner with you.
-      </p>
 
-      <div style="margin-top: 36px;">
-        <a href="/contact" class="cta-button">Start the Conversation</a>
-      </div>
-    </section>
+  
+  <footer class="footer" style="padding-top: 60px; padding-bottom: 50px; text-align: center;">
+  <img src="/images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
+  <p style="opacity: 0.7; font-size: 0.9rem;">
+    © 2026 FlowNova Solutions. All rights reserved.
+  </p>
+</footer>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer style="padding-top: 60px; padding-bottom: 50px; text-align: center;">
-    <img src="images/flownova-stacked.png" class="footer-logo" alt="FlowNova Logo">
-    <p style="opacity: 0.7; font-size: 0.9rem;">© 2026 FlowNova Solutions. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
+

@@ -837,8 +837,446 @@ p,
   }
 }
 
+/* ------------------------------------------------------ */
+/* PRICING HERO — Subtle Gradient Field (FlowNova v1)     */
+/* ------------------------------------------------------ */
+
+.pricing-hero {
+  position: relative;
+  overflow: visible; /* allow bleed */
+  padding-top: 140px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+
+.pricing-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 110%; /* independent height */
+  pointer-events: none;
+  z-index: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 20, 0.0) 0%,
+    rgba(10, 10, 20, 0.10) 45%,
+    rgba(10, 10, 20, 0.18) 100%
+  );
+
+  background-image:
+    radial-gradient(circle at 40% 20%, rgba(0,212,255,0.06), transparent 70%),
+    radial-gradient(circle at 70% 80%, rgba(255,61,252,0.05), transparent 75%);
+  background-blend-mode: screen;
+
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.pricing-hero .section,
+.contact-hero .section-eyebrow,
+.contact-hero .hero-subtext {
+  text-align: center; /* content only */
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .pricing-hero-visual {
+    background-image:
+      radial-gradient(circle at 50% 20%, rgba(0,212,255,0.05), transparent 70%),
+      radial-gradient(circle at 60% 80%, rgba(255,61,252,0.04), transparent 75%);
+  }
+}
+
+
+/* ------------------------------------------------------ */
+/* PRICING PAGE — Editorial, Left-Anchored                */
+/* ------------------------------------------------------ */
+
+/* Main pricing grid (used inside .section) */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px 32px;
+  margin-top: 40px;
+}
+
+.pricing-card {
+  border-radius: 16px;
+  padding: 20px 20px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pricing-card.highlight {
+  border-color: rgba(124, 255, 178, 0.4);
+  background: radial-gradient(circle at top left,
+    rgba(124, 255, 178, 0.08),
+    rgba(10, 10, 20, 0.95));
+}
+
+.pricing-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.pricing-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.pricing-price {
+  font-size: 0.98rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.pricing-price span {
+  font-weight: 600;
+}
+
+.pricing-description {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.pricing-list li {
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.pricing-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+}
+
+@media (max-width: 800px) {
+  .pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ------------------------------------------------------ */
+/* RETAINERS                                              */
+/* ------------------------------------------------------ */
+
+.retainer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .retainer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.retainer-card {
+  padding: 24px 24px 26px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.retainer-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.retainer-price {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.retainer-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.retainer-includes {
+  margin-top: 40px;
+}
+
+.retainer-includes ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.retainer-includes li {
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.retainer-includes li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  opacity: 0.7;
+}
+
+/* ------------------------------------------------------ */
+/* PRICING CARD HEADERS — restore compact hierarchy        */
+/* ------------------------------------------------------ */
+
+.pricing-card h2,
+.retainer-card h3 {
+  background: none;          /* remove gradient */
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: white;              /* solid white text */
+  font-size: 1.25rem;        /* matches old cards */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  line-height: 1.35;
+  opacity: 0.95;             /* softer, premium */
+}
+
+/* ------------------------------------------------------ */
+/* PRICING CARD HEADERS — compact + gradient restored      */
+/* ------------------------------------------------------ */
+
+.pricing-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  line-height: 1.32;
+
+  /* Restore FlowNova gradient */
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  opacity: 1; /* ensure full clarity */
+}
 
 
 
+/* ------------------------------------------------------ */
+/* CONTACT HERO — Soft Glow Field (FlowNova v1)           */
+/* ------------------------------------------------------ */
 
+.contact-hero {
+  position: relative;
+  overflow: visible;
+  padding-top: 140px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+
+.contact-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,20,0.0) 0%,
+    rgba(10,10,20,0.10) 50%,
+    rgba(10,10,20,0.18) 100%
+  );
+
+  background-image:
+    radial-gradient(circle at 50% 20%, rgba(0,212,255,0.06), transparent 70%),
+    radial-gradient(circle at 70% 80%, rgba(255,61,252,0.05), transparent 75%);
+  background-blend-mode: screen;
+}
+
+.contact-hero .section-eyebrow,
+.contact-hero h1,
+.contact-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* ------------------------------------------------------ */
+/* CONTACT FORM — FlowNova Premium Form System            */
+/* ------------------------------------------------------ */
+
+.contact-form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.contact-form-wrapper label {
+  display: block;
+  margin-bottom: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  font-size: 1rem;
+  transition: border 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form-wrapper input:focus,
+.contact-form-wrapper textarea:focus {
+  border-color: var(--blue);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 12px rgba(0,212,255,0.25);
+  outline: none;
+}
+
+.contact-form-wrapper textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Checkboxes */
+.project-type-group {
+  margin-bottom: 32px;
+}
+
+.project-type-group > span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.checkbox input {
+  width: auto;
+  margin: 0;
+}
+
+/* Submit Button */
+.contact-submit {
+  margin-top: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(0,212,255,0.35);
+}
+
+/* Success + Error */
+.form-success {
+  margin-top: 20px;
+  color: #7CFFB2;
+  font-size: 0.95rem;
+}
+
+.form-error {
+  margin-top: 20px;
+  color: #FF7C7C;
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/* ------------------------------------------------------ */
+/* ABOUT HERO — Cinematic Lite (Independent Height)       */
+/* ------------------------------------------------------ */
+
+.about-hero {
+  position: relative;
+  /* overflow: hidden; REMOVE THIS */
+  padding-top: 140px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+
+.about-hero-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* Independent height — NOT tied to content */
+  height: 160%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  /* Soft diagonal gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(0,212,255,0.06) 0%,
+    rgba(255,61,252,0.05) 100%
+  );
+
+  /* Faint geometric anchor */
+  background-image:
+    radial-gradient(circle at 60% 40%, rgba(255,255,255,0.10), transparent 70%);
+  background-blend-mode: screen;
+
+  /* Soft fade-out so it never ends abruptly */
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.about-hero .section-eyebrow,
+.about-hero h1,
+.about-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
 
