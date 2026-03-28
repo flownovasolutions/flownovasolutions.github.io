@@ -1358,7 +1358,7 @@ p,
 
 
 /* ------------------------------------------------------ */
-/* SERVICES HERO — Bleed-Safe Gradient Field (FlowNova v2) */
+/* SERVICES HERO — Structured Grid Field (FlowNova v3)    */
 /* ------------------------------------------------------ */
 
 .services-hero {
@@ -1366,39 +1366,54 @@ p,
   padding-top: 140px;
   padding-bottom: 100px;
   text-align: center;
-  overflow: visible; /* allows vertical + horizontal bleed */
+  overflow: visible; /* allows bleed */
 }
 
+/* Main visual layer */
 .services-hero-visual {
   position: absolute;
   inset: 0;
   width: 100%;
-  
-  /* Independent height — taller than container */
-  height: 180%; 
-
+  height: 180%; /* independent height for bleed */
   pointer-events: none;
   z-index: 0;
 
-  /* Soft vertical gradient — NEVER reaches 100% opacity */
-  background: linear-gradient(
-    to bottom,
-    rgba(10,10,20,0.00) 0%,
-    rgba(10,10,20,0.08) 40%,
-    rgba(10,10,20,0.14) 70%,
-    rgba(10,10,20,0.00) 100%
-  );
+  /* Base gradient */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10,10,20,0.00) 0%,
+      rgba(10,10,20,0.08) 40%,
+      rgba(10,10,20,0.14) 70%,
+      rgba(10,10,20,0.00) 100%
+    );
 
-  /* Subtle geometric anchors */
+  /* Grid pattern (ultra subtle) */
   background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.01) 0px,
+      rgba(255,255,255,0.01) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.01) 0px,
+      rgba(255,255,255,0.01) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
     radial-gradient(circle at 55% 35%, rgba(0,212,255,0.10), transparent 70%),
     radial-gradient(circle at 70% 75%, rgba(255,61,252,0.08), transparent 75%);
+
   background-blend-mode: screen;
 
   /* Fade-out to avoid hard bottom line */
   mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
 }
 
+/* Supporting arc */
 .services-arc {
   position: absolute;
   width: 380px;
@@ -1411,3 +1426,4 @@ p,
   opacity: 0.22;
   filter: blur(1px);
 }
+
