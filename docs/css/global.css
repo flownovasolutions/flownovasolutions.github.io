@@ -67,7 +67,7 @@ img {
   background: rgba(5, 8, 20, 0.9);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  z-index: 950;
+  z-index: 2000;
 }
 
 .header-inner {
@@ -175,19 +175,14 @@ img {
 /* MOBILE NAV + DRAWER — FlowNova Clean Rebuild           */
 /* ------------------------------------------------------ */
 
-/* Hide checkbox */
-#mobile-menu-checkbox {
-  display: none;
-}
-
-/* Hamburger toggle */
+/* MOBILE NAV — PREMIUM  */
 .mobile-nav-toggle {
   display: none;
   cursor: pointer;
   width: 32px;
   height: 24px;
   position: relative;
-  z-index: 2001; /* above header */
+  z-index: 1001;
 }
 
 .mobile-nav-toggle span {
@@ -204,67 +199,116 @@ img {
 .mobile-nav-toggle span:nth-child(2) { top: 10px; }
 .mobile-nav-toggle span:nth-child(3) { top: 20px; }
 
-/* Backdrop */
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
-  z-index: 2000;
+  z-index: 900;
 }
 
-/* Backdrop active */
+/* When drawer opens */
+#mobile-menu-checkbox:checked ~ .drawer-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+    
+/* Checkbox hack */
+#mobile-menu-checkbox {
+  display: none;
+}
+
+/* Backdrop */
 #mobile-menu-checkbox:checked ~ .drawer-backdrop {
   opacity: 1;
   pointer-events: auto;
 }
 
 /* Hamburger animation */
-#mobile-menu-checkbox:checked ~ .header .mobile-nav-toggle span:nth-child(1) {
+#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
 
-#mobile-menu-checkbox:checked ~ .header .mobile-nav-toggle span:nth-child(2) {
+#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(2) {
   opacity: 0;
 }
 
-#mobile-menu-checkbox:checked ~ .header .mobile-nav-toggle span:nth-child(3) {
+#mobile-menu-checkbox:checked ~ .header-inner .mobile-nav-toggle span:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Drawer */
+/* Logo soften */
+#mobile-menu-checkbox:checked ~ .header-inner .logo img {
+  opacity: 0.4;
+  filter: blur(1px);
+  transition: 0.35s ease;
+}
+
+/* Drawer open */
+#mobile-menu-checkbox:checked ~ .mobile-menu {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Staggered link reveal */
+#mobile-menu-checkbox:checked ~ .mobile-menu a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(1) { transition-delay: 0.05s; }
+#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(2) { transition-delay: 0.10s; }
+#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(3) { transition-delay: 0.15s; }
+#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(4) { transition-delay: 0.20s; }
+#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(5) { transition-delay: 0.25s; }
+#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(6) { transition-delay: 0.30s; }
+
+
+/*  — Final Glass Drawer */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
-  width: 75%;
-  max-width: 380px;
+  width: 60%;
   height: 100vh;
 
-  background: rgba(5, 8, 20, 0.65);
+  /* Dark structural base */
+  background-color: rgba(5, 8, 20, 0.65);
+
+  /* Translucent neon gradient */
   background-image: linear-gradient(
     to bottom,
     rgba(0,212,255,0.45),
     rgba(255,61,252,0.45)
   );
+
+  /* Stronger, cleaner blur */
   backdrop-filter: blur(24px);
 
+  /* Engineered neon edge */
   border-left: 1px solid rgba(255,255,255,0.28);
 
+  /* Soft directional glow */
+  box-shadow:
+    -8px 0 22px rgba(0,212,255,0.25),
+    -12px 0 32px rgba(255,61,252,0.20);
+
+  /* Inner shadow for structure */
   box-shadow:
     inset -6px 0 12px rgba(0,0,0,0.25),
     -8px 0 22px rgba(0,212,255,0.25),
     -12px 0 32px rgba(255,61,252,0.20);
 
-  z-index: 2002; /* above backdrop + header */
-  isolation: isolate; /* prevents header blur bleed */
+  /* ⭐ Add this line */
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
-  gap: 0;
 
   padding-top: 110px;
   padding-bottom: 40px;
@@ -278,14 +322,7 @@ img {
     opacity 0.35s ease;
 }
 
-/* Drawer active */
-#mobile-menu-checkbox:checked ~ .mobile-menu {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Drawer links */
+/* Menu links —  typography */
 .mobile-menu a {
   padding: 18px 28px;
   font-size: 1.15rem;
@@ -297,58 +334,25 @@ img {
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.mobile-menu a:last-child {
-  border-bottom: none;
-}
-
-/* Animate links in */
-#mobile-menu-checkbox:checked ~ .mobile-menu a {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger */
-#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(1) { transition-delay: 0.05s; }
-#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(2) { transition-delay: 0.10s; }
-#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(3) { transition-delay: 0.15s; }
-#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(4) { transition-delay: 0.20s; }
-#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(5) { transition-delay: 0.25s; }
-#mobile-menu-checkbox:checked ~ .mobile-menu a:nth-child(6) { transition-delay: 0.30s; }
-
-/* Hover */
+/* Gradient hover — subtle, premium */
 .mobile-menu a:hover {
-  background: var(--gradient-primary);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Show hamburger on mobile */
+/* RESPONSIVE BEHAVIOR */
 @media (max-width: 900px) {
-  .nav-list { display: none; }
-  .mobile-nav-toggle { display: block; }
+  .nav-list {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
 }
 
-.menu-close {
-  position: absolute;
-  top: 26px;
-  right: 26px;
-  font-size: 2rem;
-  font-weight: 400;
-  color: white;
-  cursor: pointer;
-  z-index: 3000;
-  background: none;
-  border: none;
-  padding: 6px;
-  line-height: 1;
-  opacity: 0.85;
-  transition: opacity 0.25s ease;
-}
-
-.menu-close:hover {
-  opacity: 1;
-}
 
 
 /* ------------------------------------------------------ */

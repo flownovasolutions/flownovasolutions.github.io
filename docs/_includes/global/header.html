@@ -1,8 +1,9 @@
-<!-- MOBILE NAV CHECKBOX -->
-<input type="checkbox" id="mobile-menu-checkbox">
-<div class="drawer-backdrop"></div>
-
 <header class="header">
+
+  <!-- MOVE THESE INSIDE THE HEADER -->
+  <input type="checkbox" id="mobile-menu-checkbox">
+  <div class="drawer-backdrop"></div>
+
   <div class="header-inner">
 
     <!-- LOGO -->
@@ -14,10 +15,7 @@
     <!-- DESKTOP NAVIGATION -->
     <nav class="desktop-nav">
       <ul class="nav-list">
-
         <li><a href="/">Home</a></li>
-
-        <!-- SERVICES DROPDOWN -->
         <li class="dropdown">
           <a href="/services">Services</a>
           <ul class="dropdown-menu">
@@ -27,20 +25,15 @@
             <li><a href="/ai">AI & Copilot</a></li>
           </ul>
         </li>
-
         <li><a href="/approach">Approach</a></li>
         <li><a href="/pricing">Pricing</a></li>
-
-        <!-- ABOUT DROPDOWN -->
         <li class="dropdown">
           <a href="/about">About</a>
           <ul class="dropdown-menu">
             <li><a href="/brand">Brand</a></li>
           </ul>
         </li>
-
         <li><a href="/contact">Contact</a></li>
-
       </ul>
     </nav>
 
@@ -52,19 +45,17 @@
     </label>
 
   </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <label for="mobile-menu-checkbox" class="menu-close">✕</label>
+
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/approach">Approach</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+
 </header>
-
-<!-- MOBILE MENU (MOVED OUTSIDE HEADER) -->
-<div class="mobile-menu">
-
-  <label for="mobile-menu-checkbox" class="menu-close">✕</label>
-
-  <a href="/">Home</a>
-  <a href="/services">Services</a>
-  <a href="/approach">Approach</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
-
-</div>
-
