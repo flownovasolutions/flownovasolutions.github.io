@@ -857,6 +857,18 @@ p,
   z-index: 1;*/
 }
 
+.hero-inner {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
 /* ------------------------------------------------------ */
 /* APPROACH HERO VISUAL SYSTEM — FlowNova Energy v7       */
 /* ------------------------------------------------------ */
