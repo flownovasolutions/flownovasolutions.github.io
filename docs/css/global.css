@@ -360,6 +360,14 @@ img {
   }
 }
 
+@media (max-width: 900px) {
+  .mobile-nav-toggle {
+    position: fixed;
+    top: 20px;   /* adjust to taste */
+    right: 20px;
+    z-index: 4000;
+  }
+}
 
 
 /* ------------------------------------------------------ */
