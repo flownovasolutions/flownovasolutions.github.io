@@ -782,6 +782,18 @@ h2,
   color: transparent;
 }
 
+@media (max-width: 900px) {
+  .section h2 {
+    line-height: 1.18 !important;
+    margin-bottom: 22px !important;
+  }
+
+  .section-eyebrow {
+    margin-bottom: 10px !important;
+  }
+}
+
+
 /* Hero Titles - Non-Homepage*/
 h2.hero-title {
   font-size: 2.9rem !important;
