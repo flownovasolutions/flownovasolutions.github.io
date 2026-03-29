@@ -329,6 +329,28 @@ img {
   .mobile-nav-toggle { display: block; }
 }
 
+.menu-close {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  font-size: 2rem;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  z-index: 3000;
+  background: none;
+  border: none;
+  padding: 6px;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.menu-close:hover {
+  opacity: 1;
+}
+
+
 /* ------------------------------------------------------ */
 /* BUTTONS                                                 */
 /* ------------------------------------------------------ */
