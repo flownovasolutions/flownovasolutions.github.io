@@ -2063,3 +2063,152 @@ p,
 }
 
 
+
+/* ------------------------------------------------------ */
+/* BRAND HERO — Clean Transition + FlowNova Identity      */
+/* ------------------------------------------------------ */
+
+.brand-hero {
+  position: relative;
+  overflow: visible;
+  padding-top: 140px;
+  padding-bottom: 100px;/*gives room for fade */
+  text-align: center;
+}
+
+.brand-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 130%; /* matches Automation/Pricing behavior */
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+
+  /* Stronger bottom fade for clean transition */
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 20, 0.00) 0%,
+    rgba(10, 10, 20, 0.10) 40%,
+    rgba(10, 10, 20, 0.22) 70%,
+    rgba(10, 10, 20, 0.32) 100%
+  );
+
+  /* Cinematic fade into divider */
+  mask-image: linear-gradient(
+    to bottom,
+    black 70%,
+    transparent 100%
+  );
+}
+
+/* ------------------------------------------------------ */
+/* BRAND VISUAL ELEMENTS                                  */
+/* ------------------------------------------------------ */
+
+.brand-gridlines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.12;
+  filter: blur(0.5px);
+}
+
+.brand-arc {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 50%;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(6deg);
+  opacity: 0.22;
+  filter: blur(1px);
+}
+
+.brand-arc-small {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 50%;
+  top: 24%;
+  left: 58%;
+  transform: translate(-50%, -50%) rotate(10deg);
+  opacity: 0.18;
+  filter: blur(2px);
+}
+
+.brand-glow {
+  position: absolute;
+  width: 150%;
+  height: 260px;
+  top: 16%;
+  left: -20%;
+  background: linear-gradient(
+    90deg,
+    rgba(0,212,255,0.22),
+    rgba(255,61,252,0.22)
+  );
+  filter: blur(48px);
+  transform: rotate(-10deg);
+  opacity: 0.22;
+}
+
+.brand-radial {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.06) 0%,
+    rgba(255,255,255,0.00) 70%
+  );
+  opacity: 0.18;
+  filter: blur(2px);
+}
+
+/* ------------------------------------------------------ */
+/* MOBILE REFINEMENTS                                     */
+/* ------------------------------------------------------ */
+
+@media (max-width: 900px) {
+  .brand-hero-visual {
+    height: 150%; /* extra room for fade on mobile */
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .brand-arc {
+    width: 260px;
+    height: 260px;
+    top: 48%;
+  }
+
+  .brand-arc-small {
+    width: 180px;
+    height: 180px;
+    top: 32%;
+    left: 56%;
+  }
+
+  .brand-glow {
+    width: 180%;
+    height: 200px;
+    top: 22%;
+    left: -30%;
+    filter: blur(40px);
+  }
+
+  .brand-radial {
+    width: 420px;
+    height: 420px;
+    opacity: 0.14;
+  }
+}
