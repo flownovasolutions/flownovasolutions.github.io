@@ -360,14 +360,6 @@ img {
   }
 }
 
-@media (max-width: 900px) {
-  .mobile-nav-toggle {
-    position: fixed;
-    top: 20px;   /* adjust to taste */
-    right: 20px;
-    z-index: 4000;
-  }
-}
 
 
 /* ------------------------------------------------------ */
@@ -432,7 +424,7 @@ img {
 /* MOBILE BACK BUTTON */
 .mobile-back {
   position: fixed;
-  top: 18px;
+  bottom: 18px;
   left: 18px;
   z-index: 3000;
   padding: 10px 16px;
