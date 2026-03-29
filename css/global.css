@@ -776,25 +776,29 @@ h2,
   font-size: 2.4rem;
   letter-spacing: -0.02em;
   font-weight: 600;
-  line-height: 1.22;
-  margin-bottom: 16px;
+  line-height: 1.30;
+  margin-bottom: 18px;
   background: var(--gradient-heading);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+.section-eyebrow{
+  margin-bottom: 12px;
+}
+
 @media (max-width: 900px) {
 
   /* Eyebrow spacing */
   .section-header .section-eyebrow {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
 
   /* H2 mobile rhythm */
   .section-header h2 {
     line-height: 1.15;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   /* Paragraph spacing after headers */
