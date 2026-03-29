@@ -376,6 +376,10 @@ img {
   text-align: center;
 }
 
+.section .learn-more {
+  margin-top: 28px;
+}
+
 .learn-more:hover {
   border-color: rgba(255,255,255,0.45);
   box-shadow:
@@ -600,8 +604,8 @@ img {
 /* Base full‑bleed behavior */
 .section-divider {
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
+  margin:0;
   overflow: hidden;
   display: block;
 }
@@ -745,6 +749,21 @@ h2,
   color: transparent;
 }
 
+/* Hero Titles - Non-Homepage*/
+h2.hero-title {
+  font-size: 2.9rem !important;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
 /* Body Text */
 p,
 .body-text {
@@ -760,6 +779,11 @@ p,
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
+}
+
+.hero-subtext {
+  margin-top: 0;       /* remove default spacing */
+  margin-bottom: 5px; /* breathing room before divider */
 }
 
 .cta-button-wrapper {
@@ -1313,7 +1337,7 @@ p,
 
 .about-hero {
   position: relative;
-  /* overflow: hidden; REMOVE THIS */
+  overflow: visible; 
   padding-top: 140px;
   padding-bottom: 100px;
   text-align: center;
@@ -1363,18 +1387,23 @@ p,
 
 .services-hero {
   position: relative;
+  overflow: visible;
   padding-top: 140px;
   padding-bottom: 100px;
   text-align: center;
-  overflow: visible; /* allows bleed */
 }
+
 
 /* Main visual layer */
 .services-hero-visual {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 180%; /* independent height for bleed */
+
+
+  height: 130%; /* slight bleed like pricing */
+  
   pointer-events: none;
   z-index: 0;
 
@@ -1388,7 +1417,7 @@ p,
       rgba(10,10,20,0.00) 100%
     );
 
-  /* Grid pattern (ultra subtle) */
+  /* Grid + glow */
   background-image:
     repeating-linear-gradient(
       to right,
@@ -1408,10 +1437,9 @@ p,
     radial-gradient(circle at 70% 75%, rgba(255,61,252,0.08), transparent 75%);
 
   background-blend-mode: screen;
-
-  /* Fade-out to avoid hard bottom line */
   mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
 }
+
 
 /* Supporting arc */
 .services-arc {
@@ -1427,3 +1455,537 @@ p,
   filter: blur(1px);
 }
 
+.services-hero .section-eyebrow,
+.services-hero .hero-title,
+.services-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* ------------------------------------------------------ */
+/* AI HERO — Signal Field (FlowNova v1)                   */
+/* ------------------------------------------------------ */
+
+.ai-hero {
+  position: relative;
+  overflow: visible; /* allow vertical bleed */
+  padding-top: 140px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+/* Main visual layer */
+.ai-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 130%; /* vertical bleed */
+  pointer-events: none;
+  z-index: 0;
+
+  /* Base gradient field */
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,20,0.0) 0%,
+    rgba(10,10,20,0.10) 45%,
+    rgba(10,10,20,0.18) 100%
+  );
+
+  /* AI signal glow */
+  background-image:
+    radial-gradient(circle at 40% 22%, rgba(0,212,255,0.10), transparent 70%),
+    radial-gradient(circle at 68% 78%, rgba(255,61,252,0.08), transparent 75%);
+  background-blend-mode: screen;
+
+  /* soften bottom edge */
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* AI arcs — more “signal / network” than approach */
+.ai-arc {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.22);
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%) rotate(10deg);
+  opacity: 0.22;
+  filter: blur(1px);
+}
+
+.ai-arc-small {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.24);
+  top: 22%;
+  left: 42%;
+  transform: translate(-50%, -50%) rotate(4deg);
+  opacity: 0.18;
+  filter: blur(2px);
+}
+
+.ai-arc-tiny {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.20);
+  top: 52%;
+  left: 70%;
+  transform: translate(-50%, -50%) rotate(14deg);
+  opacity: 0.16;
+  filter: blur(3px);
+}
+
+/* AI ribbon — more directional, “signal band” */
+.ai-ribbon {
+  position: absolute;
+  width: 140%;
+  height: 230px;
+  top: 18%;
+  left: -15%;
+  background: linear-gradient(
+    90deg,
+    rgba(0,212,255,0.30),
+    rgba(124,255,178,0.26),
+    rgba(255,61,252,0.28)
+  );
+  filter: blur(40px);
+  transform: rotate(-12deg);
+  opacity: 0.26;
+}
+
+/* Content above visuals */
+.ai-hero .section-eyebrow,
+.ai-hero .hero-title,
+.ai-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .ai-hero-visual {
+    height: 140%;
+    background-image:
+      radial-gradient(circle at 50% 20%, rgba(0,212,255,0.09), transparent 70%),
+      radial-gradient(circle at 60% 80%, rgba(255,61,252,0.07), transparent 75%);
+  }
+
+  .ai-arc {
+    width: 260px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+    opacity: 0.20;
+  }
+
+  .ai-arc-small {
+    width: 200px;
+    height: 200px;
+    top: 36%;
+    left: 44%;
+    opacity: 0.18;
+  }
+
+  .ai-arc-tiny {
+    width: 130px;
+    height: 130px;
+    top: 60%;
+    left: 62%;
+    opacity: 0.16;
+  }
+
+  .ai-ribbon {
+    width: 170%;
+    height: 200px;
+    top: 24%;
+    left: -22%;
+    transform: rotate(-6deg);
+    filter: blur(34px);
+    opacity: 0.24;
+  }
+}
+
+
+
+/* ------------------------------------------------------ */
+/* APP DESIGN HERO — FlowNova Interface Energy v1         */
+/* ------------------------------------------------------ */
+
+.apps-hero {
+  position: relative;
+  overflow: visible;
+}
+
+/* Main visual layer */
+.apps-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 135%; /* vertical bleed like Approach */
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,20,0.00) 0%,
+    rgba(10,10,20,0.10) 45%,
+    rgba(10,10,20,0.16) 100%
+  );
+
+  background-blend-mode: screen;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* Subtle interface gridlines */
+.apps-gridlines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 42px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 42px
+    );
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+/* Main geometric arc */
+.apps-arc {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 50%;
+  top: 40%;
+  left: 52%;
+  transform: translate(-50%, -50%) rotate(4deg);
+  opacity: 0.22;
+  filter: blur(1px);
+}
+
+/* Supporting arc */
+.apps-arc-small {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  top: 22%;
+  left: 40%;
+  transform: translate(-50%, -50%) rotate(2deg);
+  opacity: 0.18;
+  filter: blur(2px);
+}
+
+/* Content above visuals */
+.apps-hero .section-eyebrow,
+.apps-hero .hero-title,
+.apps-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .apps-arc {
+    width: 260px;
+    height: 260px;
+    top: 48%;
+    left: 50%;
+  }
+
+  .apps-arc-small {
+    width: 180px;
+    height: 180px;
+    top: 32%;
+    left: 46%;
+  }
+}
+
+
+
+/* ------------------------------------------------------ */
+/* PROCESS IMPROVEMENT HERO — Clarity Field               */
+/* ------------------------------------------------------ */
+
+.process-hero {
+  position: relative;
+  overflow: visible; /* allow vertical bleed */
+  padding-top: 140px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+/* Full-bleed visual layer */
+.process-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 120%; /* vertical bleed */
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+
+  /* Soft clarity gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,20,0.00) 0%,
+    rgba(10,10,20,0.10) 45%,
+    rgba(10,10,20,0.18) 100%
+  );
+
+  /* Subtle grid + focus glow */
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    radial-gradient(circle at 50% 28%, rgba(0,212,255,0.12), transparent 70%),
+    radial-gradient(circle at 65% 70%, rgba(255,61,252,0.08), transparent 75%);
+  background-blend-mode: screen;
+
+  /* Fade out at bottom */
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* Concentric clarity arcs */
+.process-arc-main,
+.process-arc-inner {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.22);
+  opacity: 0.22;
+  filter: blur(1px);
+}
+
+.process-arc-main {
+  width: 420px;
+  height: 420px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(6deg);
+}
+
+.process-arc-inner {
+  width: 280px;
+  height: 280px;
+  top: 32%;
+  left: 46%;
+  opacity: 0.20;
+  filter: blur(2px);
+}
+
+/* Small anchor nodes */
+.process-node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0));
+  box-shadow:
+    0 0 10px rgba(0,212,255,0.6),
+    0 0 18px rgba(255,61,252,0.4);
+  opacity: 0.85;
+}
+
+.process-node.node-1 { top: 22%; left: 38%; }
+.process-node.node-2 { top: 30%; left: 63%; }
+.process-node.node-3 { top: 52%; left: 44%; }
+
+/* Ensure text sits above visual */
+.process-hero .section-eyebrow,
+.process-hero .hero-title,
+.process-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .process-arc-main {
+    width: 280px;
+    height: 280px;
+    top: 46%;
+  }
+
+  .process-arc-inner {
+    width: 200px;
+    height: 200px;
+    top: 34%;
+    left: 50%;
+  }
+
+  .process-node.node-1 { top: 24%; left: 30%; }
+  .process-node.node-2 { top: 32%; left: 70%; }
+  .process-node.node-3 { top: 56%; left: 48%; }
+}
+
+
+
+
+/* ------------------------------------------------------ */
+/* AUTOMATION HERO — Flow Field                           */
+/* ------------------------------------------------------ */
+
+.automation-hero {
+  position: relative;
+  overflow: visible;
+  padding-top: 140px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+/* Full-bleed visual layer */
+.automation-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 125%; /* a bit more vertical bleed */
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+
+  /* Slightly stronger gradient than process */
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,20,0.00) 0%,
+    rgba(10,10,20,0.12) 45%,
+    rgba(10,10,20,0.20) 100%
+  );
+
+  /* Motion band + subtle grid */
+  background-image:
+    linear-gradient(
+      115deg,
+      rgba(0,212,255,0.26) 0%,
+      rgba(255,61,252,0.22) 40%,
+      rgba(0,212,255,0.18) 80%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 38px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 38px
+    );
+  background-blend-mode: screen;
+
+  mask-image: linear-gradient(to bottom, black 68%, transparent 100%);
+}
+
+/* Diagonal automation band (extra depth) */
+.automation-band {
+  position: absolute;
+  width: 150%;
+  height: 260px;
+  top: 26%;
+  left: -20%;
+  background: linear-gradient(
+    100deg,
+    rgba(0,212,255,0.40),
+    rgba(255,61,252,0.34)
+  );
+  filter: blur(46px);
+  transform: rotate(-18deg);
+  opacity: 0.32;
+}
+
+/* Automation nodes along the band */
+.automation-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.95), rgba(255,255,255,0));
+  box-shadow:
+    0 0 12px rgba(0,212,255,0.7),
+    0 0 20px rgba(255,61,252,0.5);
+  opacity: 0.9;
+}
+
+.automation-node.node-a { top: 30%; left: 24%; }
+.automation-node.node-b { top: 38%; left: 48%; }
+.automation-node.node-c { top: 46%; left: 70%; }
+
+/* Light framing arc */
+.automation-arc {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.20);
+  top: 44%;
+  left: 52%;
+  transform: translate(-50%, -50%) rotate(10deg);
+  opacity: 0.20;
+  filter: blur(1px);
+}
+
+/* Ensure text sits above visual */
+.automation-hero .section-eyebrow,
+.automation-hero .hero-title,
+.automation-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .automation-band {
+    width: 180%;
+    height: 220px;
+    top: 30%;
+    left: -30%;
+    transform: rotate(-10deg);
+    filter: blur(40px);
+    opacity: 0.30;
+  }
+
+  .automation-arc {
+    width: 260px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+  }
+
+  .automation-node.node-a { top: 32%; left: 20%; }
+  .automation-node.node-b { top: 40%; left: 50%; }
+  .automation-node.node-c { top: 50%; left: 78%; }
+}
