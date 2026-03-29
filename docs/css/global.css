@@ -776,6 +776,8 @@ h2,
   font-size: 2.4rem;
   letter-spacing: -0.02em;
   font-weight: 600;
+  line-height: 1.22;
+  margin-bottom: 16px;
   background: var(--gradient-heading);
   -webkit-background-clip: text;
   background-clip: text;
@@ -783,13 +785,22 @@ h2,
 }
 
 @media (max-width: 900px) {
-  .section h2 {
-    line-height: 1.18 !important;
-    margin-bottom: 22px !important;
+
+  /* Eyebrow spacing */
+  .section-header .section-eyebrow {
+    margin-bottom: 0px;
   }
 
-  .section-eyebrow {
-    margin-bottom: 10px !important;
+  /* H2 mobile rhythm */
+  .section-header h2 {
+    line-height: 1.22;
+    margin-bottom: 20px;
+  }
+
+  /* Paragraph spacing after headers */
+  .section-header + p,
+  .section-header + .body-text {
+    margin-top: 4px;
   }
 }
 
@@ -2034,3 +2045,5 @@ p,
   .automation-node.node-b { top: 40%; left: 50%; }
   .automation-node.node-c { top: 50%; left: 78%; }
 }
+
+
