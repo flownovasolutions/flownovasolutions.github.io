@@ -2266,6 +2266,10 @@ p,
   isolation: isolate;
 }
 
+.hero.home-hero {
+  overflow: hidden;
+}
+
 /* Original neon atmospheric overlay — BELOW content */
 .hero::before {
   content: "";
@@ -2309,6 +2313,7 @@ p,
   inset: 0;
   z-index: 2; /* BELOW text, ABOVE image */
   pointer-events: none;
+  overflow: hidden;
   opacity: 1; /* THIS is the magic — subtle, not blocking */
 }
 
@@ -2356,6 +2361,7 @@ p,
   filter: blur(40px);
   transform: rotate(-10deg);
   opacity: 0.14;
+  overflow: hidden;
 }
 
 /* BOTTOM FADE — cinematic transition */
