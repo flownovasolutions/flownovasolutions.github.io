@@ -413,6 +413,10 @@ img {
   margin-top: 28px;
 }
 
+.card .learn-more {
+  margin-top: auto; /* pushes button to bottom of card */
+}
+
 .learn-more:hover {
   border-color: rgba(255,255,255,0.45);
   box-shadow:
@@ -463,6 +467,10 @@ img {
   margin-top: 34px;
 }
 
+.card-body {
+  margin-bottom: 14px; /* consistent breathing room */
+}
+
 .card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
@@ -478,6 +486,8 @@ img {
   justify-content: flex-start;
   padding-bottom: 40px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -526,6 +536,7 @@ img {
 
 /* Homepage — 4-wide cinematic grid (keep your existing breakpoints) */
 .homepage-services-grid {
+  display: grid;
   gap: 40px;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -600,11 +611,25 @@ img {
 /* FOOTER                                                  */
 /* ------------------------------------------------------ */
 
+.footer {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
 .footer-logo {
   height: 70px;
   margin: 0 auto 14px;
   display: block;
 }
+
+.footer p {
+  margin: 12px auto 0; /* centers the block */
+  opacity: 0.7;
+  text-align: center;
+}
+
+
 
 /* ------------------------------------------------------ */
 /* UTILITIES                                               */
@@ -2210,5 +2235,285 @@ p,
     width: 420px;
     height: 420px;
     opacity: 0.14;
+  }
+}
+
+
+
+/* ------------------------------------------------------ */
+/* HERO — Correct Layering + Original Cinematic Overlay   */
+/* ------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  padding: var(--space-hero) 20px var(--space-big);
+  text-align: center;
+  min-height: 600px;
+
+  /* Your hero image — root folder */
+  background-image: url("/images/hero-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Establish stacking context */
+  z-index: 0;
+  isolation: isolate;
+}
+
+/* Original neon atmospheric overlay — BELOW content */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(0,212,255,0.35), transparent 60%),
+    radial-gradient(circle at bottom, rgba(255,0,255,0.35), transparent 65%),
+    rgba(5, 8, 20, 0.6);
+
+  z-index: 1; /* BELOW content */
+}
+
+/* Clean bottom fade into divider — BELOW content */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(5,8,20,0) 0%,
+    rgba(5,8,20,1) 100%
+  );
+
+  z-index: 1; /* BELOW content */
+}
+
+/* Content ALWAYS above overlays */
+.hero-content {
+  position: relative;
+  z-index: 5; /* ABOVE everything */
+}
+
+/* OVERLAY WRAPPER — must be subtle */
+.home-hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* BELOW text, ABOVE image */
+  pointer-events: none;
+  opacity: 1; /* THIS is the magic — subtle, not blocking */
+}
+
+/* GRIDLINES — ultra subtle */
+.home-gridlines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 90px 90px;
+  opacity: 0.08;
+  filter: blur(0.5px);
+}
+
+/* RADIAL ANCHOR — soft center glow */
+.home-radial {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.05) 0%,
+    rgba(255,255,255,0.00) 70%
+  );
+  opacity: 0.14;
+  filter: blur(2px);
+}
+
+/* DIAGONAL GLOW — gentle neon sweep */
+.home-glow {
+  position: absolute;
+  width: 140%;
+  height: 200px;
+  top: 18%;
+  left: -20%;
+  background: linear-gradient(
+    90deg,
+    rgba(0,212,255,0.14),
+    rgba(255,61,252,0.14)
+  );
+  filter: blur(40px);
+  transform: rotate(-10deg);
+  opacity: 0.14;
+}
+
+/* BOTTOM FADE — cinematic transition */
+.home-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(
+    to bottom,
+    rgba(5,8,20,0) 0%,
+    rgba(5,8,20,1) 100%
+  );
+  opacity: 0.85;
+}
+
+/* MOBILE REFINEMENTS */
+@media (max-width: 900px) {
+  .home-gridlines {
+    background-size: 70px 70px;
+    opacity: 0.06;
+  }
+
+  .home-radial {
+    width: 360px;
+    height: 360px;
+    opacity: 0.12;
+  }
+
+  .home-glow {
+    width: 180%;
+    height: 160px;
+    top: 24%;
+    left: -30%;
+    filter: blur(36px);
+    opacity: 0.12;
+  }
+
+  .home-fade {
+    height: 140px;
+  }
+}
+
+/* Desktop H1 spacing */
+.hero .heading-xl {
+  margin-bottom: 28px; /* or 32px for more breathing room */
+}
+
+.capabilities-list {
+  padding-left: 22px; /* pulls bullets inward */
+  margin-top: 18px;   /* optional: adds breathing room under the paragraph */
+}
+
+.capabilities-list li {
+  margin-bottom: 6px; /* optional: improves vertical rhythm */
+}
+
+/* Philosophy section spacing */
+.section.big .three-up {
+  margin-top: 34px; /* adds breathing room under the intro paragraph */
+  gap: 32px;        /* consistent spacing between the three items */
+}
+
+.section.big .three-up h3 {
+  margin-bottom: 10px; /* tighten header → paragraph spacing */
+}
+
+
+/* MOBILE HERO TUNING — FINAL */
+
+@media (max-width: 600px) {
+  /* Hero padding (top + bottom) */
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  /* Handle both plain h1 and heading-xl */
+  .hero h1,
+  .hero .heading-xl {
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 18px; /* tighten under headline */
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-top: 8px;
+    margin-bottom: 18px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+
+  /* Buttons stack nicely with controlled space */
+  .hero-actions {
+    margin-top: 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* HERO — Subtext → Button Spacing (Desktop + Mobile)     */
+/* ------------------------------------------------------ */
+
+/* Desktop: keep everything the same except tighten the gap */
+.hero-actions {
+  margin-top: 26px; /* was 32px — slightly tighter, more intentional */
+}
+
+/* Mobile tuning */
+@media (max-width: 600px) {
+
+  /* Subtext → Buttons spacing */
+  .hero-actions {
+    margin-top: 18px;  /* tighter, cleaner, matches your new mobile rhythm */
+    gap: 14px;         /* good breathing room between buttons */
+  }
+
+  /* Buttons fill width cleanly */
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  /* Optional: reduce hero bottom padding ONLY if needed */
+  .hero {
+    padding-bottom: 70px; /* keeps mobile hero from feeling too tall */
+  }
+}
+
+/* Desktop + default */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px; /* was tighter before — this increases space between buttons */
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px; /* vertical space between the two buttons */
+  }
+
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
   }
 }
