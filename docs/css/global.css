@@ -2528,3 +2528,544 @@ p,
     text-align: center;
   }
 }
+
+
+
+/* ------------------------------------------------------ */
+/* FLOWNOVA PRICING PAGE — v3 Trust Ladder System          */
+/* Additive CSS — append to global stylesheet              */
+/* ------------------------------------------------------ */
+
+
+/* ------------------------------------------------------ */
+/* TRUST LADDER — Inline Typographic Strip                 */
+/* ------------------------------------------------------ */
+
+.trust-ladder {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 56px;
+}
+
+.trust-ladder-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+
+  /* No card. No glass. No border. Just content. */
+  background: none;
+  border: none;
+  backdrop-filter: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.trust-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 28px;
+  border-radius: 12px;
+  transition: background 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+  flex: 1;
+  max-width: 200px;
+}
+
+.trust-step:hover {
+  background: rgba(255,255,255,0.04);
+  transform: translateY(-2px);
+}
+
+.trust-step-num {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.35;
+  font-weight: 600;
+}
+
+.trust-step-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.trust-step-range {
+  font-size: 0.78rem;
+  opacity: 0.45;
+  font-weight: 500;
+}
+
+.trust-arrow {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.trust-arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .trust-ladder {
+    padding: 32px 16px 40px;
+  }
+
+  .trust-ladder-inner {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .trust-step {
+    padding: 8px 12px;
+    flex: 0 0 calc(50% - 20px);
+    max-width: none;
+  }
+
+  .trust-arrow {
+    display: none;
+  }
+
+  .trust-step-name {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-step {
+    flex: 0 0 calc(50% - 6px);
+    padding: 8px 6px;
+  }
+}
+
+
+
+/* ------------------------------------------------------ */
+/* DISCOVER SECTION — Side-by-Side Cards                   */
+/* ------------------------------------------------------ */
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+  margin-top: 40px;
+}
+
+.card-discover {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-discover .cta-button,
+.card-discover .learn-more {
+  margin-top: auto;
+  align-self: flex-start;
+  padding-top: 12px;
+}
+
+.card-discover .cta-button {
+  margin-top: auto;
+  font-size: 0.92rem;
+  padding: 11px 22px;
+}
+
+@media (max-width: 800px) {
+  .discover-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------ */
+/* MAP SECTION — Single Featured Card                      */
+/* ------------------------------------------------------ */
+
+.map-feature {
+  margin-top: 40px;
+  max-width: 720px;
+}
+
+.card-map {
+  position: relative;
+}
+
+.pricing-scope-note {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  opacity: 0.65;
+  font-style: italic;
+  line-height: 1.55;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+
+/* ------------------------------------------------------ */
+/* BUILD SECTION — 4-Tier Grid                             */
+/* ------------------------------------------------------ */
+
+.build-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+  margin-top: 40px;
+}
+
+.card-build {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Timeline badge under price */
+.pricing-timeline {
+  font-size: 0.85rem;
+  opacity: 0.55;
+  margin-bottom: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* "This is for you if" qualifier */
+.pricing-qualifier-label {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.pricing-qualifier {
+  font-size: 0.88rem;
+  opacity: 0.7;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* Most Popular card */
+.card-popular {
+  border-color: rgba(0,212,255,0.35);
+  background: radial-gradient(
+    circle at top left,
+    rgba(0,212,255,0.08),
+    rgba(10,10,20,0.95)
+  );
+}
+
+/* Enterprise / Custom Scoped card */
+.card-enterprise {
+  border-color: rgba(255,61,252,0.30);
+  background: radial-gradient(
+    circle at top right,
+    rgba(255,61,252,0.06),
+    rgba(10,10,20,0.95)
+  );
+}
+
+@media (max-width: 900px) {
+  .build-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------ */
+/* CARD BADGES — Free, Most Popular, Custom Scoped         */
+/* ------------------------------------------------------ */
+
+.card-badge {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+  padding: 5px 14px;
+  border-radius: 0 0 10px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge-free {
+  background: rgba(124,255,178,0.18);
+  color: #7CFFB2;
+  border: 1px solid rgba(124,255,178,0.25);
+  border-top: none;
+}
+
+.badge-popular {
+  background: rgba(0,212,255,0.15);
+  color: var(--blue);
+  border: 1px solid rgba(0,212,255,0.30);
+  border-top: none;
+}
+
+.badge-enterprise {
+  background: rgba(255,61,252,0.12);
+  color: var(--pink);
+  border: 1px solid rgba(255,61,252,0.25);
+  border-top: none;
+}
+
+
+/* ------------------------------------------------------ */
+/* ARCHITECTURE NOTE — Callout Box                         */
+/* ------------------------------------------------------ */
+
+.architecture-note {
+  margin-top: 48px;
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  border-left: 3px solid;
+  border-image: var(--gradient-primary) 1;
+  position: relative;
+}
+
+.architecture-note h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.architecture-note p {
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+.architecture-note p + p {
+  margin-top: 10px;
+}
+
+.architecture-note strong {
+  opacity: 1;
+  font-weight: 600;
+}
+
+
+/* ------------------------------------------------------ */
+/* COMPONENT ADD-ONS                                       */
+/* ------------------------------------------------------ */
+
+.addons-section {
+  margin-top: 48px;
+  padding: 28px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.addons-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.addons-intro {
+  font-size: 0.92rem;
+  opacity: 0.7;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+}
+
+.addon-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: border-color 0.25s ease;
+}
+
+.addon-item:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+
+.addon-name {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.addon-price {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+@media (max-width: 800px) {
+  .addons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------ */
+/* SUSTAIN — Updated Retainer Cards                        */
+/* ------------------------------------------------------ */
+
+.retainer-meta {
+  font-size: 0.88rem;
+  opacity: 0.6;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.retainer-rec {
+  font-size: 0.82rem;
+  opacity: 0.5;
+  font-style: italic;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.retainer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
+.retainer-list li {
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.retainer-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+}
+
+.retainer-list li:first-child {
+  font-weight: 600;
+  opacity: 0.7;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.retainer-list li:first-child::before {
+  content: none;
+}
+
+/* Featured retainer (Momentum) */
+.retainer-featured {
+  border-color: rgba(0,212,255,0.30);
+  background: radial-gradient(
+    circle at top left,
+    rgba(0,212,255,0.06),
+    rgba(10,10,20,0.95)
+  );
+}
+
+/* Retainer price styling — /mo unit */
+.retainer-price span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.65;
+}
+
+/* Portfolio scaling note */
+.portfolio-scale {
+  margin-top: 40px;
+  padding: 22px 28px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.portfolio-scale p {
+  font-size: 0.92rem;
+  opacity: 0.7;
+  line-height: 1.6;
+  max-width: none;
+}
+
+.portfolio-scale strong {
+  opacity: 1;
+}
+
+
+/* ------------------------------------------------------ */
+/* MOBILE TYPOGRAPHY — Pricing-Specific Overrides          */
+/* ------------------------------------------------------ */
+
+@media (max-width: 600px) {
+  .pricing-hero h2.hero-title {
+    font-size: 2rem;
+    line-height: 1.18;
+  }
+
+  .pricing-name {
+    font-size: 1.12rem;
+  }
+
+  .architecture-note {
+    padding: 22px 20px;
+  }
+
+  .addons-section {
+    padding-top: 20px;
+  }
+
+  .addon-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .addon-price {
+    margin-left: 0;
+  }
+
+  .trust-ladder {
+    margin-top: -20px;
+  }
+}
