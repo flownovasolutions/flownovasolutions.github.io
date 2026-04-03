@@ -477,5 +477,56 @@ layout: layout.njk
       <a href="/contact" class="cta-button">Book a Free Discovery Call</a>
     </div>
   </section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var header   = document.querySelector('.header');
+  var ladder   = document.querySelector('.trust-ladder');
+  var steps    = document.querySelectorAll('.trust-step');
+  var sections = ['discover', 'map', 'build', 'sustain']
+                   .map(function (id) { return document.getElementById(id); })
+                   .filter(Boolean);
+
+  if (!header || !ladder || !sections.length) return;
+
+  /* ── Dynamic sticky top based on actual header height ── */
+  function setLadderTop() {
+    ladder.style.top = header.offsetHeight + 'px';
+  }
+  setLadderTop();
+  window.addEventListener('resize', setLadderTop);
+
+  /* ── Smooth scroll on click ── */
+  steps.forEach(function (step) {
+    step.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.querySelector(step.getAttribute('href'));
+      if (!target) return;
+      var offset = header.offsetHeight + ladder.offsetHeight + 24;
+      var top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+
+  /* ── Active state on scroll ── */
+  function updateActive() {
+    var offset = header.offsetHeight + ladder.offsetHeight + 60;
+    var current = null;
+
+    sections.forEach(function (section) {
+      if (section.getBoundingClientRect().top <= offset) {
+        current = section.id;
+      }
+    });
+
+    steps.forEach(function (step) {
+      var match = step.getAttribute('href') === '#' + current;
+      step.classList.toggle('active', match);
+    });
+  }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+});
+</script>
 
 </main>
