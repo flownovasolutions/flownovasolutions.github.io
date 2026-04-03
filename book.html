@@ -1,0 +1,115 @@
+---
+title: Book a Session • FlowNova Solutions
+layout: layout.njk
+---
+<main>
+
+<!-- HERO -->
+<section class="section text-center">
+  <div class="section-eyebrow">Book a session</div>
+  <h2 class="hero-title">Let’s start with a conversation.</h2>
+  <p class="hero-subtext">
+    Choose a session below and tell us a bit about what you’re
+    working on. We’ll take it from there.
+  </p>
+</section>
+
+<div class="section-divider divider-gradient-lite divider-down
+            divider-subtle divider-medium">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <polygon points="0,0 100,100 0,100"></polygon>
+  </svg>
+</div>
+
+
+<!-- SESSION OPTIONS -->
+<section class="section">
+  <div class="booking-sessions">
+
+    <div class="booking-session-card">
+      <h3>Discovery Call</h3>
+      <p class="booking-session-meta">Free · 30 minutes</p>
+      <p>
+        A focused conversation to understand your challenges, explore
+        opportunities, and determine fit. No commitment required.
+      </p>
+    </div>
+
+    <div class="booking-session-card">
+      <h3>Process Clarity Session</h3>
+      <p class="booking-session-meta">$750 · 2–3 hours</p>
+      <p>
+        A deep&#8209;dive working session to map a specific workflow,
+        identify friction, and outline a clear path forward.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider divider-gradient-lite divider-up
+            divider-subtle divider-medium">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <polygon points="0,100 100,0 100,100"></polygon>
+  </svg>
+</div>
+
+
+<!-- BOOKING FORM -->
+<section class="section">
+  <div class="section-header text-center">
+    <h2>Request a session</h2>
+    <p>We’ll confirm your booking within one business day.</p>
+  </div>
+
+  <form class="booking-form"
+        action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key"
+           value="YOUR_ACCESS_KEY_HERE">
+    <input type="hidden" name="subject"
+           value="New Booking Request — FlowNova Solutions">
+    <input type="hidden" name="redirect"
+           value="https://flownovasolutions.com/thank-you">
+
+    <div class="form-group">
+      <label for="name">Name
+        <span class="required">*</span></label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email
+        <span class="required">*</span></label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company
+        <span class="optional">(optional)</span></label>
+      <input type="text" id="company" name="company">
+    </div>
+
+    <div class="form-group">
+      <label for="session-type">Session Type
+        <span class="required">*</span></label>
+      <select id="session-type" name="session_type" required>
+        <option value="" disabled selected>Select a session</option>
+        <option value="Discovery Call">
+          Discovery Call (Free · 30 min)</option>
+        <option value="Process Clarity Session">
+          Process Clarity Session ($750 · 2–3 hrs)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5"
+        placeholder="Tell us a bit about what you're working on..."
+      ></textarea>
+    </div>
+
+    <button type="submit" class="cta-button">Submit Request</button>
+  </form>
+</section>
+
+</main>

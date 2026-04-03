@@ -2,118 +2,105 @@
 title: Contact • FlowNova Solutions
 layout: layout.njk
 ---
-
 <main>
 
-  <!-- HERO -->
-  <section class="contact-hero">
-    <div class="contact-hero-visual"></div>
+<!-- HERO -->
+<section class="section text-center">
+  <div class="section-eyebrow">Contact</div>
+  <h2 class="hero-title">Tell us what you’re thinking.</h2>
+  <p class="hero-subtext">
+    Whether it’s a question, an idea, or just a hello —
+    we’d love to hear from you.
+  </p>
+</section>
 
-    <div class="hero-inner">
-    <div class="section-eyebrow">Contact</div>
-    <h2 class="hero-title"">Tell us what you’re building.</h2>
+<div class="section-divider divider-gradient-lite divider-down
+            divider-subtle divider-medium">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <polygon points="0,0 100,100 0,100"></polygon>
+  </svg>
+</div>
 
-    <p class="hero-subtext">
-      Share a bit about your team, your systems, and where you want to go.
-      We’ll follow up with clarity, not chaos.
+
+<!-- BOOKING BANNER -->
+<section class="section">
+  <div class="booking-banner">
+    <p>
+      Looking to book a Discovery Call or Process Clarity Session?
+      <a href="/book">Head to our booking page &rarr;</a>
     </p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- DIVIDER — subtle upward -->
-  <div class="section-divider divider-gradient-lite divider-up divider-subtle divider-medium divider-lift">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon points="0,100 100,0 100,100"></polygon>
-    </svg>
+
+<!-- CONTACT FORM -->
+<section class="section">
+  <div class="section-header text-center">
+    <h2>Send us a message</h2>
   </div>
 
-  <!-- CONTACT FORM -->
-  <section class="section contact-form-wrapper">
+  <form class="contact-form"
+        action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key"
+           value="YOUR_ACCESS_KEY_HERE">
+    <input type="hidden" name="subject"
+           value="New Contact Inquiry — FlowNova Solutions">
+    <input type="hidden" name="redirect"
+           value="https://flownovasolutions.com/thank-you">
 
-    <form
-      id="contactForm"
-      action="https://formspree.io/f/xlgoejlw"
-      method="POST"
-      novalidate
-    >
-      <label>
-        Name *
-        <input type="text" name="name" required />
-      </label>
+    <div class="form-group">
+      <label for="contact-name">Name
+        <span class="required">*</span></label>
+      <input type="text" id="contact-name" name="name" required>
+    </div>
 
-      <label>
-        Email *
-        <input type="email" name="email" required />
-      </label>
+    <div class="form-group">
+      <label for="contact-email">Email
+        <span class="required">*</span></label>
+      <input type="email" id="contact-email" name="email" required>
+    </div>
 
-      <label>
-        Company *
-        <input type="text" name="company" required />
-      </label>
-
-      <label>
-        Phone (optional)
-        <input type="tel" name="phone" />
-      </label>
-
-      <div class="project-type-group">
-        <span>Project Type (select all that apply) *</span>
-
-        <label class="checkbox">
-          <input type="checkbox" name="projectType" value="Workflow Automation" required />
-          Workflow Automation
+    <div class="form-group">
+      <label>What brings you here?</label>
+      <div class="inquiry-checkboxes">
+        <label class="checkbox-label">
+          <input type="checkbox" name="inquiry_type"
+                 value="General Question">
+          <span>General Question</span>
         </label>
-
-        <label class="checkbox">
-          <input type="checkbox" name="projectType" value="Power Apps / Internal Tools" />
-          Power Apps / Internal Tools
+        <label class="checkbox-label">
+          <input type="checkbox" name="inquiry_type"
+                 value="Partnership">
+          <span>Partnership</span>
         </label>
-
-        <label class="checkbox">
-          <input type="checkbox" name="projectType" value="AI / Applied AI" />
-          AI / Applied AI
+        <label class="checkbox-label">
+          <input type="checkbox" name="inquiry_type"
+                 value="Existing Client Support">
+          <span>Existing Client Support</span>
         </label>
-
-        <label class="checkbox">
-          <input type="checkbox" name="projectType" value="Process Mapping & Future-State Design" />
-          Process Mapping &amp; Future-State Design
+        <label class="checkbox-label">
+          <input type="checkbox" name="inquiry_type"
+                 value="Press / Media">
+          <span>Press / Media</span>
         </label>
-
-        <label class="checkbox">
-          <input type="checkbox" name="projectType" value="Integration / API Work" />
-          Integration / API Work
+        <label class="checkbox-label">
+          <input type="checkbox" name="inquiry_type"
+                 value="Something Else">
+          <span>Something Else</span>
         </label>
-
-        <label class="checkbox">
-          <input type="checkbox" id="otherCheckbox" value="Other" />
-          Something Else
-        </label>
-
-        <input
-          type="text"
-          id="otherText"
-          name="otherProjectType"
-          placeholder="Tell us more…"
-          class="hidden"
-        />
       </div>
+    </div>
 
-      <label>
-        Message *
-        <textarea name="message" required></textarea>
-      </label>
+    <div class="form-group">
+      <label for="contact-message">Message
+        <span class="required">*</span></label>
+      <textarea id="contact-message" name="message" rows="5"
+        placeholder="Tell us more..." required></textarea>
+    </div>
 
-      <button type="submit" class="contact-submit">Send Message</button>
-
-      <p id="formSuccess" class="form-success hidden">
-        Message sent! We’ll be in touch soon.
-      </p>
-      <p id="formError" class="form-error hidden">
-        Something went wrong. Please try again.
-      </p>
-    </form>
-
-  </section>
+    <button type="submit" class="cta-button">Send Message</button>
+  </form>
+</section>
 
 </main>
 
