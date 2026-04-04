@@ -2732,7 +2732,7 @@ p,
 .trust-badge-icon {
   width: 64px;
   height: 64px;
-  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.3));
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.2));
 }
 
 .trust-number {
@@ -3012,7 +3012,7 @@ a.learn-more:hover {
   padding-bottom: 100px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .case-studies-hero-visual {
@@ -3031,9 +3031,10 @@ a.learn-more:hover {
 }
 
 .case-study {
-  max-width: 860px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 60px 5vw 80px;
+  scroll-margin-top: 160px;
 }
 
 .case-study-tag {
@@ -3125,6 +3126,7 @@ a.learn-more:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 40px 0 48px;
 }
 
 .tech-tag {
@@ -4834,4 +4836,265 @@ input:focus, select:focus, textarea:focus {
 .pricing-card .cta-button,
 .pricing-card .learn-more {
   margin-top: 24px;
+}
+
+
+
+/* ------------------------------------------------------ */
+/* CASE STUDIES STICKY NAV                                 */
+/* ------------------------------------------------------ */
+
+.case-nav {
+  position: sticky;
+  top: 53px;
+  z-index: 1300;
+  background: rgba(5, 8, 20, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0;
+}
+
+.case-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0 24px;
+}
+
+.case-nav-link {
+  position: relative;
+  padding: 12px 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.case-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.case-nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.case-nav-link:hover::after {
+  width: 60%;
+}
+
+.case-nav-link.active {
+  color: white;
+}
+
+.case-nav-link.active::after {
+  width: 80%;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+.case-nav-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .case-nav-link {
+    padding: 10px 16px;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .case-nav-dot {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+
+
+/* ---- CASE STUDY BLOCKQUOTE ---- */
+
+.case-study-quote {
+  margin-top: 48px;
+  padding: 28px 32px;
+  border-left: 2px solid rgba(0, 212, 255, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 12px 12px 0;
+}
+
+.case-study-quote p {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  opacity: 0.75;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 600px) {
+  .case-study-quote {
+    padding: 20px 20px;
+  }
+}
+
+
+
+
+/* ------------------------------------------------------ */
+/* CASE STUDIES HERO — Evidence Trail Visual               */
+/* ------------------------------------------------------ */
+
+.case-studies-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 130%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+
+  background:
+    radial-gradient(ellipse at 30% 20%,
+      rgba(0, 212, 255, 0.08), transparent 60%),
+    radial-gradient(ellipse at 70% 80%,
+      rgba(255, 61, 252, 0.06), transparent 60%);
+
+  background-blend-mode: screen;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* Horizontal scanlines — evidence / data feel */
+.cs-scanlines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+/* Diagonal path glow — journey / progression */
+.cs-path-glow {
+  position: absolute;
+  width: 160%;
+  height: 200px;
+  top: 34%;
+  left: -30%;
+  background: linear-gradient(
+    110deg,
+    rgba(0, 212, 255, 0.18),
+    rgba(255, 61, 252, 0.14),
+    transparent 70%
+  );
+  filter: blur(52px);
+  transform: rotate(-8deg);
+  opacity: 0.28;
+}
+
+/* Journey nodes — three dots representing the three case studies */
+.cs-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d4ff, #ff3dfc);
+  opacity: 0.3;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.25);
+}
+
+.cs-node-1 {
+  top: 38%;
+  left: 22%;
+}
+
+.cs-node-2 {
+  top: 52%;
+  left: 50%;
+  opacity: 0.4;
+  width: 8px;
+  height: 8px;
+}
+
+.cs-node-3 {
+  top: 42%;
+  left: 76%;
+}
+
+/* Content above visuals */
+.case-studies-hero .section-eyebrow,
+.case-studies-hero .hero-title,
+.case-studies-hero .hero-subtext {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .cs-path-glow {
+    top: 40%;
+    opacity: 0.22;
+  }
+
+  .cs-node-1 { left: 12%; }
+  .cs-node-3 { left: 84%; }
+}
+
+
+
+
+
+/* ------------------------------------------------------ */
+/* CASE STUDY BLOCKQUOTE                                   */
+/* ------------------------------------------------------ */
+
+.case-study-quote {
+  margin-top: 48px;
+  padding: 28px 32px;
+  border-left: 2px solid rgba(0, 212, 255, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 12px 12px 0;
+}
+
+.case-study-quote p {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  opacity: 0.75;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 600px) {
+  .case-study-quote {
+    padding: 20px 20px;
+  }
 }
