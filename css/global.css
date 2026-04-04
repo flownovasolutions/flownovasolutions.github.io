@@ -5098,3 +5098,93 @@ input:focus, select:focus, textarea:focus {
     padding: 20px 20px;
   }
 }
+
+
+
+/* ------------------------------------------------------ */
+/* HOMEPAGE — CASE STUDY PREVIEW CARDS                     */
+/* ------------------------------------------------------ */
+
+.cs-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding: 0 24px;
+  text-align: left;
+}
+
+.cs-preview-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cs-preview-card:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+.cs-preview-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cs-preview-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cs-preview-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  flex-grow: 1;
+}
+
+.cs-preview-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 8px;
+  transition: opacity 0.25s ease;
+}
+
+.cs-preview-card:hover .cs-preview-link {
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .cs-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+  }
+}
+
+/* Center .section-subtext only inside text-center sections */
+.text-center .section-subtext {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
