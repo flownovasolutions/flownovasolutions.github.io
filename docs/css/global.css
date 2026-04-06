@@ -5635,3 +5635,55 @@ input:focus, select:focus, textarea:focus {
   letter-spacing: 0.03em;
   margin-top: 8px;
 }
+
+
+
+
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+}
+
+
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-legal .footer-divider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Legal page list alignment */
+.legal-section ul {
+  padding-left: 1.25em;
+  margin-left: 0;
+}
+
+.legal-section li {
+  padding-left: 0.25em;
+}
+
+/* Center the last-updated date */
+.legal-updated {
+  text-align: center;
+}
