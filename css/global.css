@@ -5646,7 +5646,10 @@ input:focus, select:focus, textarea:focus {
   margin-top: 12px;
   letter-spacing: 0.5px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 
 .footer-legal {
@@ -5678,6 +5681,7 @@ input:focus, select:focus, textarea:focus {
 .section > ul {
   padding-left: 1.25em;
   margin-left: 0;
+  margin-top: 10px;
 }
 
 .legal-section li {
