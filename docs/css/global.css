@@ -686,7 +686,6 @@ button.cta-button {
 /* Push Learn More to the bottom of every card */
 .services-grid .card a {
   margin-top: auto;
-  padding-top: 20px;
   align-self: flex-start;
 }
 
@@ -694,6 +693,7 @@ button.cta-button {
 /* Restore breathing room between subtext and bullets */
 .services-grid .card ul {
   margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 
