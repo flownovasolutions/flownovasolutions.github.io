@@ -3503,7 +3503,12 @@ input:focus, select:focus, textarea:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 55% 100%;
+  background-position: 0% center;
+  font-size: 1.20rem;
+  font-weight: 00;
 }
+
 
 .build-card:hover {
   border-color: rgba(0, 212, 255, 0.3);
