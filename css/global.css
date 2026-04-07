@@ -1112,6 +1112,15 @@ p,
 /* APPROACH HERO VISUAL SYSTEM — FlowNova Energy v7       */
 /* ------------------------------------------------------ */
 
+/* ── Approach Hero Wrapper ── */
+.approach-hero {
+  position: relative;
+  overflow-x: clip;
+  padding-top: 140px;
+  padding-bottom: 100px;
+}
+
+
 .approach-hero-visual {
   position: absolute;
   inset: 0;
@@ -1120,6 +1129,8 @@ p,
   pointer-events: none;
   overflow: visible;
   z-index: 0;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 
   /* Light, inviting gradient */
   background: linear-gradient(
