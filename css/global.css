@@ -5708,3 +5708,8 @@ input:focus, select:focus, textarea:focus {
 .cs-hero {
   overflow-x: clip;
 }
+
+
+main {
+  overflow-x: clip;
+}
