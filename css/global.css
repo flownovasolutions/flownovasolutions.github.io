@@ -1,6 +1,9 @@
 html {
   overflow-x: clip;
 }
+body {
+  overflow: clip;
+}
 
 
 /* ------------------------------------------------------ */
@@ -5702,4 +5705,22 @@ input:focus, select:focus, textarea:focus {
 /* Center the last-updated date */
 .legal-updated {
   text-align: center;
+}
+
+
+
+
+/* ── Clip oversized decorative glows/ribbons at hero boundaries ── */
+.approach-hero,
+.automation-hero,
+.ai-hero,
+.home-hero,
+.brand-hero,
+.cs-hero {
+  overflow-x: clip;
+}
+
+
+main {
+  overflow-x: clip;
 }
