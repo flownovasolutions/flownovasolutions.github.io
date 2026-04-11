@@ -5745,3 +5745,11 @@ input:focus, select:focus, textarea:focus {
 main {
   overflow-x: clip;
 }
+
+
+.response-promise {
+  font-size: 0.85rem;
+  color: var(--text-muted, #888);
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
