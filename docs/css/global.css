@@ -5691,6 +5691,27 @@ input:focus, select:focus, textarea:focus {
 }
 
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.founder-social a {
+  color: var(--text-muted, #888);
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.founder-social a:hover {
+  color: var(--accent, #4ea8de);
+}
+
+
+
 /* Legal page list alignment */
 .section > ul {
   padding-left: 1.25em;
