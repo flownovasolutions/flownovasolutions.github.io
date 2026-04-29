@@ -1,0 +1,61 @@
+---
+title: Blog • FlowNova Solutions
+layout: layout.njk
+description: Insights on process improvement, Power Platform, automation, and building systems that actually work.
+---
+
+<main>
+  <!-- HERO -->
+  <section class="hero-spacing blog-hero">
+    <div class="blog-hero-visual"></div>
+    <div class="hero-inner">
+      <div class="section-eyebrow">FlowNova Blog</div>
+      <h2 class="hero-title">Insights from the build.</h2>
+      <p class="hero-subtext">
+        Practical thinking on process improvement, automation, Power Platform, and building systems teams actually want to use.
+      </p>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider divider-gradient-lite divider-down divider-regular divider-medium">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,0 100,100 0,100" />
+    </svg>
+  </div>
+
+  <!-- BLOG POST LISTING -->
+  <section class="section">
+    <div class="blog-grid">
+      {% for post in collections.blog | reverse %}
+      <a href="{{ post.url }}" class="blog-card">
+        <span class="blog-card-date">{{ post.date | dateFormat }}</span>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.excerpt }}</p>
+        <span class="blog-card-cta">Read More →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider divider-gradient-lite divider-up divider-subtle divider-short">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100" />
+    </svg>
+  </div>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="section-header">
+      <div class="section-eyebrow">Stay connected</div>
+      <h2>Want insights like these in your inbox?</h2>
+    </div>
+    <p class="cta-subtext" style="max-width: 640px; margin: 0 auto;">
+      We share practical thinking on automation, process improvement, and Power Platform — no fluff, no spam.
+    </p>
+    <div class="cta-button-wrapper">
+      <a href="/contact" class="cta-button">Get in Touch</a>
+    </div>
+  </section>
+</main>

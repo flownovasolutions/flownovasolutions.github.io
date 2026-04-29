@@ -1,0 +1,48 @@
+---
+layout: layout.njk
+---
+
+<main>
+  <!-- HERO -->
+  <section class="hero-spacing blog-hero">
+    <div class="blog-hero-visual"></div>
+    <div class="hero-inner">
+      <div class="section-eyebrow">FlowNova Blog</div>
+      <h2 class="hero-title">{{ title }}</h2>
+      <p class="hero-subtext blog-meta">{{ date | dateFormat }}{% if author %} · {{ author }}{% endif %}</p>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider divider-gradient-lite divider-down divider-regular divider-medium">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,0 100,100 0,100" />
+    </svg>
+  </div>
+
+  <!-- ARTICLE CONTENT -->
+  <article class="section blog-article">
+    {{ content | safe }}
+  </article>
+
+  <!-- Divider -->
+  <div class="section-divider divider-gradient-lite divider-up divider-subtle divider-short">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,100 100,0 100,100" />
+    </svg>
+  </div>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="section-header">
+      <div class="section-eyebrow">Next step</div>
+      <h2>Want to talk through your processes?</h2>
+    </div>
+    <p class="cta-subtext" style="max-width: 640px; margin: 0 auto;">
+      Book a free Discovery Call — no pitch, no pressure. Just a conversation about where you are and where you want to be.
+    </p>
+    <div class="cta-button-wrapper">
+      <a href="/book" class="cta-button">Book a Free Discovery Call</a>
+    </div>
+  </section>
+</main>
