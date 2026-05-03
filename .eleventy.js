@@ -15,6 +15,11 @@ module.exports = function(eleventyConfig) {
     return d.toLocaleDateString('en-US', options);
   });
 
+  // Date filter for sitemap
+  eleventyConfig.addFilter("dateToRfc3339", (date) => {
+    return new Date(date).toISOString();
+  });
+
   // Template formats
   eleventyConfig.setTemplateFormats(["njk", "html"]);
 
