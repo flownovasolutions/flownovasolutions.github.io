@@ -5757,8 +5757,6 @@ main {
 
 
 
-
-
 /* ======================================================
    BLOG STYLES — FlowNova Solutions
    ====================================================== */
@@ -6015,5 +6013,127 @@ main {
   .blog-article h2 {
     font-size: 1.35rem;
     margin-top: 36px;
+  }
+}
+
+
+
+
+/* ============================================================
+   OKLAHOMA LANDING PAGE
+   ============================================================ */
+
+/* --- Hero --- */
+.oklahoma-hero {
+  position: relative;
+  overflow: visible;
+  padding-top: 140px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.oklahoma-hero-visual {
+  position: absolute;
+  inset: 0;
+  height: 130%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* Central cyan-magenta glow */
+.oklahoma-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  translate: -50% 0;
+  width: 900px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 212, 255, 0.12) 0%,
+    rgba(255, 61, 252, 0.06) 50%,
+    transparent 80%
+  );
+  filter: blur(60px);
+}
+
+/* Primary decorative arc */
+.oklahoma-arc {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.08);
+  box-shadow:
+    0 0 80px rgba(0, 212, 255, 0.04),
+    inset 0 0 80px rgba(255, 61, 252, 0.02);
+}
+
+/* Secondary smaller arc */
+.oklahoma-arc-small {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 61, 252, 0.06);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+
+  .oklahoma-hero {
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  .oklahoma-glow {
+    width: 500px;
+    height: 400px;
+  }
+
+  .oklahoma-arc {
+    width: 450px;
+    height: 450px;
+  }
+
+  .oklahoma-arc-small {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Force inline grid overrides to single column on tablet/mobile */
+  .oklahoma-hero ~ * .card-grid[style*="repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .oklahoma-hero ~ * .approach-pillars[style*="repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .oklahoma-hero {
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+
+  .oklahoma-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .oklahoma-hero .hero-actions {
+    flex-direction: column;
+    gap: 12px;
   }
 }
