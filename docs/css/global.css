@@ -571,6 +571,45 @@ button.cta-button {
 }
 
 
+/* Wide variant — auto-sizes to content */
+.learn-more-wide {
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: 0.25s ease;
+  text-align: center;
+  width: auto;
+}
+
+.learn-more-wide:hover {
+  border-color: rgba(255,255,255,0.45);
+  box-shadow:
+    0 0 12px rgba(0,212,255,0.35),
+    0 0 18px rgba(255,61,252,0.25);
+}
+
+a.learn-more-wide {
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00d4ff, #ff3dfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a.learn-more-wide:hover {
+  opacity: 0.7;
+}
+
+
 /* MOBILE BACK BUTTON */
 .mobile-back {
   position: fixed;
@@ -6019,99 +6058,151 @@ main {
 
 
 
-/* ============================================================
-   OKLAHOMA LANDING PAGE
-   ============================================================ */
+/* ------------------------------------------------------ */
+/* OKLAHOMA HERO — Horizon Field (FlowNova v1)            */
+/* ------------------------------------------------------ */
 
-/* --- Hero --- */
 .oklahoma-hero {
   position: relative;
   overflow: visible;
-  padding-top: 140px;
-  padding-bottom: 100px;
-  text-align: center;
 }
 
+/* Full-bleed visual layer */
 .oklahoma-hero-visual {
   position: absolute;
   inset: 0;
+  width: 100%;
   height: 130%;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,20,0.00) 0%,
+    rgba(10,10,20,0.10) 45%,
+    rgba(10,10,20,0.18) 100%
+  );
+
+  background-image:
+    radial-gradient(circle at 45% 25%, rgba(0,212,255,0.10), transparent 70%),
+    radial-gradient(circle at 65% 75%, rgba(255,61,252,0.08), transparent 75%);
+  background-blend-mode: screen;
+
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
-/* Central cyan-magenta glow */
-.oklahoma-glow {
+/* Wide horizon glow band — unique 3-color */
+.oklahoma-horizon {
   position: absolute;
-  top: -10%;
+  width: 140%;
+  height: 200px;
+  top: 42%;
+  left: -18%;
+  background: linear-gradient(
+    90deg,
+    rgba(0,212,255,0.32),
+    rgba(124,255,178,0.24),
+    rgba(255,61,252,0.30)
+  );
+  filter: blur(50px);
+  transform: rotate(-4deg);
+  opacity: 0.28;
+}
+
+/* Upward pulse glow from center */
+.oklahoma-pulse {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 15%;
   left: 50%;
-  translate: -50% 0;
-  width: 900px;
-  height: 600px;
+  transform: translateX(-50%);
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(0, 212, 255, 0.12) 0%,
-    rgba(255, 61, 252, 0.06) 50%,
-    transparent 80%
+    rgba(0,212,255,0.14) 0%,
+    rgba(124,255,178,0.06) 40%,
+    transparent 70%
   );
-  filter: blur(60px);
+  filter: blur(40px);
 }
 
-/* Primary decorative arc */
+/* Primary arc */
 .oklahoma-arc {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 700px;
-  height: 700px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 212, 255, 0.08);
-  box-shadow:
-    0 0 80px rgba(0, 212, 255, 0.04),
-    inset 0 0 80px rgba(255, 61, 252, 0.02);
+  border: 1px solid rgba(255,255,255,0.20);
+  top: 38%;
+  left: 54%;
+  transform: translate(-50%, -50%) rotate(8deg);
+  opacity: 0.22;
+  filter: blur(1px);
 }
 
-/* Secondary smaller arc */
+/* Secondary arc */
 .oklahoma-arc-small {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 440px;
-  height: 440px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 61, 252, 0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  top: 24%;
+  left: 42%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  opacity: 0.18;
+  filter: blur(2px);
+  box-shadow: 0 0 12px rgba(255,255,255,0.10);
 }
 
-/* --- Responsive --- */
-@media (max-width: 900px) {
+/* Content above visuals */
+.oklahoma-hero .section-eyebrow,
+.oklahoma-hero .heading-xl,
+.oklahoma-hero .hero-subtext,
+.oklahoma-hero .hero-actions {
+  position: relative;
+  z-index: 2;
+}
 
-  .oklahoma-hero {
-    padding-top: 110px;
-    padding-bottom: 70px;
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .oklahoma-horizon {
+    width: 170%;
+    height: 180px;
+    top: 38%;
+    left: -25%;
+    transform: rotate(-3deg);
+    filter: blur(40px);
+    opacity: 0.24;
   }
 
-  .oklahoma-glow {
-    width: 500px;
-    height: 400px;
+  .oklahoma-pulse {
+    width: 350px;
+    height: 350px;
   }
 
   .oklahoma-arc {
-    width: 450px;
-    height: 450px;
+    width: 260px;
+    height: 260px;
+    top: 48%;
+    left: 50%;
+    opacity: 0.20;
   }
 
   .oklahoma-arc-small {
-    width: 280px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
+    top: 32%;
+    left: 46%;
+    opacity: 0.16;
   }
+}
 
-  /* Force inline grid overrides to single column on tablet/mobile */
+/* Page grid responsive overrides */
+@media (max-width: 900px) {
   .oklahoma-hero ~ * .card-grid[style*="repeat(3"] {
     grid-template-columns: 1fr !important;
   }
@@ -6121,20 +6212,4 @@ main {
   }
 }
 
-@media (max-width: 600px) {
-
-  .oklahoma-hero {
-    padding-top: 90px;
-    padding-bottom: 50px;
-  }
-
-  .oklahoma-hero .hero-title {
-    font-size: 2rem;
-  }
-
-  .oklahoma-hero .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-}
 
