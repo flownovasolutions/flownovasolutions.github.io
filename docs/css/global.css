@@ -6397,3 +6397,125 @@ main {
     max-width: 100%;
   }
 }
+
+
+/* ══════════════════════════════════════════════════════════════
+   FAQ ACCORDION — append to end of style.css
+   ══════════════════════════════════════════════════════════════ */
+
+.faq-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(0, 212, 255, 0.22);
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  cursor: pointer;
+  list-style: none;
+  background: transparent;
+  -webkit-appearance: none;
+  color: white;
+  gap: 16px;
+}
+
+/* Hide browser-default disclosure triangles */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; }
+
+/* Custom + indicator */
+.faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.5;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+  opacity: 0.9;
+}
+
+.faq-item summary:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-answer {
+  padding: 0 28px 24px;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  opacity: 0.75;
+  max-width: none; /* Override global p { max-width: 720px } */
+}
+
+@media (max-width: 900px) {
+  .faq-item summary { padding: 18px 22px; font-size: 0.97rem; }
+  .faq-answer { padding: 0 22px 20px; }
+}
+
+@media (max-width: 600px) {
+  .faq-item summary { padding: 16px 18px; font-size: 0.93rem; }
+  .faq-answer { padding: 0 18px 18px; }
+  .faq-answer p { font-size: 0.9rem; }
+}
+
+
+
+/* ── Case Preview — button & header corrections ─────────── */
+
+/* Strip the pill-box from .learn-more base class so the
+   link renders as a clean inline gradient text link */
+.case-preview-card a.learn-more {
+  display: inline;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  backdrop-filter: none;
+  background: linear-gradient(135deg, #00d4ff, #ff3dfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: filter 0.25s ease;   /* ← was opacity */
+}
+
+.case-preview-card a.learn-more:hover {
+  filter: brightness(1.25);         /* ← was opacity: 0.7 */
+}
+
+/* Give h3 the same gradient heading treatment as .card h3 */
+.case-preview-card h3 {
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}

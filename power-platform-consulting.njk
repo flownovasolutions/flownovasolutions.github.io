@@ -1,0 +1,644 @@
+---
+title: Power Platform Consulting • FlowNova Solutions
+layout: layout.njk
+description: "FlowNova is a Microsoft-certified Power Platform consultant helping businesses in Tulsa, Oklahoma and across the US build Power Apps, automate workflows, and deploy AI agents — with engineering discipline and zero guesswork."
+ogImage: "https://flownovasolutions.com/images/og-image.png"
+---
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   PP HERO — page-scoped visuals only
+   Everything else uses global classes
+   ══════════════════════════════════════════════════════= */
+
+.pp-hero {
+  position: relative;
+  overflow: visible;
+}
+
+.pp-hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Bold SVG laser lines */
+.pp-lasers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Blurred color orbs */
+.pp-orb-pink {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  top: -380px;
+  left: -260px;
+  background: radial-gradient(circle, rgba(255,61,252,0.22) 0%, rgba(255,61,252,0.08) 40%, transparent 68%);
+  filter: blur(80px);
+}
+
+.pp-orb-teal {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  bottom: -100px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(0,212,255,0.18) 0%, transparent 65%);
+  filter: blur(64px);
+}
+
+.pp-orb-mid {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  top: 42%;
+  left: 54%;
+  background: radial-gradient(circle, rgba(0,212,255,0.10) 0%, transparent 70%);
+  filter: blur(44px);
+}
+
+
+
+/* Dark gradient text — "Built right. Built to last." */
+.pp-title-grad {
+  display: block;
+  background: linear-gradient(135deg, #e040fb 0%, #2979ff 55%, #00e5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero content — explicit flex layout for spacing control */
+.pp-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pp-hero .hero-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pp-hero .hero-subtext {
+  margin: 0;
+}
+
+.pp-hero .hero-actions {
+  margin-top: 8px;
+}
+
+.pp-hero .button.secondary {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: white;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.pp-hero .button.secondary:hover {
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+</style>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HERO                                               -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="pp-hero hero-spacing text-center">
+
+<div class="pp-hero-visual">
+<svg class="pp-lasers" viewBox="0 0 1440 580" preserveAspectRatio="none"
+     style="filter: blur(1.2px);"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Teal beam — sweeps left to right -->
+      <linearGradient id="lt1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0"/>
+        <stop offset="30%"  stop-color="#00d4ff" stop-opacity="0.35"/>
+        <stop offset="65%"  stop-color="#00d4ff" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+      </linearGradient>
+      <!-- Teal thin — sweeps left to right, different peak -->
+      <linearGradient id="lt2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#00d4ff" stop-opacity="0"/>
+        <stop offset="50%"  stop-color="#00d4ff" stop-opacity="0.15"/>
+        <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+      </linearGradient>
+      <!-- Pink slash — right to left bias, peaks early -->
+      <linearGradient id="lp1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#ff3dfc" stop-opacity="0.20"/>
+        <stop offset="25%"  stop-color="#ff3dfc" stop-opacity="0.28"/>
+        <stop offset="70%"  stop-color="#ff3dfc" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#ff3dfc" stop-opacity="0"/>
+      </linearGradient>
+      <!-- Pink hair — fades in late -->
+      <linearGradient id="lp2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#ff3dfc" stop-opacity="0"/>
+        <stop offset="60%"  stop-color="#ff3dfc" stop-opacity="0.13"/>
+        <stop offset="100%" stop-color="#ff3dfc" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Main teal sweep — dramatic upward angle, thickest -->
+    <line x1="-40" y1="480" x2="1480" y2="110" stroke="url(#lt1)" stroke-width="1.6"/>
+    <!-- Secondary teal — nearly parallel but not quite -->
+    <line x1="-40" y1="540" x2="1480" y2="230" stroke="url(#lt2)" stroke-width="0.8"/>
+    <!-- Pink slash — starts hot upper-left, bleeds out right -->
+    <line x1="0"   y1="200" x2="1100" y2="520" stroke="url(#lp1)" stroke-width="1.1"/>
+    <!-- Thin pink accent — totally different angle, off-axis -->
+    <line x1="220" y1="580" x2="860"  y2="-20" stroke="url(#lp2)" stroke-width="0.5"/>
+    <!-- Hair-thin teal — bottom right area, texture only -->
+    <line x1="680" y1="580" x2="1480" y2="320" stroke="url(#lt2)" stroke-width="0.4"/>
+  </svg>
+
+  <!-- Orbs: pink dominates upper-left, teal is accent lower-right -->
+  <div class="pp-orb-pink"></div>
+  <div class="pp-orb-teal"></div>
+  <div class="pp-orb-mid"></div>
+</div>
+
+
+  </div>
+
+  <div class="hero-content">
+    <div class="section-eyebrow">Power Platform Consulting</div>
+
+    <h2 class="hero-title">
+      Microsoft Power Platform.<br>
+      <span class="pp-title-grad">Built right. Built to last.</span>
+    </h2>
+
+    <p class="hero-subtext">
+      FlowNova is a Microsoft-certified Power Platform consultant helping businesses
+      in Tulsa, Oklahoma and across the US design, automate, and build — with
+      engineering discipline and zero guesswork.
+    </p>
+
+    <div class="hero-actions">
+      <a href="/book/" class="cta-button">Book a Free Discovery Call</a>
+      <a href="/case-studies/" class="button secondary">See Real Results</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="0,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PROBLEM                                            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-eyebrow">Sound familiar?</div>
+  <h2>Your Tech Stack Is Capable. Your Processes Aren't Keeping Up.</h2>
+  <p>
+    Most businesses already have Microsoft 365. The licenses are paid. The tools
+    exist. But the workflows are still running through email threads, disconnected
+    spreadsheets, and manual hand-offs that slow everything down.
+  </p>
+  <p style="margin-top: 16px;">
+    A Power Platform consultant doesn't just "set up" tools — they engineer the
+    operational layer that connects your data, automates your decisions, and gives
+    your team back time they didn't know they were losing.
+  </p>
+  <p style="margin-top: 16px;">
+    That's what FlowNova does. Not templates. Not demos. Real systems built on
+    your reality, your data, and your workflows.
+  </p>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="1440,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- POWER APPS                                         -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-eyebrow">Power Apps</div>
+  <h2>Custom Apps That Replace the Chaos</h2>
+  <p>
+    Canvas apps, model-driven apps, and Dataverse-backed systems designed to
+    eliminate manual data entry, disconnected files, and the inbox as a workflow.
+  </p>
+
+  <div class="ai-grid">
+
+    <article class="card">
+      <h3>Canvas & Model-Driven Apps</h3>
+      <p>
+        Role-specific interfaces that match how your team actually works — not
+        how a generic template assumed they would.
+      </p>
+      <ul>
+        <li>Intake forms & approval flows</li>
+        <li>Field operations tools</li>
+        <li>Multi-role, permission-aware apps</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Dataverse Architecture</h3>
+      <p>
+        Clean, scalable data models built for reliability — with validation
+        rules, relationships, and governance baked in from day one.
+      </p>
+      <ul>
+        <li>Schema design & data modeling</li>
+        <li>Business rules & calculated fields</li>
+        <li>SharePoint & SQL migration paths</li>
+      </ul>
+    </article>
+
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="0,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- POWER AUTOMATE                                     -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-eyebrow">Power Automate</div>
+  <h2>Workflows That Run Without You</h2>
+  <p>
+    Power Automate consulting focused on eliminating the manual steps that eat
+    your team's day — approvals, notifications, data sync, document generation,
+    and more.
+  </p>
+
+  <div class="ai-grid">
+
+    <article class="card">
+      <h3>Approval & Notification Flows</h3>
+      <p>
+        Multi-stage approvals, conditional routing, and automated notifications
+        that keep everyone informed without inbox overload.
+      </p>
+      <ul>
+        <li>Adaptive Cards in Teams</li>
+        <li>Multi-approver routing logic</li>
+        <li>Escalation & reminder automation</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>System Integration & Data Sync</h3>
+      <p>
+        Connect your Microsoft 365 environment to CRMs, ERPs, and third-party
+        tools — so data flows where it needs to go, automatically.
+      </p>
+      <ul>
+        <li>API connectors & custom flows</li>
+        <li>Bi-directional data sync</li>
+        <li>Document generation & filing</li>
+      </ul>
+    </article>
+
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="1440,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- AI & COPILOT STUDIO                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-eyebrow">AI & Copilot Studio</div>
+  <h2>Real AI — Embedded in Your Operations</h2>
+  <p>
+    Microsoft's AI layer is already inside your M365 tenant. We help you deploy it
+    purposefully — not as a novelty, but as an operational asset that reduces
+    manual work, surfaces insight, and keeps your team focused on high-value decisions.
+  </p>
+
+  <div class="ai-grid">
+
+    <article class="card">
+      <h3>Copilot Studio Agents</h3>
+      <p>
+        Custom AI agents built for real business tasks — not generic chatbots.
+        Trained on your data, connected to your systems, and deployed inside
+        Teams or your Power Apps.
+      </p>
+      <ul>
+        <li>HR & IT helpdesk agents</li>
+        <li>Customer intake & triage bots</li>
+        <li>Knowledge-base Q&A agents</li>
+        <li>Connected to Dataverse & SharePoint</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>AI-Powered Automation</h3>
+      <p>
+        Intelligent flows that go beyond "if this, then that" — using AI Builder
+        to extract, classify, and act on unstructured data automatically.
+      </p>
+      <ul>
+        <li>Document processing & extraction</li>
+        <li>Sentiment analysis on intake forms</li>
+        <li>Predictive routing & classification</li>
+        <li>AI Builder model integration</li>
+      </ul>
+    </article>
+
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="0,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- APPROACH                                           -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section text-center">
+  <div class="section-eyebrow">How We Work</div>
+  <h2>Consulting That Builds — Not Just Advises</h2>
+  <p style="max-width: 640px; margin: 0 auto;">
+    Every engagement is engineered, not improvised. We scope tightly, build
+    deliberately, and deliver systems your team can own, extend, and trust.
+  </p>
+
+  <div class="approach-pillars">
+
+    <div class="approach-card">
+      <h3>Discover</h3>
+      <p>
+        We start by understanding your actual workflow — not the documented version.
+        Discovery is where we find the gaps that a demo would never surface.
+      </p>
+    </div>
+
+    <div class="approach-card">
+      <h3>Architect</h3>
+      <p>
+        Before a single flow is built, we map the data model, the automation
+        logic, and the user experience — so nothing has to be rebuilt six months later.
+      </p>
+    </div>
+
+    <div class="approach-card">
+      <h3>Deliver</h3>
+      <p>
+        We ship in working increments — not a 12-week black box. You see it,
+        test it, and own it before the engagement closes.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="1440,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CASE STUDIES                                       -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section text-center">
+  <div class="section-eyebrow">Real Results</div>
+  <h2>Power Platform Consulting in Action</h2>
+  <p style="max-width: 640px; margin: 0 auto;">
+    Every engagement starts with a real business problem. Here's what we've shipped.
+  </p>
+
+  <div class="case-preview-grid">
+
+    <div class="case-preview-card">
+      <span class="case-preview-tag">Power Apps · Power Automate</span>
+      <h3>Employee Onboarding — From 3 Days to 4 Hours</h3>
+      <p>
+        Replaced a spreadsheet-and-email onboarding workflow with a structured
+        Power App and automated task routing — cutting new-hire setup time by 85%.
+      </p>
+      <a href="/case-studies/employee-onboarding/" class="learn-more">Read the case study →</a>
+    </div>
+
+    <div class="case-preview-card">
+      <span class="case-preview-tag">Power Apps · Dataverse</span>
+      <h3>Change Order Management Built for the Field</h3>
+      <p>
+        Built a mobile-first change order system for a construction firm —
+        replacing paper forms and email chains with a fully tracked,
+        approval-routed workflow.
+      </p>
+      <a href="/case-studies/change-order-management/" class="learn-more">Read the case study →</a>
+    </div>
+
+    <div class="case-preview-card">
+      <span class="case-preview-tag">Power BI · Power Automate</span>
+      <h3>Fleet Operations — Real-Time, Not Retroactive</h3>
+      <p>
+        Delivered live fleet status dashboards and automated maintenance alerts
+        — turning a weekly manual report into an always-on operational view.
+      </p>
+      <a href="/case-studies/fleet-operations/" class="learn-more">Read the case study →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="0,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- FAQ                                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-eyebrow">Common Questions</div>
+  <h2>Power Platform Consulting — Answered</h2>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>What does a Power Platform consultant actually do?</summary>
+      <div class="faq-answer">
+        <p>
+          A Power Platform consultant designs, builds, and deploys custom business
+          solutions using Microsoft's low-code tools — Power Apps, Power Automate,
+          Power BI, and Copilot Studio. Unlike a generalist IT consultant, we focus
+          specifically on translating your operational problems into working systems:
+          automated workflows, custom applications, AI agents, and dashboards that
+          connect to your existing Microsoft 365 environment.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you work with businesses outside of Tulsa and Oklahoma?</summary>
+      <div class="faq-answer">
+        <p>
+          Yes — FlowNova works with clients across the US. We're headquartered in
+          Tulsa, Oklahoma, but Power Platform work is remote-first by design.
+          Discovery calls, architecture sessions, and delivery all happen over Teams.
+          Most of our clients never need us on-site.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What's the difference between Power Apps and Power Automate?</summary>
+      <div class="faq-answer">
+        <p>
+          Power Apps is where you build the interface — the form, the dashboard, the
+          tool your team interacts with. Power Automate is the engine running in the
+          background — handling approvals, sending notifications, syncing data, and
+          triggering actions. In most real-world solutions, they work together: Power
+          Apps surfaces the experience, Power Automate does the heavy lifting behind it.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need a large IT team to get value from Power Platform?</summary>
+      <div class="faq-answer">
+        <p>
+          No. Most of FlowNova's clients are mid-sized businesses with lean IT teams
+          or none at all. Power Platform operates within your existing Microsoft 365
+          licenses — no new infrastructure required. We handle the architecture and
+          build, then document and train your team so they can own it going forward.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How is FlowNova different from a large Microsoft partner?</summary>
+      <div class="faq-answer">
+        <p>
+          Large partners typically deploy teams of junior consultants managed by senior
+          account leads you rarely talk to. At FlowNova, you work directly with the
+          engineer building your solution — no handoffs, no middlemen. That means faster
+          discovery, tighter scoping, and builds that actually reflect your real workflow
+          rather than a templated assumption about it.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider divider-gradient-lite divider-medium divider-subtle">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    <polygon points="1440,0 1440,70 0,70"></polygon>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CTA                                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section text-center">
+  <div class="section-eyebrow">Next Step</div>
+  <h2>Ready to Build Something That Actually Works?</h2>
+  <p style="max-width: 600px; margin: 0 auto;">
+    Whether you're replacing a spreadsheet, automating an approval process, or
+    deploying your first AI agent — FlowNova scopes, builds, and delivers it right.
+  </p>
+  <div style="margin-top: 36px;">
+    <a href="/book/" class="cta-button">Book a Free Discovery Call</a>
+  </div>
+  <p class="cta-subtext" style="margin-top: 20px; font-size: 0.88rem; opacity: 0.65;">
+    Not ready to talk? <a href="/case-studies/" style="text-decoration: underline;">Browse case studies first</a> and see what's possible.
+  </p>
+</div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- JSON-LD: FAQPage Schema                            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a Power Platform consultant actually do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Power Platform consultant designs, builds, and deploys custom business solutions using Microsoft's low-code tools — Power Apps, Power Automate, Power BI, and Copilot Studio. They translate operational problems into working systems: automated workflows, custom applications, AI agents, and dashboards that connect to your existing Microsoft 365 environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses outside of Tulsa and Oklahoma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — FlowNova works with clients across the US. We're headquartered in Tulsa, Oklahoma, but Power Platform work is remote-first by design. Discovery calls, architecture sessions, and delivery all happen over Teams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Power Apps and Power Automate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Power Apps is where you build the interface — the form, the dashboard, the tool your team interacts with. Power Automate is the engine running in the background — handling approvals, sending notifications, syncing data, and triggering actions. In most real-world solutions they work together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a large IT team to get value from Power Platform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most of FlowNova's clients are mid-sized businesses with lean IT teams or none at all. Power Platform operates within your existing Microsoft 365 licenses — no new infrastructure required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is FlowNova different from a large Microsoft partner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Large partners typically deploy teams of junior consultants managed by senior account leads you rarely talk to. At FlowNova, you work directly with the engineer building your solution — no handoffs, no middlemen."
+      }
+    }
+  ]
+}
+</script>
