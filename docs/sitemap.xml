@@ -94,12 +94,21 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-    <url>
+  <url>
     <loc>https://flownovasolutions.com/blog/2026-05-13/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+  <url>
+    <loc>https://flownovasolutions.com/blog/2026-06-03/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://flownovasolutions.com/blog/2026-06-10/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Conversion pages -->
   <url>
