@@ -1,0 +1,168 @@
+---
+title: "Dataverse vs. SharePoint Lists — Which One Should You Build On?"
+excerpt: "Choosing between Microsoft Dataverse and SharePoint Lists for your Power App? Learn the real differences, honest tradeoffs, and a simple framework to decide — before you build."
+date: 2026-06-19
+tags: ["blog"]
+author: "Shelby Williams"
+ogImage: "/images/og-default.png"
+---
+
+<p>We hear some version of this almost every time we take over a Power App that's outgrown its foundation: "We built it on SharePoint Lists. It worked great for six months. Now we need to rebuild the whole thing."</p>
+
+<p>It usually starts the same way: someone needs a quick app, they already have SharePoint, it seems like the obvious choice, and the app gets built. People use it. It grows. And then the cracks appear — performance slowing down, security getting complicated, relationships between data not working the way they need to, no audit trail anywhere.</p>
+
+<p>By that point, the cost of switching isn't just technical. It's the hours spent rebuilding, the workflows that break, and the organizational patience that runs thin. <strong>The choice of data source feels like a minor technical detail at the start of a project and becomes one of the most consequential decisions by the end of it.</strong></p>
+
+<p>This post is here to help you make that call before you build — not after.</p>
+
+<h2>What SharePoint Lists Actually Are</h2>
+
+<p>If you've used Microsoft 365 for more than a week, you've probably seen a SharePoint List. They're essentially structured tables that live inside a SharePoint site — like a smarter spreadsheet that multiple people can edit at the same time, with built-in columns for text, dates, numbers, dropdowns, and basic lookups.</p>
+
+<p>For a lot of use cases, that's exactly what you need. SharePoint Lists are:</p>
+
+<ul>
+  <li><strong>Already included in virtually every Microsoft 365 license</strong> — no additional cost, no new subscriptions.</li>
+  <li>Fast to set up — you can have a working list in under ten minutes.</li>
+  <li>Great for simple tracking — task lists, contact directories, event registrations, intake forms.</li>
+  <li>Fully compatible with Power Apps canvas apps and Power Automate flows.</li>
+</ul>
+
+<p>For a small team managing a simple, flat dataset, SharePoint Lists are a perfectly legitimate data source. There is nothing wrong with using them — as long as you're using them for the right things.</p>
+
+<h2>Where SharePoint Lists Start to Break Down</h2>
+
+<p>The problems don't show up immediately. They show up at the six-month mark, when the app has grown beyond what was originally imagined and the data model starts fighting back.</p>
+
+<h3>The 5,000-Item Threshold</h3>
+<p>SharePoint has a hard architectural limit that kicks in around 5,000 items. Once a list grows past that point, certain queries stop working without careful column indexing and view management. <strong>In a Power App, this can mean filters silently returning incomplete results — a data integrity problem most users won't immediately notice.</strong> Performance also degrades noticeably well before you hit millions of rows.</p>
+
+<h3>Relationships Between Tables Don't Really Work</h3>
+<p>SharePoint supports lookup columns, but only in one direction and with significant limitations. If your app has customers, orders, and products — all related to each other — you'll quickly find yourself working around SharePoint instead of working with it. There's no referential integrity, no cascading deletes, and no clean way to enforce relationships between lists.</p>
+
+<h3>Security Is Coarse-Grained</h3>
+<p>SharePoint security works at the site, list, and item level. <strong>There's no native way to say "this user can see all records, but only edit their own" without a tangle of custom permissions or Power Automate flows holding things together.</strong> For apps that handle sensitive data or need role-based access, this becomes a real liability.</p>
+
+<h3>No Native Business Rules or Audit History</h3>
+<p>SharePoint doesn't have native business rules — logic that enforces data quality automatically. You can approximate this with Power Automate, but you're adding moving parts and maintenance overhead. There's also no built-in audit trail that tracks who changed what and when.</p>
+
+<h2>What Microsoft Dataverse Actually Is</h2>
+
+<p>Dataverse is Microsoft's purpose-built relational database that lives natively inside the Power Platform. If SharePoint Lists are a smart spreadsheet, Dataverse is a proper enterprise database — pre-wired into Power Apps, Power Automate, Power BI, and Dynamics 365 so that everything talks to each other out of the box.</p>
+
+<ul>
+  <li><strong>True relational data model</strong> — define tables and relationships, and Dataverse enforces them with referential integrity. No workarounds.</li>
+  <li><strong>Row-level and column-level security</strong> — using role-based access control (RBAC), you can define exactly who can see, create, edit, or delete records, and even hide individual columns from specific roles.</li>
+  <li><strong>Business rules and calculated columns built in</strong> — enforce data validation logic at the data layer, not in the app. Change it once and it applies everywhere.</li>
+  <li><strong>Full audit history</strong> — every change to every record is logged natively. Who changed it, when, and what it was before.</li>
+  <li><strong>Scales to millions of rows</strong> without the performance degradation you see in SharePoint.</li>
+  <li><strong>Required for model-driven apps</strong> — if you want to use Power Apps' model-driven experience, Dataverse is the only option.</li>
+</ul>
+
+<h2>SharePoint Lists vs. Dataverse: Side-by-Side</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>SharePoint Lists</th>
+      <th>Microsoft Dataverse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Setup Complexity</strong></td>
+      <td>Low — minutes to configure</td>
+      <td>Moderate — requires data model planning</td>
+    </tr>
+    <tr>
+      <td><strong>Licensing</strong></td>
+      <td>Included in most Microsoft 365 plans</td>
+      <td>Requires Power Apps Premium (~$20/user/month)</td>
+    </tr>
+    <tr>
+      <td><strong>Relationships</strong></td>
+      <td>Basic one-way lookups only; no referential integrity</td>
+      <td>Full relational model with cascading deletes</td>
+    </tr>
+    <tr>
+      <td><strong>Row-Level Security</strong></td>
+      <td>Item-level permissions only; complex at scale</td>
+      <td>RBAC with column-level granularity</td>
+    </tr>
+    <tr>
+      <td><strong>Business Rules</strong></td>
+      <td>Not natively supported</td>
+      <td>Native business rules and calculated columns</td>
+    </tr>
+    <tr>
+      <td><strong>Scalability</strong></td>
+      <td>Issues above ~5,000 items</td>
+      <td>Built for enterprise scale; millions of rows</td>
+    </tr>
+    <tr>
+      <td><strong>Audit Trail</strong></td>
+      <td>Not natively available</td>
+      <td>Full native audit history on every record</td>
+    </tr>
+    <tr>
+      <td><strong>App Types</strong></td>
+      <td>Canvas apps only</td>
+      <td>Canvas apps and model-driven apps</td>
+    </tr>
+    <tr>
+      <td><strong>Best For</strong></td>
+      <td>Simple lists, small teams, quick prototypes</td>
+      <td>Complex apps, related tables, business-critical processes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>The Honest Tradeoffs</h2>
+
+<p><strong>Dataverse costs more.</strong> Every user who interacts with a production app built on Dataverse needs a Power Apps Premium license — approximately $20 per user per month as of 2025. For a small team building a simple internal tool, that cost may not be justifiable.</p>
+
+<p><strong>Dataverse takes longer to set up.</strong> You need to think through your data model, configure security roles, and plan your table structure before the first line of app logic gets written. For a quick prototype, that overhead isn't worth it.</p>
+
+<p>The mistake we see most often isn't choosing SharePoint — it's choosing SharePoint for something that was never going to stay simple. <strong>If you're building a tracker for five people to manage a small list of items, SharePoint Lists are completely fine.</strong> If you're building a business process app with multiple data entities, role-based access, and any expectation of growth — that's not what SharePoint Lists were designed for.</p>
+
+<h2>A Simple Framework for Making the Call</h2>
+
+<h3>Use SharePoint Lists if...</h3>
+<ul>
+  <li>It's a small team using the app infrequently</li>
+  <li>The data is genuinely flat — one list, no real relationships to other tables</li>
+  <li>You don't need row-level or column-level security beyond basic SharePoint permissions</li>
+  <li>You don't need an audit trail of data changes</li>
+  <li>It's a quick prototype or proof-of-concept</li>
+  <li>Premium licensing is not yet in budget and the use case doesn't justify it</li>
+</ul>
+
+<h3>Use Dataverse if...</h3>
+<ul>
+  <li>You have two or more related tables (e.g., Customers → Orders → Products)</li>
+  <li>Different users need different levels of access to the same data</li>
+  <li>You need business rules that enforce data quality automatically</li>
+  <li>An audit trail is required</li>
+  <li>The dataset will grow beyond a few thousand records</li>
+  <li>You're building something people will rely on for core business operations</li>
+  <li>You want the option to use model-driven apps now or in the future</li>
+</ul>
+
+<p><strong>Quick rule of thumb:</strong> Ask yourself — if this app broke or returned wrong data tomorrow, would it cause a real business problem? If yes, build on Dataverse. If no, SharePoint Lists may be just fine.</p>
+
+<h2>The Real Cost of Choosing Wrong</h2>
+
+<p>Switching data sources mid-build isn't just a technical headache — it's a full rebuild. Every screen in your canvas app is connected to a data source. Every column reference, every formula, every gallery, every form has to be rewired. Power Automate flows need to be recreated. Security has to be reconfigured from scratch. Data has to be migrated.</p>
+
+<p>We've seen teams spend three months rebuilding apps that took three weeks to build the first time — all because the data source decision was made by default rather than by design.</p>
+
+<p><strong>Spending 30 minutes thinking through the right data layer before you build will save you months of rework after.</strong> It's one of those rare situations where a small upfront investment pays back at a completely disproportionate rate.</p>
+
+<h2>Not Sure Which Direction to Go?</h2>
+
+<p>If you're about to build something on the Power Platform — or if you're already in the middle of a build and something feels off — the data layer question is exactly the kind of thing FlowNova helps with.</p>
+
+<p>We're a Power Platform consultancy based in Tulsa, Oklahoma, and we've worked through this decision on a lot of different projects across a lot of different industries. Sometimes the answer is Dataverse. Sometimes SharePoint Lists are genuinely the right call. What matters is making that decision intentionally, before you've committed months of development to a foundation that won't hold what you're trying to build.</p>
+
+<p>Reach out before you build — not after. A short conversation now is a lot less expensive than a rebuild later. <a href="/contact">Contact FlowNova Solutions →</a></p>
